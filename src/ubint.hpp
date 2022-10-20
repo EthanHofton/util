@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "serializable.hpp"
+#include "serializable_string.hpp"
 
 namespace util
 {
