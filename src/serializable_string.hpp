@@ -114,7 +114,7 @@ namespace util
          * 
          * @return std::string 
          */
-        std::string string()
+        std::string string() const
         {
             return m_data;
         }

@@ -111,7 +111,7 @@ namespace util
          * 
          * @return size_t 
          */
-        size_t size() { return m_data.size(); }
+        size_t size() const { return m_data.size(); }
 
         /**
          * @brief list index access
@@ -133,7 +133,7 @@ namespace util
          * 
          * @return std::vector<T> 
          */
-        std::vector<T> data() { return m_data; }
+        std::vector<T> data() const { return m_data; }
 
         /**
          * @brief serialzaible list standard out

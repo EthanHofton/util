@@ -20,7 +20,7 @@ namespace util
          * 
          * @param t_n construct a new ubint with this value
          */
-        ubint(const unsigned long long& t_n = 0)
+        ubint(const unsigned long long& t_n = 0ULL)
         {
             unsigned long long n = t_n;
             do {
@@ -28,6 +28,12 @@ namespace util
                 n /= 10;
             } while (n);
         }
+        /**
+         * @brief Construct a new ubint object from int
+         * 
+         * @param t_n construct new ubint with this value
+         */
+        ubint(const int& t_n) : ubint((unsigned long long)t_n) {}
         /**
          * @brief Construct a new ubint object from string
          * 
