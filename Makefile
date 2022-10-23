@@ -1,7 +1,7 @@
 CC = c++
 
 #CXX flags
-CXXFLAGS = -Wall -std=c++17 -stdlib=libc++
+CXXFLAGS = -Wall -std=c++20
 CXXFLAGS += -Isrc/
 
 SRC = $(wildcard src/*.cpp)

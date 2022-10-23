@@ -1,0 +1,40 @@
+\hypertarget{logger__file__sink_8hpp_source}{}\doxysection{logger\+\_\+file\+\_\+sink.\+hpp}
+\label{logger__file__sink_8hpp_source}\index{src/logger\_file\_sink.hpp@{src/logger\_file\_sink.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTIL\_LOGGER\_FILE\_SINK\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTIL\_LOGGER\_FILE\_SINK\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}logger.hpp"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1logger__file__sink}{logger\_file\_sink}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1logger__sink}{logger\_sink}}}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{25         \mbox{\hyperlink{classutil_1_1logger__file__sink_a12843f533446d0cd5f4ff75db142dfd5}{logger\_file\_sink}}(\textcolor{keyword}{const} std::string\& t\_filename) : m\_filename(t\_filename) \{\}}
+\DoxyCodeLine{32         \mbox{\hyperlink{classutil_1_1logger__file__sink_a5b04fce07df8f721e81d4d015c680b11}{logger\_file\_sink}}(\textcolor{keyword}{const} std::string\& t\_filename, \textcolor{keyword}{const} std::string\& t\_format) : \mbox{\hyperlink{classutil_1_1logger__file__sink}{logger\_file\_sink}}(t\_filename)}
+\DoxyCodeLine{33         \{ \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\_format}} = t\_format; \}}
+\DoxyCodeLine{38         \mbox{\hyperlink{classutil_1_1logger__file__sink_a65c80b921d8636ac462cfe85ffaa3a26}{\string~logger\_file\_sink}}()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__file__sink_a7451d29dfbb631ff5348ec5f999d7c99}{output}}(\textcolor{keyword}{const} std::string\& t\_out)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{46 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{47             std::ofstream file(m\_filename, std::ios::out | std::ios::app);}
+\DoxyCodeLine{48             file << t\_out << std::endl;}
+\DoxyCodeLine{49             file.close();}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keyword}{private}:}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         std::string m\_filename;}
+\DoxyCodeLine{55     \};}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

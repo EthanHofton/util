@@ -376,7 +376,7 @@ namespace util
          * @brief ubint right shift
          * 
          * @param t_a ubint right shift lhs
-         * @param t_t ubint right shift rhs
+         * @param t_b ubint right shift rhs
          * @return ubint 
          */
         friend ubint operator>>(const ubint&, const ubint&);

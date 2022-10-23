@@ -1,0 +1,107 @@
+\hypertarget{classutil_1_1serializable}{}\doxysection{util\+::serializable Class Reference}
+\label{classutil_1_1serializable}\index{util::serializable@{util::serializable}}
+
+
+this class will be inherited for serializable objects  
+
+
+
+
+{\ttfamily \#include $<$serializable.\+hpp$>$}
+
+Inheritance diagram for util\+::serializable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.761006cm]{classutil_1_1serializable}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classutil_1_1serializable_a804bcd68e6038cb81dc0d51ff4f8b922}{serialize}} (std\+::string t\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em when called, it will serialize the class into the specified file name using overloaded write method \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1serializable_a37a3ac1b4126907bba6c6cd6d1539a03}{deserialize}} (std\+::string t\+\_\+filename)
+\begin{DoxyCompactList}\small\item\em deserialize method will read a serializable class from the spesified file name using overloaded read method \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classutil_1_1serializable_a926595a896c4039bf2c5bf01cac1b1bb}{read}} (std\+::ifstream \&t\+\_\+stream)=0
+\begin{DoxyCompactList}\small\item\em this method is overloaded by the inheriting class and specifies how to read a serialized file \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classutil_1_1serializable_aa1b9f6c36c5693481e4f5f6c9453f343}{write}} (std\+::ofstream \&t\+\_\+stream) const =0
+\begin{DoxyCompactList}\small\item\em this method is overloaded by the inheriting class and specifies how to write a serialized file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this class will be inherited for serializable objects 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1serializable_a37a3ac1b4126907bba6c6cd6d1539a03}\label{classutil_1_1serializable_a37a3ac1b4126907bba6c6cd6d1539a03}} 
+\index{util::serializable@{util::serializable}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!util::serializable@{util::serializable}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void util\+::serializable\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+deserialize method will read a serializable class from the spesified file name using overloaded read method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+filename} & the specified binary file to deserialize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1serializable_a926595a896c4039bf2c5bf01cac1b1bb}\label{classutil_1_1serializable_a926595a896c4039bf2c5bf01cac1b1bb}} 
+\index{util::serializable@{util::serializable}!read@{read}}
+\index{read@{read}!util::serializable@{util::serializable}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual void util\+::serializable\+::read (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{t\+\_\+stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+this method is overloaded by the inheriting class and specifies how to read a serialized file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+stream} & the input file stream to read from \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classutil_1_1serializable__list_af6dad646c2632b2cbd2fd05d7c012e8d}{util\+::serializable\+\_\+list$<$ T $>$}}, \mbox{\hyperlink{classutil_1_1serializable__string_ad7959d5dab6d3145033c955027a8c83c}{util\+::serializable\+\_\+string}}, \mbox{\hyperlink{classutil_1_1ubint_a868db6b493fb643093ec9b807b4bea51}{util\+::ubint}}, and \mbox{\hyperlink{classutil_1_1bitstream_ae6b666587ccfe0a58d1f100ca65beb9c}{util\+::bitstream}}.
+
+\mbox{\Hypertarget{classutil_1_1serializable_a804bcd68e6038cb81dc0d51ff4f8b922}\label{classutil_1_1serializable_a804bcd68e6038cb81dc0d51ff4f8b922}} 
+\index{util::serializable@{util::serializable}!serialize@{serialize}}
+\index{serialize@{serialize}!util::serializable@{util::serializable}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void util\+::serializable\+::serialize (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+when called, it will serialize the class into the specified file name using overloaded write method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+filename} & is the name of the output filename \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1serializable_aa1b9f6c36c5693481e4f5f6c9453f343}\label{classutil_1_1serializable_aa1b9f6c36c5693481e4f5f6c9453f343}} 
+\index{util::serializable@{util::serializable}!write@{write}}
+\index{write@{write}!util::serializable@{util::serializable}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual void util\+::serializable\+::write (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{t\+\_\+stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+this method is overloaded by the inheriting class and specifies how to write a serialized file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+stream} & the output file stream to read from \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classutil_1_1bitstream_a40911be6dda2f92d4ee1f42ae144b9de}{util\+::bitstream}}, \mbox{\hyperlink{classutil_1_1serializable__list_a8faa6f20defd64bc5a9e3c78a34cd540}{util\+::serializable\+\_\+list$<$ T $>$}}, \mbox{\hyperlink{classutil_1_1serializable__string_ac05ed645c82c2ac5174b7dc31e6635a1}{util\+::serializable\+\_\+string}}, and \mbox{\hyperlink{classutil_1_1ubint_a7166787662071478550a7401362e6a43}{util\+::ubint}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/serializable.\+hpp\end{DoxyCompactItemize}

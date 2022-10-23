@@ -1,0 +1,209 @@
+\hypertarget{classutil_1_1logger__sink}{}\doxysection{util\+::logger\+\_\+sink Class Reference}
+\label{classutil_1_1logger__sink}\index{util::logger\_sink@{util::logger\_sink}}
+
+
+sink for a logger. a way for the message of the logger to be outputted  
+
+
+
+
+{\ttfamily \#include $<$logger.\+hpp$>$}
+
+Inheritance diagram for util\+::logger\+\_\+sink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutil_1_1logger__sink}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1logger__sink_ad6f804adb7ba775a386b6362c2a40156}{logger\+\_\+sink}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new logger sink object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classutil_1_1logger__sink_a86eb391763969c1ad0e7ed2844629ef5}{$\sim$logger\+\_\+sink}} ()=0
+\begin{DoxyCompactList}\small\item\em Destroy the logger sink object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger__sink_a8c945df74d587a5447255db63bf342cc}{set\+Log\+Level}} (const LOGGER\+\_\+\+LEVEL \&t\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Set the Log Level. \end{DoxyCompactList}\item 
+LOGGER\+\_\+\+LEVEL \mbox{\hyperlink{classutil_1_1logger__sink_a01d31b8777e127c2906858dcc942a0f5}{get\+Log\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Get the Log Level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger__sink_a78ae962f1c41aa9d41e8bd431b9fc6ec}{set\+Format}} (const std\+::string \&t\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Set the output format. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_a0bd9705e13323136ecd40e0cc58b81a6}{get\+Format}} ()
+\begin{DoxyCompactList}\small\item\em Get the output format. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classutil_1_1logger__sink_a0aa7398005008588cd349d491af6c2e8}{output}} (const std\+::string \&t\+\_\+out) const =0
+\begin{DoxyCompactList}\small\item\em output a message. to be defined by derrived classes \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}{start\+Output\+Color\+Range}} (const LOGGER\+\_\+\+LEVEL \&t\+\_\+level) const
+\begin{DoxyCompactList}\small\item\em add special charicters to the output stream to define colors \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}{end\+Output\+Color\+Range}} () const
+\begin{DoxyCompactList}\small\item\em restore the old color for the output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\+\_\+format}} = \char`\"{}\mbox{[}\%Y-\/\%m-\/\%d \%H\+:\%M\+:\%S\mbox{]} \mbox{[}\%n\mbox{]} \mbox{[}\%$^\wedge$\%l\%\$\mbox{]} \%v\char`\"{}
+\begin{DoxyCompactList}\small\item\em the format to output the message in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+sink for a logger. a way for the message of the logger to be outputted 
+
+Default logger format\+: \mbox{[}Y-\/m-\/d H\+:M\+:S\mbox{]} \mbox{[}n\mbox{]} \mbox{[}\%$^\wedge$l\$\mbox{]} v Defualt logger level \+: INFO 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__sink_ad6f804adb7ba775a386b6362c2a40156}\label{classutil_1_1logger__sink_ad6f804adb7ba775a386b6362c2a40156}} 
+\index{util::logger\_sink@{util::logger\_sink}!logger\_sink@{logger\_sink}}
+\index{logger\_sink@{logger\_sink}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{logger\_sink()}{logger\_sink()}}
+{\footnotesize\ttfamily util\+::logger\+\_\+sink\+::logger\+\_\+sink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new logger sink object. 
+
+\mbox{\Hypertarget{classutil_1_1logger__sink_a86eb391763969c1ad0e7ed2844629ef5}\label{classutil_1_1logger__sink_a86eb391763969c1ad0e7ed2844629ef5}} 
+\index{util::logger\_sink@{util::logger\_sink}!````~logger\_sink@{$\sim$logger\_sink}}
+\index{````~logger\_sink@{$\sim$logger\_sink}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{$\sim$logger\_sink()}{~logger\_sink()}}
+{\footnotesize\ttfamily util\+::logger\+\_\+sink\+::$\sim$logger\+\_\+sink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Destroy the logger sink object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}\label{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}} 
+\index{util::logger\_sink@{util::logger\_sink}!endOutputColorRange@{endOutputColorRange}}
+\index{endOutputColorRange@{endOutputColorRange}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{endOutputColorRange()}{endOutputColorRange()}}
+{\footnotesize\ttfamily virtual std\+::string util\+::logger\+\_\+sink\+::end\+Output\+Color\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+restore the old color for the output stream 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classutil_1_1logger__console__sink_aadb0332ea0dc97a26cdda1f12c38afa2}{util\+::logger\+\_\+console\+\_\+sink}}.
+
+\mbox{\Hypertarget{classutil_1_1logger__sink_a0bd9705e13323136ecd40e0cc58b81a6}\label{classutil_1_1logger__sink_a0bd9705e13323136ecd40e0cc58b81a6}} 
+\index{util::logger\_sink@{util::logger\_sink}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily std\+::string util\+::logger\+\_\+sink\+::get\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the output format. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger__sink_a01d31b8777e127c2906858dcc942a0f5}\label{classutil_1_1logger__sink_a01d31b8777e127c2906858dcc942a0f5}} 
+\index{util::logger\_sink@{util::logger\_sink}!getLogLevel@{getLogLevel}}
+\index{getLogLevel@{getLogLevel}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{getLogLevel()}{getLogLevel()}}
+{\footnotesize\ttfamily LOGGER\+\_\+\+LEVEL util\+::logger\+\_\+sink\+::get\+Log\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Log Level. 
+
+\begin{DoxyReturn}{Returns}
+LOGGER\+\_\+\+LEVEL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger__sink_a0aa7398005008588cd349d491af6c2e8}\label{classutil_1_1logger__sink_a0aa7398005008588cd349d491af6c2e8}} 
+\index{util::logger\_sink@{util::logger\_sink}!output@{output}}
+\index{output@{output}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily virtual void util\+::logger\+\_\+sink\+::output (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+output a message. to be defined by derrived classes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+out} & the message to output \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classutil_1_1logger__console__sink_accd5093f9f77692e37adad54f799ab52}{util\+::logger\+\_\+console\+\_\+sink}}, and \mbox{\hyperlink{classutil_1_1logger__file__sink_a7451d29dfbb631ff5348ec5f999d7c99}{util\+::logger\+\_\+file\+\_\+sink}}.
+
+\mbox{\Hypertarget{classutil_1_1logger__sink_a78ae962f1c41aa9d41e8bd431b9fc6ec}\label{classutil_1_1logger__sink_a78ae962f1c41aa9d41e8bd431b9fc6ec}} 
+\index{util::logger\_sink@{util::logger\_sink}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}}
+{\footnotesize\ttfamily void util\+::logger\+\_\+sink\+::set\+Format (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the output format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+format} & the format to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger__sink_a8c945df74d587a5447255db63bf342cc}\label{classutil_1_1logger__sink_a8c945df74d587a5447255db63bf342cc}} 
+\index{util::logger\_sink@{util::logger\_sink}!setLogLevel@{setLogLevel}}
+\index{setLogLevel@{setLogLevel}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{setLogLevel()}{setLogLevel()}}
+{\footnotesize\ttfamily void util\+::logger\+\_\+sink\+::set\+Log\+Level (\begin{DoxyParamCaption}\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Log Level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+level} & the level to set the logger priority \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}\label{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}} 
+\index{util::logger\_sink@{util::logger\_sink}!startOutputColorRange@{startOutputColorRange}}
+\index{startOutputColorRange@{startOutputColorRange}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{startOutputColorRange()}{startOutputColorRange()}}
+{\footnotesize\ttfamily virtual std\+::string util\+::logger\+\_\+sink\+::start\+Output\+Color\+Range (\begin{DoxyParamCaption}\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+add special charicters to the output stream to define colors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+level} & the level of the output to base the color off \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classutil_1_1logger__console__sink_ab11fd4d59f6e2e0269e1f50fb329613d}{util\+::logger\+\_\+console\+\_\+sink}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}\label{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}} 
+\index{util::logger\_sink@{util::logger\_sink}!m\_format@{m\_format}}
+\index{m\_format@{m\_format}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{m\_format}{m\_format}}
+{\footnotesize\ttfamily std\+::string util\+::logger\+\_\+sink\+::m\+\_\+format = \char`\"{}\mbox{[}\%Y-\/\%m-\/\%d \%H\+:\%M\+:\%S\mbox{]} \mbox{[}\%n\mbox{]} \mbox{[}\%$^\wedge$\%l\%\$\mbox{]} \%v\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the format to output the message in 
+
+default format\+: \mbox{[}Y-\/m-\/d H\+:M\+:S\mbox{]} \mbox{[}n\mbox{]} \mbox{[}\%$^\wedge$l\$\mbox{]} v \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classutil_1_1logger}{logger}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/logger.\+hpp\end{DoxyCompactItemize}

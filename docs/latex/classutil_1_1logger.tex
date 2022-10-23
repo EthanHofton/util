@@ -1,0 +1,815 @@
+\hypertarget{classutil_1_1logger}{}\doxysection{util\+::logger Class Reference}
+\label{classutil_1_1logger}\index{util::logger@{util::logger}}
+
+
+logger class. takes sinks to output structed messages too.  
+
+
+
+
+{\ttfamily \#include $<$logger.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1logger_a1d7adfa80a33a49ccb915dda372495e7}{logger}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new logger object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger_a8f290f5a732175bf79e12fc2e8bac5a3}{$\sim$logger}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the logger object and free all the sinks that were created. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_af94e8d190539776787bbd130b3704296}{add\+Sink}} (const std\+::string \&t\+\_\+index, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em add a new output sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}{remove\+Sink}} (const std\+::string \&t\+\_\+index)
+\begin{DoxyCompactList}\small\item\em remove an output sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}{set\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level)
+\begin{DoxyCompactList}\small\item\em Set the sinks log level. \end{DoxyCompactList}\item 
+LOGGER\+\_\+\+LEVEL \mbox{\hyperlink{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}{get\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Get a sinks log level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a7ecce168a7f7645c35518b9cccfbafe7}{set\+Sink\+Format}} (const std\+::string \&t\+\_\+index, const std\+::string \&t\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Set the sinks Format (see logger class breif) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1logger_a0f67ce37c0447ed74344ab8f99eaccb6}{get\+Sink\+Format}} (const std\+::string \&t\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Get the Sink Format string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}} (const std\+::string \&t\+\_\+msg, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level, const std\+::string \&t\+\_\+sink)
+\begin{DoxyCompactList}\small\item\em log a message to an output sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}{log}} (const std\+::string \&t\+\_\+msg, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level)
+\begin{DoxyCompactList}\small\item\em log a message to all output sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a0a8fc47d716b0f143f6868b6e18b9128}{log\+Trace}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at trace prioirty to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a2c0c92ad0348b7f42763222968891561}{log\+Trace}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at trace priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a81975fc6e46c5f7c2bc014c37628e929}{log\+Sink\+Trace}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at trace prirorty to a spicific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a19d11fd91779d1e2808d117404a9cd29}{log\+Sink\+Trace}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at trace priority to a specific sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_aacd31b656afafbd5e3b2d861da4be728}{log\+Debug}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at debug prioirty to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_aff5737dcfc8bf89240d6551e751068d7}{log\+Debug}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at debug priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a084b1e60f69f7bba1d3270e0f1316458}{log\+Sink\+Debug}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at debug priority to a specific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a907d5ea84a810ee5e8ac645df510275b}{log\+Sink\+Debug}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at debug priority to a specific sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a439ea95b2f807582b546373949aeaf8e}{log\+Info}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at info priorirty to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a815f5cc8bcdeed692767ad6aa45bef9b}{log\+Info}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at info priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a05e8baef29499f7f63c95abef8f07752}{log\+Sink\+Info}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at info priority to a specific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a54d7d045577e53d562c4c91b1da1e57d}{log\+Sink\+Info}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at info priority to a speicfic sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a6360e0753a524b4a21df203cc50286af}{log\+Warning}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at warning priotity to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_ae934e6c1c871c4069c09d1208833428f}{log\+Warning}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at warning priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_ad28698a93648e2cf6dee374388f7a11a}{log\+Sink\+Warning}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at warning priority to a specific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a5bd7ae652315d65113637b3a41204c86}{log\+Sink\+Warning}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at warning priority to a sprcific sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a34afa68e31d2ad5b7beb9d81a8352025}{log\+Error}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at error priority to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a21f34b89df2ccf57e76cea4a62c8c152}{log\+Error}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at error priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_aff904ced975af606c59ee70eceb622e7}{log\+Sink\+Error}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at error priority to a specific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a7d84b429d7769337d4af2a52df93e5ed}{log\+Sink\+Error}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at error priority to a specific sink \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_a8a4cb5e9e804882ba24c8c892cc40c59}{log\+Critical}} (const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at critical priority to all sinks \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a72b4c91f1d85aa20fb0e8be2a89b3e2c}{log\+Critical}} (const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at critical priority to all sinks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1logger_ac8d6477ebb5baf612ae4ec4a1a08ab2d}{log\+Sink\+Critical}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
+\begin{DoxyCompactList}\small\item\em log a message at critical priority to a specific sink \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a741994ed817e2dd1c0322d73a3a8ce16}{log\+Sink\+Critical}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
+\begin{DoxyCompactList}\small\item\em log a message at critical priority to a specfic sink \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&)=delete
+\begin{DoxyCompactList}\small\item\em logger copy constructor (deleted) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em logger move constructor (deleted) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger}{logger}} \& \mbox{\hyperlink{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}{operator=}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&)=delete
+\begin{DoxyCompactList}\small\item\em logger assignmet operator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger}{logger}} \& \mbox{\hyperlink{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}{operator=}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em logger move assignement operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+logger class. takes sinks to output structed messages too. 
+
+logger object cannot be copied or reassiged due to internal memory management of the sinks (temporary)
+
+the logger level heigherchy is as follows\+: TRACE-\/\texorpdfstring{$>$}{>}DEBUG-\/\texorpdfstring{$>$}{>}INFO-\/\texorpdfstring{$>$}{>}WARNING-\/\texorpdfstring{$>$}{>}ERROR-\/\texorpdfstring{$>$}{>}CRITICAL the logger output format is as follows\+: v\+: the text to log t\+: thread id P\+: process id n\+: logger name l\+: logger level a\+: abbriviated weekday name A\+: full weekday name b\+: abbriviated month name B\+: full month name c\+: date and time representation (a b d H\+:M\+:S Y) C\+: Year in 2 digits Y\+: year in 4 digits D or x\+: short for m/d/C m\+: month 01-\/12 d\+: day of the month 01-\/31 H\+: hour in 24 hour format I\+: hout in 12 hour format M\+: minuets 00-\/59 S\+: seconds 00-\/59 p\+: AM/\+PM r\+: 24hr clock (I\+:M\+:S p) R\+: 24 hour (H\+:M) T or X\+: ISO 8601 format (H\+:M\+:S) z\+: ISO 8601 offset from UTC in timezone (\mbox{[}+/-\/\mbox{]}HH\+:MM) E\+: second since Unix Epoch \%$^\wedge$\+: start color range \$\+: end color range g\+: {\bfseries{FILE}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1logger_a1d7adfa80a33a49ccb915dda372495e7}\label{classutil_1_1logger_a1d7adfa80a33a49ccb915dda372495e7}} 
+\index{util::logger@{util::logger}!logger@{logger}}
+\index{logger@{logger}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logger()}{logger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new logger object. 
+
+\mbox{\Hypertarget{classutil_1_1logger_a8f290f5a732175bf79e12fc2e8bac5a3}\label{classutil_1_1logger_a8f290f5a732175bf79e12fc2e8bac5a3}} 
+\index{util::logger@{util::logger}!````~logger@{$\sim$logger}}
+\index{````~logger@{$\sim$logger}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{$\sim$logger()}{~logger()}}
+{\footnotesize\ttfamily util\+::logger\+::$\sim$logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the logger object and free all the sinks that were created. 
+
+\mbox{\Hypertarget{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}\label{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}} 
+\index{util::logger@{util::logger}!logger@{logger}}
+\index{logger@{logger}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logger()}{logger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+logger copy constructor (deleted) 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]deleted\end{DoxyRefDesc}
+\mbox{\Hypertarget{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}\label{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}} 
+\index{util::logger@{util::logger}!logger@{logger}}
+\index{logger@{logger}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logger()}{logger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+logger move constructor (deleted) 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]deleted\end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger_af94e8d190539776787bbd130b3704296}\label{classutil_1_1logger_af94e8d190539776787bbd130b3704296}} 
+\index{util::logger@{util::logger}!addSink@{addSink}}
+\index{addSink@{addSink}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{addSink()}{addSink()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+void util\+::logger\+::add\+Sink (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add a new output sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of sink. must be derrived from \mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} class \\
+\hline
+{\em Args} & the arguments used to construct the object \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & the name to give to the logger (must be unique) \\
+\hline
+{\em t\+\_\+args} & the arguments used to construct the sink \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a0f67ce37c0447ed74344ab8f99eaccb6}\label{classutil_1_1logger_a0f67ce37c0447ed74344ab8f99eaccb6}} 
+\index{util::logger@{util::logger}!getSinkFormat@{getSinkFormat}}
+\index{getSinkFormat@{getSinkFormat}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{getSinkFormat()}{getSinkFormat()}}
+{\footnotesize\ttfamily std\+::string util\+::logger\+::get\+Sink\+Format (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Sink Format string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & the sinks identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}\label{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}} 
+\index{util::logger@{util::logger}!getSinkLogLevel@{getSinkLogLevel}}
+\index{getSinkLogLevel@{getSinkLogLevel}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{getSinkLogLevel()}{getSinkLogLevel()}}
+{\footnotesize\ttfamily LOGGER\+\_\+\+LEVEL util\+::logger\+::get\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a sinks log level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & the sinks identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LOGGER\+\_\+\+LEVEL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}\label{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}} 
+\index{util::logger@{util::logger}!log@{log}}
+\index{log@{log}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message to all output sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+msg} & the message to log \\
+\hline
+{\em t\+\_\+level} & the priority of the message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}\label{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}} 
+\index{util::logger@{util::logger}!log@{log}}
+\index{log@{log}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level,  }\item[{const std\+::string \&}]{t\+\_\+sink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message to an output sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+msg} & the message to log \\
+\hline
+{\em t\+\_\+level} & the priority of the message \\
+\hline
+{\em t\+\_\+sink} & the identifier of the sink to log to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a8a4cb5e9e804882ba24c8c892cc40c59}\label{classutil_1_1logger_a8a4cb5e9e804882ba24c8c892cc40c59}} 
+\index{util::logger@{util::logger}!logCritical@{logCritical}}
+\index{logCritical@{logCritical}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logCritical()}{logCritical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Critical (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at critical priority to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to be logged \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a72b4c91f1d85aa20fb0e8be2a89b3e2c}\label{classutil_1_1logger_a72b4c91f1d85aa20fb0e8be2a89b3e2c}} 
+\index{util::logger@{util::logger}!logCritical@{logCritical}}
+\index{logCritical@{logCritical}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logCritical()}{logCritical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Critical (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at critical priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of arguments passed in \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+{\em t\+\_\+args} & the arguments to pass to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_aacd31b656afafbd5e3b2d861da4be728}\label{classutil_1_1logger_aacd31b656afafbd5e3b2d861da4be728}} 
+\index{util::logger@{util::logger}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logDebug()}{logDebug()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at debug prioirty to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_aff5737dcfc8bf89240d6551e751068d7}\label{classutil_1_1logger_aff5737dcfc8bf89240d6551e751068d7}} 
+\index{util::logger@{util::logger}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logDebug()}{logDebug()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at debug priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & the types of arguemnts passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & a format string \\
+\hline
+{\em t\+\_\+args} & arguemnts to pass to format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a34afa68e31d2ad5b7beb9d81a8352025}\label{classutil_1_1logger_a34afa68e31d2ad5b7beb9d81a8352025}} 
+\index{util::logger@{util::logger}!logError@{logError}}
+\index{logError@{logError}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at error priority to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a21f34b89df2ccf57e76cea4a62c8c152}\label{classutil_1_1logger_a21f34b89df2ccf57e76cea4a62c8c152}} 
+\index{util::logger@{util::logger}!logError@{logError}}
+\index{logError@{logError}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at error priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of the arguments passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+{\em t\+\_\+args} & the arguemnts to be passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a439ea95b2f807582b546373949aeaf8e}\label{classutil_1_1logger_a439ea95b2f807582b546373949aeaf8e}} 
+\index{util::logger@{util::logger}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at info priorirty to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a815f5cc8bcdeed692767ad6aa45bef9b}\label{classutil_1_1logger_a815f5cc8bcdeed692767ad6aa45bef9b}} 
+\index{util::logger@{util::logger}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at info priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of arguments passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & a format string to be logged \\
+\hline
+{\em t\+\_\+args} & the arguments passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_ac8d6477ebb5baf612ae4ec4a1a08ab2d}\label{classutil_1_1logger_ac8d6477ebb5baf612ae4ec4a1a08ab2d}} 
+\index{util::logger@{util::logger}!logSinkCritical@{logSinkCritical}}
+\index{logSinkCritical@{logSinkCritical}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkCritical()}{logSinkCritical()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Critical (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at critical priority to a specific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a741994ed817e2dd1c0322d73a3a8ce16}\label{classutil_1_1logger_a741994ed817e2dd1c0322d73a3a8ce16}} 
+\index{util::logger@{util::logger}!logSinkCritical@{logSinkCritical}}
+\index{logSinkCritical@{logSinkCritical}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkCritical()}{logSinkCritical()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Critical (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at critical priority to a specfic sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of the arguemtns packed in \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+{\em t\+\_\+args} & the arguemnts passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a084b1e60f69f7bba1d3270e0f1316458}\label{classutil_1_1logger_a084b1e60f69f7bba1d3270e0f1316458}} 
+\index{util::logger@{util::logger}!logSinkDebug@{logSinkDebug}}
+\index{logSinkDebug@{logSinkDebug}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkDebug()}{logSinkDebug()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at debug priority to a specific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a907d5ea84a810ee5e8ac645df510275b}\label{classutil_1_1logger_a907d5ea84a810ee5e8ac645df510275b}} 
+\index{util::logger@{util::logger}!logSinkDebug@{logSinkDebug}}
+\index{logSinkDebug@{logSinkDebug}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkDebug()}{logSinkDebug()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at debug priority to a specific sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & the types of arguemnts passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & a format string to log \\
+\hline
+{\em t\+\_\+args} & the arguments to pass to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_aff904ced975af606c59ee70eceb622e7}\label{classutil_1_1logger_aff904ced975af606c59ee70eceb622e7}} 
+\index{util::logger@{util::logger}!logSinkError@{logSinkError}}
+\index{logSinkError@{logSinkError}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkError()}{logSinkError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at error priority to a specific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a7d84b429d7769337d4af2a52df93e5ed}\label{classutil_1_1logger_a7d84b429d7769337d4af2a52df93e5ed}} 
+\index{util::logger@{util::logger}!logSinkError@{logSinkError}}
+\index{logSinkError@{logSinkError}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkError()}{logSinkError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at error priority to a specific sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & the types of the arguments passed in \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+{\em t\+\_\+args} & the arugments to pass to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a05e8baef29499f7f63c95abef8f07752}\label{classutil_1_1logger_a05e8baef29499f7f63c95abef8f07752}} 
+\index{util::logger@{util::logger}!logSinkInfo@{logSinkInfo}}
+\index{logSinkInfo@{logSinkInfo}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkInfo()}{logSinkInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at info priority to a specific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a54d7d045577e53d562c4c91b1da1e57d}\label{classutil_1_1logger_a54d7d045577e53d562c4c91b1da1e57d}} 
+\index{util::logger@{util::logger}!logSinkInfo@{logSinkInfo}}
+\index{logSinkInfo@{logSinkInfo}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkInfo()}{logSinkInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Info (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at info priority to a speicfic sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of arguments passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & a format string to be logged \\
+\hline
+{\em t\+\_\+args} & the arguemnts passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a81975fc6e46c5f7c2bc014c37628e929}\label{classutil_1_1logger_a81975fc6e46c5f7c2bc014c37628e929}} 
+\index{util::logger@{util::logger}!logSinkTrace@{logSinkTrace}}
+\index{logSinkTrace@{logSinkTrace}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkTrace()}{logSinkTrace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Trace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at trace prirorty to a spicific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a19d11fd91779d1e2808d117404a9cd29}\label{classutil_1_1logger_a19d11fd91779d1e2808d117404a9cd29}} 
+\index{util::logger@{util::logger}!logSinkTrace@{logSinkTrace}}
+\index{logSinkTrace@{logSinkTrace}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkTrace()}{logSinkTrace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Trace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at trace priority to a specific sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of arguemnts \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & a format string to print \\
+\hline
+{\em t\+\_\+args} & the arguemnts to pass to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_ad28698a93648e2cf6dee374388f7a11a}\label{classutil_1_1logger_ad28698a93648e2cf6dee374388f7a11a}} 
+\index{util::logger@{util::logger}!logSinkWarning@{logSinkWarning}}
+\index{logSinkWarning@{logSinkWarning}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkWarning()}{logSinkWarning()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Sink\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at warning priority to a specific sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a5bd7ae652315d65113637b3a41204c86}\label{classutil_1_1logger_a5bd7ae652315d65113637b3a41204c86}} 
+\index{util::logger@{util::logger}!logSinkWarning@{logSinkWarning}}
+\index{logSinkWarning@{logSinkWarning}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logSinkWarning()}{logSinkWarning()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Sink\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+sink,  }\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at warning priority to a sprcific sink 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of the arguments passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+sink} & the sink to log to \\
+\hline
+{\em t\+\_\+fmt} & the format string to log \\
+\hline
+{\em t\+\_\+args} & the arguemnts to be passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a0a8fc47d716b0f143f6868b6e18b9128}\label{classutil_1_1logger_a0a8fc47d716b0f143f6868b6e18b9128}} 
+\index{util::logger@{util::logger}!logTrace@{logTrace}}
+\index{logTrace@{logTrace}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logTrace()}{logTrace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Trace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at trace prioirty to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a2c0c92ad0348b7f42763222968891561}\label{classutil_1_1logger_a2c0c92ad0348b7f42763222968891561}} 
+\index{util::logger@{util::logger}!logTrace@{logTrace}}
+\index{logTrace@{logTrace}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logTrace()}{logTrace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Trace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at trace priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & the types of arguemnts passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & a format string \\
+\hline
+{\em t\+\_\+args} & arguemnts to pass to format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a6360e0753a524b4a21df203cc50286af}\label{classutil_1_1logger_a6360e0753a524b4a21df203cc50286af}} 
+\index{util::logger@{util::logger}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logWarning()}{logWarning()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::logger\+::log\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at warning priotity to all sinks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the message to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_ae934e6c1c871c4069c09d1208833428f}\label{classutil_1_1logger_ae934e6c1c871c4069c09d1208833428f}} 
+\index{util::logger@{util::logger}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{logWarning()}{logWarning()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void util\+::logger\+::log\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+fmt,  }\item[{Args \&\&...}]{t\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+log a message at warning priority to all sinks 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & all the types of arguments passed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & a format string to be logged \\
+\hline
+{\em t\+\_\+args} & the arguemtns passed to the format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}\label{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}} 
+\index{util::logger@{util::logger}!operator=@{operator=}}
+\index{operator=@{operator=}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger}{logger}} \& util\+::logger\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+logger move assignement operator 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]deleted\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+logger\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}\label{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}} 
+\index{util::logger@{util::logger}!operator=@{operator=}}
+\index{operator=@{operator=}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger}{logger}} \& util\+::logger\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+logger assignmet operator 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]deleted\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+logger\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}\label{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}} 
+\index{util::logger@{util::logger}!removeSink@{removeSink}}
+\index{removeSink@{removeSink}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{removeSink()}{removeSink()}}
+{\footnotesize\ttfamily void util\+::logger\+::remove\+Sink (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove an output sink 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & the name used to identify the sink \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a7ecce168a7f7645c35518b9cccfbafe7}\label{classutil_1_1logger_a7ecce168a7f7645c35518b9cccfbafe7}} 
+\index{util::logger@{util::logger}!setSinkFormat@{setSinkFormat}}
+\index{setSinkFormat@{setSinkFormat}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{setSinkFormat()}{setSinkFormat()}}
+{\footnotesize\ttfamily void util\+::logger\+::set\+Sink\+Format (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index,  }\item[{const std\+::string \&}]{t\+\_\+format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the sinks Format (see logger class breif) 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classutil_1_1logger}{logger}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & the sinks identifier \\
+\hline
+{\em t\+\_\+format} & the format to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}\label{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}} 
+\index{util::logger@{util::logger}!setSinkLogLevel@{setSinkLogLevel}}
+\index{setSinkLogLevel@{setSinkLogLevel}!util::logger@{util::logger}}
+\doxysubsubsection{\texorpdfstring{setSinkLogLevel()}{setSinkLogLevel()}}
+{\footnotesize\ttfamily void util\+::logger\+::set\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the sinks log level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+index} & sinks identifier \\
+\hline
+{\em t\+\_\+level} & level to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/logger.\+hpp\end{DoxyCompactItemize}

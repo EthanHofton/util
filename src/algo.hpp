@@ -1,6 +1,9 @@
 #ifndef UTIL_ALGO_HPP
 #define UTIL_ALGO_HPP
 
+#include <string>
+#include <sstream>
+
 namespace util
 {
     /**
@@ -90,6 +93,53 @@ namespace util
     T lcm(const T& t_a, const T& t_b)
     {
         return (abs<T>(t_a * t_b)) / gcd(t_a, t_b);
+    }
+
+    /**
+     * @brief format base case
+     * 
+     * @param t_fmt the format string to return
+     * @return std::string 
+     */
+    std::string fmt(std::string t_fmt)
+    {
+        return t_fmt;
+    }
+
+    /**
+     * @brief format a string, replace {} with arguments provided in squentail order
+     * 
+     * @tparam T the type of the current argument
+     * @tparam Args the rest of the arguments
+     * @param t_fmt the format string
+     * @param t_val the top of the arugment list
+     * @param t_rest the rest of the argument list
+     * @return std::string 
+     */
+    template<typename T, typename... Args>
+    std::string fmt(std::string t_fmt, T t_val, Args... t_rest)
+    {
+        size_t pos = t_fmt.find("{}");
+        if (pos == std::string::npos) throw std::invalid_argument("too many arguments provided");
+        std::stringstream buf;
+        buf << t_val;
+        t_fmt.replace(t_fmt.begin() + pos, t_fmt.begin() + pos + 2, buf.str());
+        return fmt(t_fmt, t_rest...);
+    }
+
+    /**
+     * @brief takes an format string and replaces the corrisponding placeholders with there values
+     * 
+     * @param fmt format string describing what time to use
+     * @return std::string 
+     */
+    std::string strfmttime(const std::string& fmt)
+    {
+        char outstr[200];
+        time_t t = time(NULL);
+        struct tm *tmp = gmtime(&t);
+        strftime(outstr, sizeof(outstr), fmt.c_str(), tmp);
+        return std::string(outstr);
     }
 }
 

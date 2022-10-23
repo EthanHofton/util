@@ -1,0 +1,82 @@
+\hypertarget{algo_8hpp_source}{}\doxysection{algo.\+hpp}
+\label{algo_8hpp_source}\index{src/algo.hpp@{src/algo.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTIL\_ALGO\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTIL\_ALGO\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{18     T min(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         \textcolor{keywordflow}{return} (t\_a < t\_b) ? t\_a : t\_b;}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{31     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{32     T max(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} (t\_a > t\_b) ? t\_a : t\_b;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{46     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{47     T clamp(\textcolor{keyword}{const} T\& t\_x, \textcolor{keyword}{const} T\& t\_min, \textcolor{keyword}{const} T\& t\_max)}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         max<T>(t\_min, min<T>(t\_x, t\_max));}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{59     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{60     T abs(\textcolor{keyword}{const} T\& t\_a)}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         (t\_a >= 0) ? t\_a : -\/t\_a;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{74     T gcd(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{75     \{}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if} (t\_b == 0)}
+\DoxyCodeLine{77         \{}
+\DoxyCodeLine{78             \textcolor{keywordflow}{return} t\_a;}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} gcd<T>(t\_b, t\_a \% t\_b);}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{92     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{93     T lcm(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} (abs<T>(t\_a * t\_b)) / gcd(t\_a, t\_b);}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104     std::string fmt(std::string t\_fmt)}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106         \textcolor{keywordflow}{return} t\_fmt;}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{119     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{120     std::string fmt(std::string t\_fmt, T t\_val, Args... t\_rest)}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122         \textcolor{keywordtype}{size\_t} pos = t\_fmt.find(\textcolor{stringliteral}{"{}\{\}"{}});}
+\DoxyCodeLine{123         \textcolor{keywordflow}{if} (pos == std::string::npos) \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}too many arguments provided"{}});}
+\DoxyCodeLine{124         std::stringstream buf;}
+\DoxyCodeLine{125         buf << t\_val;}
+\DoxyCodeLine{126         t\_fmt.replace(t\_fmt.begin() + pos, t\_fmt.begin() + pos + 2, buf.str());}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} fmt(t\_fmt, t\_rest...);}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{136     std::string strfmttime(\textcolor{keyword}{const} std::string\& fmt)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         \textcolor{keywordtype}{char} outstr[200];}
+\DoxyCodeLine{139         time\_t t = time(NULL);}
+\DoxyCodeLine{140         \textcolor{keyword}{struct }tm *tmp = gmtime(\&t);}
+\DoxyCodeLine{141         strftime(outstr, \textcolor{keyword}{sizeof}(outstr), fmt.c\_str(), tmp);}
+\DoxyCodeLine{142         \textcolor{keywordflow}{return} std::string(outstr);}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
