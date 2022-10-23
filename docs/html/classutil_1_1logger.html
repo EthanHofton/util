@@ -94,6 +94,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f290f5a732175bf79e12fc2e8bac5a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#a8f290f5a732175bf79e12fc2e8bac5a3">~logger</a> ()</td></tr>
 <tr class="memdesc:a8f290f5a732175bf79e12fc2e8bac5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the logger object and free all the sinks that were created.  <a href="classutil_1_1logger.html#a8f290f5a732175bf79e12fc2e8bac5a3">More...</a><br /></td></tr>
 <tr class="separator:a8f290f5a732175bf79e12fc2e8bac5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cf427a8e37482c65406dbde1f256fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#ac9cf427a8e37482c65406dbde1f256fa">logger</a> (<a class="el" href="classutil_1_1logger.html">logger</a> const &amp;t_logger)</td></tr>
+<tr class="memdesc:ac9cf427a8e37482c65406dbde1f256fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger copy constructor. creates copied of all the sinks  <a href="classutil_1_1logger.html#ac9cf427a8e37482c65406dbde1f256fa">More...</a><br /></td></tr>
+<tr class="separator:ac9cf427a8e37482c65406dbde1f256fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2917d5e9e035a8dbf0b02ca4ec59ab71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#a2917d5e9e035a8dbf0b02ca4ec59ab71">logger</a> (<a class="el" href="classutil_1_1logger.html">logger</a> &amp;&amp;t_logger)</td></tr>
+<tr class="memdesc:a2917d5e9e035a8dbf0b02ca4ec59ab71"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger move constructor. moves ownership of the pervious sinks to the new class  <a href="classutil_1_1logger.html#a2917d5e9e035a8dbf0b02ca4ec59ab71">More...</a><br /></td></tr>
+<tr class="separator:a2917d5e9e035a8dbf0b02ca4ec59ab71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af94e8d190539776787bbd130b3704296"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:af94e8d190539776787bbd130b3704296"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#af94e8d190539776787bbd130b3704296">addSink</a> (const std::string &amp;t_index, Args &amp;&amp;... t_args)</td></tr>
 <tr class="memdesc:af94e8d190539776787bbd130b3704296"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a new output sink  <a href="classutil_1_1logger.html#af94e8d190539776787bbd130b3704296">More...</a><br /></td></tr>
@@ -203,22 +209,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a741994ed817e2dd1c0322d73a3a8ce16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#a741994ed817e2dd1c0322d73a3a8ce16">logSinkCritical</a> (const std::string &amp;t_sink, const std::string &amp;t_fmt, Args &amp;&amp;... t_args)</td></tr>
 <tr class="memdesc:a741994ed817e2dd1c0322d73a3a8ce16"><td class="mdescLeft">&#160;</td><td class="mdescRight">log a message at critical priority to a specfic sink  <a href="classutil_1_1logger.html#a741994ed817e2dd1c0322d73a3a8ce16">More...</a><br /></td></tr>
 <tr class="separator:a741994ed817e2dd1c0322d73a3a8ce16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a121edf0f82e5d8c821d54d79060122c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#a121edf0f82e5d8c821d54d79060122c7">logger</a> (<a class="el" href="classutil_1_1logger.html">logger</a> const &amp;)=delete</td></tr>
-<tr class="memdesc:a121edf0f82e5d8c821d54d79060122c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger copy constructor (deleted)  <a href="classutil_1_1logger.html#a121edf0f82e5d8c821d54d79060122c7">More...</a><br /></td></tr>
-<tr class="separator:a121edf0f82e5d8c821d54d79060122c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e022a89a217abafbd36307c98f34719"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#a0e022a89a217abafbd36307c98f34719">logger</a> (<a class="el" href="classutil_1_1logger.html">logger</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a0e022a89a217abafbd36307c98f34719"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger move constructor (deleted)  <a href="classutil_1_1logger.html#a0e022a89a217abafbd36307c98f34719">More...</a><br /></td></tr>
-<tr class="separator:a0e022a89a217abafbd36307c98f34719"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef13b8e9d49aba5700ec086e61ef9292"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1logger.html">logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#aef13b8e9d49aba5700ec086e61ef9292">operator=</a> (<a class="el" href="classutil_1_1logger.html">logger</a> const &amp;)=delete</td></tr>
-<tr class="memdesc:aef13b8e9d49aba5700ec086e61ef9292"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger assignmet operator  <a href="classutil_1_1logger.html#aef13b8e9d49aba5700ec086e61ef9292">More...</a><br /></td></tr>
-<tr class="separator:aef13b8e9d49aba5700ec086e61ef9292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa808e8451042b118a9457e974fb87b2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutil_1_1logger.html">logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger.html#aa808e8451042b118a9457e974fb87b2d">operator=</a> (<a class="el" href="classutil_1_1logger.html">logger</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:aa808e8451042b118a9457e974fb87b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger move assignement operator  <a href="classutil_1_1logger.html#aa808e8451042b118a9457e974fb87b2d">More...</a><br /></td></tr>
-<tr class="separator:aa808e8451042b118a9457e974fb87b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >logger class. takes sinks to output structed messages too. </p>
-<p >logger object cannot be copied or reassiged due to internal memory management of the sinks (temporary)</p>
 <p >the logger level heigherchy is as follows: TRACE-&gt;DEBUG-&gt;INFO-&gt;WARNING-&gt;ERROR-&gt;CRITICAL the logger output format is as follows: v: the text to log t: thread id P: process id n: logger name l: logger level a: abbriviated weekday name A: full weekday name b: abbriviated month name B: full month name c: date and time representation (a b d H:M:S Y) C: Year in 2 digits Y: year in 4 digits D or x: short for m/d/C m: month 01-12 d: day of the month 01-31 H: hour in 24 hour format I: hout in 12 hour format M: minuets 00-59 S: seconds 00-59 p: AM/PM r: 24hr clock (I:M:S p) R: 24 hour (H:M) T or X: ISO 8601 format (H:M:S) z: ISO 8601 offset from UTC in timezone ([+/-]HH:MM) E: second since Unix Epoch %^: start color range $: end color range g: <b>FILE</b> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d7adfa80a33a49ccb915dda372495e7" name="a1d7adfa80a33a49ccb915dda372495e7"></a>
@@ -275,8 +268,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a121edf0f82e5d8c821d54d79060122c7" name="a121edf0f82e5d8c821d54d79060122c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a121edf0f82e5d8c821d54d79060122c7">&#9670;&#160;</a></span>logger() <span class="overload">[2/3]</span></h2>
+<a id="ac9cf427a8e37482c65406dbde1f256fa" name="ac9cf427a8e37482c65406dbde1f256fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cf427a8e37482c65406dbde1f256fa">&#9670;&#160;</a></span>logger() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,24 +281,23 @@ Public Member Functions</h2></td></tr>
           <td class="memname">util::logger::logger </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1logger.html">logger</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>t_logger</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>logger copy constructor (deleted) </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>deleted</dd></dl>
+<p>logger copy constructor. creates copied of all the sinks </p>
 
 </div>
 </div>
-<a id="a0e022a89a217abafbd36307c98f34719" name="a0e022a89a217abafbd36307c98f34719"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e022a89a217abafbd36307c98f34719">&#9670;&#160;</a></span>logger() <span class="overload">[3/3]</span></h2>
+<a id="a2917d5e9e035a8dbf0b02ca4ec59ab71" name="a2917d5e9e035a8dbf0b02ca4ec59ab71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2917d5e9e035a8dbf0b02ca4ec59ab71">&#9670;&#160;</a></span>logger() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,19 +309,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">util::logger::logger </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1logger.html">logger</a> &amp;&amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>t_logger</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>logger move constructor (deleted) </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>deleted</dd></dl>
+<p>logger move constructor. moves ownership of the pervious sinks to the new class </p>
 
 </div>
 </div>
@@ -1704,66 +1695,6 @@ template&lt;typename... Args&gt; </div>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aa808e8451042b118a9457e974fb87b2d" name="aa808e8451042b118a9457e974fb87b2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa808e8451042b118a9457e974fb87b2d">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classutil_1_1logger.html">logger</a> &amp; util::logger::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classutil_1_1logger.html">logger</a> &amp;&amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>logger move assignement operator </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>deleted</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>logger&amp; </dd></dl>
-
-</div>
-</div>
-<a id="aef13b8e9d49aba5700ec086e61ef9292" name="aef13b8e9d49aba5700ec086e61ef9292"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef13b8e9d49aba5700ec086e61ef9292">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classutil_1_1logger.html">logger</a> &amp; util::logger::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classutil_1_1logger.html">logger</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>logger assignmet operator </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>deleted</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>logger&amp; </dd></dl>
 
 </div>
 </div>

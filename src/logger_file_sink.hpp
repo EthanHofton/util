@@ -49,6 +49,12 @@ namespace util
             file.close();
         }
 
+        /**
+         * @brief Construct a new logger sink copy
+         * 
+         */
+        LOGGER_SINK_CLONE_IMPL(logger_file_sink)
+
     private:
 
         std::string m_filename;

@@ -104,20 +104,22 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            file.close();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        std::string m_filename;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        LOGGER_SINK_CLONE_IMPL(<a class="code hl_class" href="classutil_1_1logger__file__sink.html">logger_file_sink</a>)</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        std::string m_filename;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassutil_1_1logger__file__sink_html"><div class="ttname"><a href="classutil_1_1logger__file__sink.html">util::logger_file_sink</a></div><div class="ttdoc">logger output sink to a file</div><div class="ttdef"><b>Definition:</b> logger_file_sink.hpp:17</div></div>
 <div class="ttc" id="aclassutil_1_1logger__file__sink_html_a12843f533446d0cd5f4ff75db142dfd5"><div class="ttname"><a href="classutil_1_1logger__file__sink.html#a12843f533446d0cd5f4ff75db142dfd5">util::logger_file_sink::logger_file_sink</a></div><div class="ttdeci">logger_file_sink(const std::string &amp;t_filename)</div><div class="ttdoc">Construct a new logger file sink object.</div><div class="ttdef"><b>Definition:</b> logger_file_sink.hpp:25</div></div>
 <div class="ttc" id="aclassutil_1_1logger__file__sink_html_a5b04fce07df8f721e81d4d015c680b11"><div class="ttname"><a href="classutil_1_1logger__file__sink.html#a5b04fce07df8f721e81d4d015c680b11">util::logger_file_sink::logger_file_sink</a></div><div class="ttdeci">logger_file_sink(const std::string &amp;t_filename, const std::string &amp;t_format)</div><div class="ttdoc">Construct a new logger file sink object.</div><div class="ttdef"><b>Definition:</b> logger_file_sink.hpp:32</div></div>
 <div class="ttc" id="aclassutil_1_1logger__file__sink_html_a65c80b921d8636ac462cfe85ffaa3a26"><div class="ttname"><a href="classutil_1_1logger__file__sink.html#a65c80b921d8636ac462cfe85ffaa3a26">util::logger_file_sink::~logger_file_sink</a></div><div class="ttdeci">~logger_file_sink() override</div><div class="ttdoc">Destroy the logger file sink object.</div><div class="ttdef"><b>Definition:</b> logger_file_sink.hpp:38</div></div>
 <div class="ttc" id="aclassutil_1_1logger__file__sink_html_a7451d29dfbb631ff5348ec5f999d7c99"><div class="ttname"><a href="classutil_1_1logger__file__sink.html#a7451d29dfbb631ff5348ec5f999d7c99">util::logger_file_sink::output</a></div><div class="ttdeci">void output(const std::string &amp;t_out) const override</div><div class="ttdoc">output the message to the log file</div><div class="ttdef"><b>Definition:</b> logger_file_sink.hpp:45</div></div>
 <div class="ttc" id="aclassutil_1_1logger__sink_html"><div class="ttname"><a href="classutil_1_1logger__sink.html">util::logger_sink</a></div><div class="ttdoc">sink for a logger. a way for the message of the logger to be outputted</div><div class="ttdef"><b>Definition:</b> logger.hpp:56</div></div>
-<div class="ttc" id="aclassutil_1_1logger__sink_html_a99f55201bc0d1183116850b5ea465112"><div class="ttname"><a href="classutil_1_1logger__sink.html#a99f55201bc0d1183116850b5ea465112">util::logger_sink::m_format</a></div><div class="ttdeci">std::string m_format</div><div class="ttdoc">the format to output the message in</div><div class="ttdef"><b>Definition:</b> logger.hpp:125</div></div>
+<div class="ttc" id="aclassutil_1_1logger__sink_html_a99f55201bc0d1183116850b5ea465112"><div class="ttname"><a href="classutil_1_1logger__sink.html#a99f55201bc0d1183116850b5ea465112">util::logger_sink::m_format</a></div><div class="ttdeci">std::string m_format</div><div class="ttdoc">the format to output the message in</div><div class="ttdef"><b>Definition:</b> logger.hpp:134</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

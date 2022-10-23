@@ -16,6 +16,10 @@ logger class. takes sinks to output structed messages too.
 \begin{DoxyCompactList}\small\item\em Construct a new logger object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classutil_1_1logger_a8f290f5a732175bf79e12fc2e8bac5a3}{$\sim$logger}} ()
 \begin{DoxyCompactList}\small\item\em Destroy the logger object and free all the sinks that were created. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger_ac9cf427a8e37482c65406dbde1f256fa}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&t\+\_\+logger)
+\begin{DoxyCompactList}\small\item\em logger copy constructor. creates copied of all the sinks \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger_a2917d5e9e035a8dbf0b02ca4ec59ab71}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&t\+\_\+logger)
+\begin{DoxyCompactList}\small\item\em logger move constructor. moves ownership of the pervious sinks to the new class \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_af94e8d190539776787bbd130b3704296}{add\+Sink}} (const std\+::string \&t\+\_\+index, Args \&\&... t\+\_\+args)
 \begin{DoxyCompactList}\small\item\em add a new output sink \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}{remove\+Sink}} (const std\+::string \&t\+\_\+index)
@@ -79,21 +83,11 @@ void \mbox{\hyperlink{classutil_1_1logger_a8a4cb5e9e804882ba24c8c892cc40c59}{log
 void \mbox{\hyperlink{classutil_1_1logger_ac8d6477ebb5baf612ae4ec4a1a08ab2d}{log\+Sink\+Critical}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt)
 \begin{DoxyCompactList}\small\item\em log a message at critical priority to a specific sink \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classutil_1_1logger_a741994ed817e2dd1c0322d73a3a8ce16}{log\+Sink\+Critical}} (const std\+::string \&t\+\_\+sink, const std\+::string \&t\+\_\+fmt, Args \&\&... t\+\_\+args)
-\begin{DoxyCompactList}\small\item\em log a message at critical priority to a specfic sink \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&)=delete
-\begin{DoxyCompactList}\small\item\em logger copy constructor (deleted) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}{logger}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&)=delete
-\begin{DoxyCompactList}\small\item\em logger move constructor (deleted) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutil_1_1logger}{logger}} \& \mbox{\hyperlink{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}{operator=}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&)=delete
-\begin{DoxyCompactList}\small\item\em logger assignmet operator \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutil_1_1logger}{logger}} \& \mbox{\hyperlink{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}{operator=}} (\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&)=delete
-\begin{DoxyCompactList}\small\item\em logger move assignement operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em log a message at critical priority to a specfic sink \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 logger class. takes sinks to output structed messages too. 
-
-logger object cannot be copied or reassiged due to internal memory management of the sinks (temporary)
 
 the logger level heigherchy is as follows\+: TRACE-\/\texorpdfstring{$>$}{>}DEBUG-\/\texorpdfstring{$>$}{>}INFO-\/\texorpdfstring{$>$}{>}WARNING-\/\texorpdfstring{$>$}{>}ERROR-\/\texorpdfstring{$>$}{>}CRITICAL the logger output format is as follows\+: v\+: the text to log t\+: thread id P\+: process id n\+: logger name l\+: logger level a\+: abbriviated weekday name A\+: full weekday name b\+: abbriviated month name B\+: full month name c\+: date and time representation (a b d H\+:M\+:S Y) C\+: Year in 2 digits Y\+: year in 4 digits D or x\+: short for m/d/C m\+: month 01-\/12 d\+: day of the month 01-\/31 H\+: hour in 24 hour format I\+: hout in 12 hour format M\+: minuets 00-\/59 S\+: seconds 00-\/59 p\+: AM/\+PM r\+: 24hr clock (I\+:M\+:S p) R\+: 24 hour (H\+:M) T or X\+: ISO 8601 format (H\+:M\+:S) z\+: ISO 8601 offset from UTC in timezone (\mbox{[}+/-\/\mbox{]}HH\+:MM) E\+: second since Unix Epoch \%$^\wedge$\+: start color range \$\+: end color range g\+: {\bfseries{FILE}} 
 
@@ -118,30 +112,26 @@ Construct a new logger object.
 
 Destroy the logger object and free all the sinks that were created. 
 
-\mbox{\Hypertarget{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}\label{classutil_1_1logger_a121edf0f82e5d8c821d54d79060122c7}} 
+\mbox{\Hypertarget{classutil_1_1logger_ac9cf427a8e37482c65406dbde1f256fa}\label{classutil_1_1logger_ac9cf427a8e37482c65406dbde1f256fa}} 
 \index{util::logger@{util::logger}!logger@{logger}}
 \index{logger@{logger}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{logger()}{logger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&}]{t\+\_\+logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-logger copy constructor (deleted) 
+logger copy constructor. creates copied of all the sinks 
 
-\begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]deleted\end{DoxyRefDesc}
-\mbox{\Hypertarget{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}\label{classutil_1_1logger_a0e022a89a217abafbd36307c98f34719}} 
+\mbox{\Hypertarget{classutil_1_1logger_a2917d5e9e035a8dbf0b02ca4ec59ab71}\label{classutil_1_1logger_a2917d5e9e035a8dbf0b02ca4ec59ab71}} 
 \index{util::logger@{util::logger}!logger@{logger}}
 \index{logger@{logger}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{logger()}{logger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily util\+::logger\+::logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&}]{t\+\_\+logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-logger move constructor (deleted) 
+logger move constructor. moves ownership of the pervious sinks to the new class 
 
-\begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]deleted\end{DoxyRefDesc}
 
 
 \doxysubsection{Member Function Documentation}
@@ -722,40 +712,6 @@ log a message at warning priority to all sinks
 {\em t\+\_\+args} & the arguemtns passed to the format string \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}\label{classutil_1_1logger_aa808e8451042b118a9457e974fb87b2d}} 
-\index{util::logger@{util::logger}!operator=@{operator=}}
-\index{operator=@{operator=}!util::logger@{util::logger}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger}{logger}} \& util\+::logger\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
-
-
-logger move assignement operator 
-
-\begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]deleted\end{DoxyRefDesc}
-
-
-\begin{DoxyReturn}{Returns}
-logger\& 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}\label{classutil_1_1logger_aef13b8e9d49aba5700ec086e61ef9292}} 
-\index{util::logger@{util::logger}!operator=@{operator=}}
-\index{operator=@{operator=}!util::logger@{util::logger}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger}{logger}} \& util\+::logger\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1logger}{logger}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
-
-
-logger assignmet operator 
-
-\begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]deleted\end{DoxyRefDesc}
-
-
-\begin{DoxyReturn}{Returns}
-logger\& 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}\label{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}} 
 \index{util::logger@{util::logger}!removeSink@{removeSink}}
 \index{removeSink@{removeSink}!util::logger@{util::logger}}

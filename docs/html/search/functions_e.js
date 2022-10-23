@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['value_0',['value',['../classutil_1_1ubint.html#ab553998279f43341f413c89f75d2567a',1,'util::ubint']]]
+  ['toascci_0',['toAscci',['../classutil_1_1bitstream.html#ae594445ce9f80651ad2e2e8d7b6e66c0',1,'util::bitstream']]],
+  ['tobinary_1',['toBinary',['../classutil_1_1bitstream.html#a76ecc93df4c4f3fa69b45ab4255af7e7',1,'util::bitstream']]],
+  ['toint_2',['toInt',['../classutil_1_1bitstream.html#ae6543e0ea41583118d0b37f56dfb6707',1,'util::bitstream']]],
+  ['toubint_3',['toUbint',['../classutil_1_1bitstream.html#af76a9e5b2a4b1a6cb56da532a642af71',1,'util::bitstream']]]
 ];

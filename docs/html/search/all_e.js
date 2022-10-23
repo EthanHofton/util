@@ -11,5 +11,6 @@ var searchData=
   ['size_8',['size',['../classutil_1_1bitstream.html#ae2dbde873c92a4ca61be88cb6e47e1c7',1,'util::bitstream::size()'],['../classutil_1_1serializable__list.html#adb6e806b17fa433913e0db3a79b8305c',1,'util::serializable_list::size()']]],
   ['sqrt_9',['sqrt',['../classutil_1_1ubint.html#a34a8a562dceae2f968562466608d42da',1,'util::ubint']]],
   ['startoutputcolorrange_10',['startOutputColorRange',['../classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217',1,'util::logger_sink::startOutputColorRange()'],['../classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d',1,'util::logger_console_sink::startOutputColorRange()']]],
-  ['string_11',['string',['../classutil_1_1serializable__string.html#a312f186d994efbeb2b18b99a689ace1c',1,'util::serializable_string']]]
+  ['strfmttime_11',['strfmttime',['../algo_8hpp.html#ab1d9997edb8c4fe8ae1d14dd950fddb3',1,'util']]],
+  ['string_12',['string',['../classutil_1_1serializable__string.html#a312f186d994efbeb2b18b99a689ace1c',1,'util::serializable_string']]]
 ];

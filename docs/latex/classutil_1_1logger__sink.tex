@@ -35,7 +35,9 @@ virtual void \mbox{\hyperlink{classutil_1_1logger__sink_a0aa7398005008588cd349d4
 virtual std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}{start\+Output\+Color\+Range}} (const LOGGER\+\_\+\+LEVEL \&t\+\_\+level) const
 \begin{DoxyCompactList}\small\item\em add special charicters to the output stream to define colors \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}{end\+Output\+Color\+Range}} () const
-\begin{DoxyCompactList}\small\item\em restore the old color for the output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em restore the old color for the output stream \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ \mbox{\hyperlink{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em return a new copy of derivded class as the base class from the derivded class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,6 +74,19 @@ Destroy the logger sink object.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}\label{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}} 
+\index{util::logger\_sink@{util::logger\_sink}!clone@{clone}}
+\index{clone@{clone}!util::logger\_sink@{util::logger\_sink}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ util\+::logger\+\_\+sink\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+return a new copy of derivded class as the base class from the derivded class 
+
+\begin{DoxyReturn}{Returns}
+logger\+\_\+sink$\ast$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}\label{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}} 
 \index{util::logger\_sink@{util::logger\_sink}!endOutputColorRange@{endOutputColorRange}}
 \index{endOutputColorRange@{endOutputColorRange}!util::logger\_sink@{util::logger\_sink}}

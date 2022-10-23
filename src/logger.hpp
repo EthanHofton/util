@@ -114,6 +114,15 @@ namespace util
          */
         virtual std::string endOutputColorRange() const { return ""; }
 
+        /**
+         * @brief return a new copy of derivded class as the base class from the derivded class
+         * 
+         * @return logger_sink* 
+         */
+        virtual logger_sink* clone() const = 0;
+
+        #define LOGGER_SINK_CLONE_IMPL(derived) logger_sink* clone() const override { return new derived(static_cast<const derived&>(*this)); }
+
     protected:
         /**
          * @brief the format to output the message in
@@ -137,8 +146,6 @@ namespace util
 
     /**
      * @brief logger class. takes sinks to output structed messages too.
-     * 
-     * logger object cannot be copied or reassiged due to internal memory management of the sinks (temporary)
      * 
      * the logger level heigherchy is as follows: TRACE->DEBUG->INFO->WARNING->ERROR->CRITICAL
      * the logger output format is as follows:
@@ -188,6 +195,25 @@ namespace util
         ~logger() { for (auto sink : m_sinks) delete sink.second; m_sinks.clear(); }
 
         /**
+         * @brief logger copy constructor. creates copied of all the sinks
+         * 
+         */
+        logger(logger const& t_logger)
+        {
+            for (auto& pair : t_logger.m_sinks)
+            {
+                m_sinks[pair.first] = pair.second->clone();
+            }
+        }
+
+        /**
+         * @brief logger move constructor. moves ownership of the pervious sinks to the new class
+         * 
+         */
+        logger(logger&& t_logger)
+        { m_sinks = std::move(t_logger.m_sinks); }
+
+        /**
          * @brief add a new output sink
          * 
          * @tparam T the type of sink. must be derrived from logger_sink class
@@ -204,7 +230,7 @@ namespace util
          * @param t_index the name used to identify the sink
          */
         void removeSink(const std::string& t_index)
-        { if (m_sinks.find(t_index) != m_sinks.end()) m_sinks.erase(t_index); }
+        { if (m_sinks.find(t_index) != m_sinks.end()) { m_sinks.erase(t_index); } }
 
         /**
          * @brief Set the sinks log level
@@ -485,33 +511,6 @@ namespace util
         template <typename... Args>
         void logSinkCritical(const std::string& t_sink, const std::string& t_fmt, Args&&... t_args)
         { log(fmt(t_fmt, t_args...), LOGGER_LEVEL::CRITICAL, t_sink); }
-
-        /**
-         * @brief logger copy constructor (deleted)
-         * @deprecated deleted
-         * 
-         */
-        logger(logger const&) = delete;
-        /**
-         * @brief logger move constructor (deleted)
-         * @deprecated deleted
-         * 
-         */
-        logger(logger&&) = delete;
-        /**
-         * @brief logger assignmet operator
-         * @deprecated deleted
-         * 
-         * @return logger& 
-         */
-        logger& operator=(logger const&) = delete;
-        /**
-         * @brief logger move assignement operator
-         * @deprecated deleted
-         * 
-         * @return logger& 
-         */
-        logger& operator=(logger &&) = delete;
 
     private:
 

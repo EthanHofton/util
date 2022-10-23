@@ -4,6 +4,16 @@
 #include <string>
 #include <sstream>
 
+/**
+ * @file algo.hpp
+ * 
+ * a file defining commonly used functions and algorithms
+ * 
+ */
+
+/**
+ * @namespace util
+*/
 namespace util
 {
     /**

@@ -80,6 +80,12 @@ namespace util
             ss << CONSOLE_COLOR_CODE::BG_DEFAULT << CONSOLE_COLOR_CODE::FG_DEFAULT;
             return ss.str();
         }
+
+        /**
+         * @brief create a new logger sink copy object
+         * 
+         */
+        LOGGER_SINK_CLONE_IMPL(logger_console_sink)
     };
 }
 

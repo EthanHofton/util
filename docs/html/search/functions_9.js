@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['prepend_0',['prepend',['../classutil_1_1bitstream.html#a01eb371b0ed05612643554dae99198db',1,'util::bitstream::prepend(const bitstream &amp;t_bits)'],['../classutil_1_1bitstream.html#a7641b46970b95ce0ef27d62aa46a205c',1,'util::bitstream::prepend(const bool &amp;t_bit)']]]
+  ['max_0',['max',['../algo_8hpp.html#a6cd86e6329cc7fee23ecf5c5f8a3bee7',1,'util']]],
+  ['min_1',['min',['../algo_8hpp.html#a53d58676f94050e59fb2808fef15d659',1,'util']]]
 ];
