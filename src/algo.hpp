@@ -3,6 +3,7 @@
 
 #include <string>
 #include <sstream>
+#include "random.hpp"
 
 /**
  * @file algo.hpp
@@ -150,6 +151,40 @@ namespace util
         struct tm *tmp = gmtime(&t);
         strftime(outstr, sizeof(outstr), fmt.c_str(), tmp);
         return std::string(outstr);
+    }
+
+    /**
+    * generate a new random v4 uuid
+    *
+    * @return std::string the new v4 uuid
+    */
+    std::string generate_uuid_v4() {
+        std::stringstream ss;
+        prng rng;
+        int i;
+        
+        ss << std::hex;   
+        for (i = 0; i < 8; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        for (i = 0; i < 4; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-4";
+        for (i = 0; i < 3; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        ss << rng.randi(8, 11);
+        for (i = 0; i < 3; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        for (i = 0; i < 12; i++) {
+            ss << rng.randi(0, 15);
+        }
+        return ss.str();
     }
 }
 
