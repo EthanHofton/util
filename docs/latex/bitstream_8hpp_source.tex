@@ -12,7 +12,7 @@
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}ubint.hpp"{}}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}serializable\_list.hpp"{}}}
 \DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }util}
 \DoxyCodeLine{12 \{}
 \DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1serializable}{serializable}}}
 \DoxyCodeLine{18     \{}
@@ -143,7 +143,7 @@
 \DoxyCodeLine{350         std::vector<bool> m\_bits;}
 \DoxyCodeLine{351     \};}
 \DoxyCodeLine{352 }
-\DoxyCodeLine{353     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_a001834f5ed0d77e0b3ad3c0a82fc633c}{fromAscii}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&t\_str)}
+\DoxyCodeLine{353     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} fromAscii(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&t\_str)}
 \DoxyCodeLine{354     \{}
 \DoxyCodeLine{355         \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} res;}
 \DoxyCodeLine{356         \textcolor{keywordtype}{int} num = (int)t\_str;}
@@ -158,31 +158,31 @@
 \DoxyCodeLine{365         \textcolor{keywordflow}{return} res;}
 \DoxyCodeLine{366     \}}
 \DoxyCodeLine{367 }
-\DoxyCodeLine{368     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_a001834f5ed0d77e0b3ad3c0a82fc633c}{fromAscii}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&t\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& t\_bits)}
+\DoxyCodeLine{368     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} fromAscii(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&t\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& t\_bits)}
 \DoxyCodeLine{369     \{}
-\DoxyCodeLine{370         \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} s = \mbox{\hyperlink{namespaceutil_a001834f5ed0d77e0b3ad3c0a82fc633c}{fromAscii}}(t\_str);}
+\DoxyCodeLine{370         \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} s = fromAscii(t\_str);}
 \DoxyCodeLine{371         s.\mbox{\hyperlink{classutil_1_1bitstream_a01eb371b0ed05612643554dae99198db}{prepend}}(std::vector<bool>(t\_bits -\/ s.\mbox{\hyperlink{classutil_1_1bitstream_ae2dbde873c92a4ca61be88cb6e47e1c7}{size}}(), 0));}
 \DoxyCodeLine{372         \textcolor{keywordflow}{return} s;}
 \DoxyCodeLine{373     \}}
 \DoxyCodeLine{374     }
-\DoxyCodeLine{375     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_a001834f5ed0d77e0b3ad3c0a82fc633c}{fromAscii}}(\textcolor{keyword}{const} std::string \&t\_str)}
+\DoxyCodeLine{375     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} fromAscii(\textcolor{keyword}{const} std::string \&t\_str)}
 \DoxyCodeLine{376     \{}
 \DoxyCodeLine{377         \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} s;}
 \DoxyCodeLine{378         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} c : t\_str)}
 \DoxyCodeLine{379         \{}
-\DoxyCodeLine{380             s.\mbox{\hyperlink{classutil_1_1bitstream_ae97d251f1e16418958263c0df1db0c13}{append}}(\mbox{\hyperlink{namespaceutil_a001834f5ed0d77e0b3ad3c0a82fc633c}{fromAscii}}(c, 8));}
+\DoxyCodeLine{380             s.\mbox{\hyperlink{classutil_1_1bitstream_ae97d251f1e16418958263c0df1db0c13}{append}}(fromAscii(c, 8));}
 \DoxyCodeLine{381         \}}
 \DoxyCodeLine{382         \textcolor{keywordflow}{return} s;}
 \DoxyCodeLine{383     \}}
 \DoxyCodeLine{384 }
-\DoxyCodeLine{385     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_a3b5bea81a28e41cae329cb04a5753539}{bitwise\_xor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
+\DoxyCodeLine{385     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} bitwise\_xor(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
 \DoxyCodeLine{386     \{ \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} r = t\_lhs; \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < t\_lhs.\mbox{\hyperlink{classutil_1_1bitstream_ae2dbde873c92a4ca61be88cb6e47e1c7}{size}}(); i++) r[i] = t\_lhs[i] \string^ t\_rhs[i]; \textcolor{keywordflow}{return} r;\}}
-\DoxyCodeLine{387     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_ad6158a8278cbe378dcc8a39d741a0765}{bitwise\_and}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
+\DoxyCodeLine{387     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} bitwise\_and(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
 \DoxyCodeLine{388     \{ \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} r = t\_lhs; \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < t\_lhs.\mbox{\hyperlink{classutil_1_1bitstream_ae2dbde873c92a4ca61be88cb6e47e1c7}{size}}(); i++) r[i] = t\_lhs[i] \& t\_rhs[i]; \textcolor{keywordflow}{return} r;\}}
-\DoxyCodeLine{389     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} \mbox{\hyperlink{namespaceutil_af49c16e4eaf8992f64f3b3d57519438e}{bitwise\_or}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
+\DoxyCodeLine{389     \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} bitwise\_or(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_rhs)}
 \DoxyCodeLine{390     \{ \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}} r = t\_lhs; \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < t\_lhs.\mbox{\hyperlink{classutil_1_1bitstream_ae2dbde873c92a4ca61be88cb6e47e1c7}{size}}(); i++) r[i] = t\_lhs[i] | t\_rhs[i]; \textcolor{keywordflow}{return} r;\}}
 \DoxyCodeLine{391 }
-\DoxyCodeLine{392     std::ostream\& \mbox{\hyperlink{namespaceutil_ac43231c61ec1cc4a58c9e3f27d406154}{operator<<}}(std::ostream\& t\_o, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_b)}
+\DoxyCodeLine{392     std::ostream\& operator<<(std::ostream\& t\_o, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1bitstream}{bitstream}}\& t\_b)}
 \DoxyCodeLine{393     \{}
 \DoxyCodeLine{394         t\_o << t\_b.\mbox{\hyperlink{classutil_1_1bitstream_a76ecc93df4c4f3fa69b45ab4255af7e7}{toBinary}}();}
 \DoxyCodeLine{395         \textcolor{keywordflow}{return} t\_o;}

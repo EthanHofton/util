@@ -9,34 +9,34 @@
 \DoxyCodeLine{5 \textcolor{preprocessor}{\#include <sstream>}}
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}random.hpp"{}}}
 \DoxyCodeLine{7 }
-\DoxyCodeLine{18 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }util}
 \DoxyCodeLine{19 \{}
 \DoxyCodeLine{28     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{29     T \mbox{\hyperlink{namespaceutil_a53d58676f94050e59fb2808fef15d659}{min}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{29     T \mbox{\hyperlink{algo_8hpp_a53d58676f94050e59fb2808fef15d659}{min}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
 \DoxyCodeLine{30     \{}
 \DoxyCodeLine{31         \textcolor{keywordflow}{return} (t\_a < t\_b) ? t\_a : t\_b;}
 \DoxyCodeLine{32     \}}
 \DoxyCodeLine{33 }
 \DoxyCodeLine{42     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{43     T \mbox{\hyperlink{namespaceutil_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{max}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{43     T \mbox{\hyperlink{algo_8hpp_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{max}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
 \DoxyCodeLine{44     \{}
 \DoxyCodeLine{45         \textcolor{keywordflow}{return} (t\_a > t\_b) ? t\_a : t\_b;}
 \DoxyCodeLine{46     \}}
 \DoxyCodeLine{47 }
 \DoxyCodeLine{57     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{58     T \mbox{\hyperlink{namespaceutil_ae51cb392f73c8c5e2e9c00e0bc7486b5}{clamp}}(\textcolor{keyword}{const} T\& t\_x, \textcolor{keyword}{const} T\& t\_min, \textcolor{keyword}{const} T\& t\_max)}
+\DoxyCodeLine{58     T \mbox{\hyperlink{algo_8hpp_ae51cb392f73c8c5e2e9c00e0bc7486b5}{clamp}}(\textcolor{keyword}{const} T\& t\_x, \textcolor{keyword}{const} T\& t\_min, \textcolor{keyword}{const} T\& t\_max)}
 \DoxyCodeLine{59     \{}
 \DoxyCodeLine{60         max<T>(t\_min, min<T>(t\_x, t\_max));}
 \DoxyCodeLine{61     \}}
 \DoxyCodeLine{62 }
 \DoxyCodeLine{70     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{71     T \mbox{\hyperlink{namespaceutil_a16b5d2b3794e71cf76adde3c92b76085}{abs}}(\textcolor{keyword}{const} T\& t\_a)}
+\DoxyCodeLine{71     T \mbox{\hyperlink{algo_8hpp_a16b5d2b3794e71cf76adde3c92b76085}{abs}}(\textcolor{keyword}{const} T\& t\_a)}
 \DoxyCodeLine{72     \{}
 \DoxyCodeLine{73         (t\_a >= 0) ? t\_a : -\/t\_a;}
 \DoxyCodeLine{74     \}}
 \DoxyCodeLine{75 }
 \DoxyCodeLine{84     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{85     T \mbox{\hyperlink{namespaceutil_a9a54d6a0a89d859e8a796dd4fb4852e9}{gcd}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{85     T \mbox{\hyperlink{algo_8hpp_a9a54d6a0a89d859e8a796dd4fb4852e9}{gcd}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
 \DoxyCodeLine{86     \{}
 \DoxyCodeLine{87         \textcolor{keywordflow}{if} (t\_b == 0)}
 \DoxyCodeLine{88         \{}
@@ -47,37 +47,37 @@
 \DoxyCodeLine{93     \}}
 \DoxyCodeLine{94 }
 \DoxyCodeLine{103     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{104     T \mbox{\hyperlink{namespaceutil_a06515ad83f47d896c6a3bdd745eb8435}{lcm}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
+\DoxyCodeLine{104     T \mbox{\hyperlink{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}{lcm}}(\textcolor{keyword}{const} T\& t\_a, \textcolor{keyword}{const} T\& t\_b)}
 \DoxyCodeLine{105     \{}
-\DoxyCodeLine{106         \textcolor{keywordflow}{return} (abs<T>(t\_a * t\_b)) / \mbox{\hyperlink{namespaceutil_a9a54d6a0a89d859e8a796dd4fb4852e9}{gcd}}(t\_a, t\_b);}
+\DoxyCodeLine{106         \textcolor{keywordflow}{return} (abs<T>(t\_a * t\_b)) / \mbox{\hyperlink{algo_8hpp_a9a54d6a0a89d859e8a796dd4fb4852e9}{gcd}}(t\_a, t\_b);}
 \DoxyCodeLine{107     \}}
 \DoxyCodeLine{108 }
-\DoxyCodeLine{115     std::string \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(std::string t\_fmt)}
+\DoxyCodeLine{115     std::string \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(std::string t\_fmt)}
 \DoxyCodeLine{116     \{}
 \DoxyCodeLine{117         \textcolor{keywordflow}{return} t\_fmt;}
 \DoxyCodeLine{118     \}}
 \DoxyCodeLine{119 }
 \DoxyCodeLine{130     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{131     std::string \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(std::string t\_fmt, T t\_val, Args... t\_rest)}
+\DoxyCodeLine{131     std::string \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(std::string t\_fmt, T t\_val, Args... t\_rest)}
 \DoxyCodeLine{132     \{}
 \DoxyCodeLine{133         \textcolor{keywordtype}{size\_t} pos = t\_fmt.find(\textcolor{stringliteral}{"{}\{\}"{}});}
 \DoxyCodeLine{134         \textcolor{keywordflow}{if} (pos == std::string::npos) \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}too many arguments provided"{}});}
 \DoxyCodeLine{135         std::stringstream buf;}
 \DoxyCodeLine{136         buf << t\_val;}
 \DoxyCodeLine{137         t\_fmt.replace(t\_fmt.begin() + pos, t\_fmt.begin() + pos + 2, buf.str());}
-\DoxyCodeLine{138         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_rest...);}
+\DoxyCodeLine{138         \textcolor{keywordflow}{return} \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_rest...);}
 \DoxyCodeLine{139     \}}
 \DoxyCodeLine{140 }
-\DoxyCodeLine{147     std::string \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{keyword}{const} std::string\& \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}})}
+\DoxyCodeLine{147     std::string \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{keyword}{const} std::string\& fmt)}
 \DoxyCodeLine{148     \{}
 \DoxyCodeLine{149         \textcolor{keywordtype}{char} outstr[200];}
 \DoxyCodeLine{150         time\_t t = time(NULL);}
 \DoxyCodeLine{151         \textcolor{keyword}{struct }tm *tmp = gmtime(\&t);}
-\DoxyCodeLine{152         strftime(outstr, \textcolor{keyword}{sizeof}(outstr), \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}.c\_str(), tmp);}
+\DoxyCodeLine{152         strftime(outstr, \textcolor{keyword}{sizeof}(outstr), \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}.c\_str(), tmp);}
 \DoxyCodeLine{153         \textcolor{keywordflow}{return} std::string(outstr);}
 \DoxyCodeLine{154     \}}
 \DoxyCodeLine{155 }
-\DoxyCodeLine{161     std::string \mbox{\hyperlink{namespaceutil_a50505def43e261cc1e822485e7e8dd04}{generate\_uuid\_v4}}() \{}
+\DoxyCodeLine{161     std::string \mbox{\hyperlink{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}{generate\_uuid\_v4}}() \{}
 \DoxyCodeLine{162         std::stringstream ss;}
 \DoxyCodeLine{163         \mbox{\hyperlink{classutil_1_1prng}{prng}} rng;}
 \DoxyCodeLine{164         \textcolor{keywordtype}{int} i;}

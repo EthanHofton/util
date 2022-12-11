@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;logger.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceutil.html">util</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>util</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classutil_1_1logger__console__sink.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classutil_1_1logger__console__sink.html">logger_console_sink</a> : <span class="keyword">public</span> <a class="code hl_class" href="classutil_1_1logger__sink.html">logger_sink</a></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            std::cout &lt;&lt; t_out &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">   55</a></span>        std::string <a class="code hl_function" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">startOutputColorRange</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a>&amp; t_level)<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">   55</a></span>        std::string <a class="code hl_function" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">startOutputColorRange</a>(<span class="keyword">const</span> LOGGER_LEVEL&amp; t_level)<span class="keyword"> const override</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">        </span>{</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            std::stringstream ss;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
@@ -137,8 +137,6 @@ $(function() {
 <div class="ttc" id="aclassutil_1_1logger__console__sink_html_accd5093f9f77692e37adad54f799ab52"><div class="ttname"><a href="classutil_1_1logger__console__sink.html#accd5093f9f77692e37adad54f799ab52">util::logger_console_sink::output</a></div><div class="ttdeci">void output(const std::string &amp;t_out) const override</div><div class="ttdoc">output a string to standard output</div><div class="ttdef"><b>Definition:</b> logger_console_sink.hpp:44</div></div>
 <div class="ttc" id="aclassutil_1_1logger__sink_html"><div class="ttname"><a href="classutil_1_1logger__sink.html">util::logger_sink</a></div><div class="ttdoc">sink for a logger. a way for the message of the logger to be outputted</div><div class="ttdef"><b>Definition:</b> logger.hpp:56</div></div>
 <div class="ttc" id="aclassutil_1_1logger__sink_html_a99f55201bc0d1183116850b5ea465112"><div class="ttname"><a href="classutil_1_1logger__sink.html#a99f55201bc0d1183116850b5ea465112">util::logger_sink::m_format</a></div><div class="ttdeci">std::string m_format</div><div class="ttdoc">the format to output the message in</div><div class="ttdef"><b>Definition:</b> logger.hpp:134</div></div>
-<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div></div>
-<div class="ttc" id="anamespaceutil_html_a8e72eaec516a371b251df311da971a87"><div class="ttname"><a href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">util::LOGGER_LEVEL</a></div><div class="ttdeci">LOGGER_LEVEL</div><div class="ttdoc">enum class to store the logger priority level</div><div class="ttdef"><b>Definition:</b> logger.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

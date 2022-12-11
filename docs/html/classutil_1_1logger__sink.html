@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceutil.html">util</a></li><li class="navelem"><a class="el" href="classutil_1_1logger__sink.html">logger_sink</a></li>  </ul>
+<li class="navelem"><b>util</b></li><li class="navelem"><a class="el" href="classutil_1_1logger__sink.html">logger_sink</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,9 +92,8 @@ Inheritance diagram for util::logger_sink:</div>
  <div class="center">
   <img src="classutil_1_1logger__sink.png" usemap="#util::logger_5Fsink_map" alt=""/>
   <map id="util::logger_5Fsink_map" name="util::logger_5Fsink_map">
-<area href="classutil_1_1logger__console__sink.html" title="logger output sink to console" alt="util::logger_console_sink" shape="rect" coords="0,56,194,80"/>
-<area href="classutil_1_1logger__file__sink.html" title="logger output sink to a file" alt="util::logger_file_sink" shape="rect" coords="204,56,398,80"/>
-<area href="classutil_1_1logger__server__console__sink.html" alt="util::logger_server_console_sink" shape="rect" coords="408,56,602,80"/>
+<area href="classutil_1_1logger__console__sink.html" title="logger output sink to console" alt="util::logger_console_sink" shape="rect" coords="0,56,150,80"/>
+<area href="classutil_1_1logger__file__sink.html" title="logger output sink to a file" alt="util::logger_file_sink" shape="rect" coords="160,56,310,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -106,10 +105,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a86eb391763969c1ad0e7ed2844629ef5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a86eb391763969c1ad0e7ed2844629ef5">~logger_sink</a> ()=0</td></tr>
 <tr class="memdesc:a86eb391763969c1ad0e7ed2844629ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the logger sink object.  <a href="classutil_1_1logger__sink.html#a86eb391763969c1ad0e7ed2844629ef5">More...</a><br /></td></tr>
 <tr class="separator:a86eb391763969c1ad0e7ed2844629ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c945df74d587a5447255db63bf342cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a8c945df74d587a5447255db63bf342cc">setLogLevel</a> (const <a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a> &amp;t_level)</td></tr>
+<tr class="memitem:a8c945df74d587a5447255db63bf342cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a8c945df74d587a5447255db63bf342cc">setLogLevel</a> (const LOGGER_LEVEL &amp;t_level)</td></tr>
 <tr class="memdesc:a8c945df74d587a5447255db63bf342cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Log Level.  <a href="classutil_1_1logger__sink.html#a8c945df74d587a5447255db63bf342cc">More...</a><br /></td></tr>
 <tr class="separator:a8c945df74d587a5447255db63bf342cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d31b8777e127c2906858dcc942a0f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">getLogLevel</a> () const</td></tr>
+<tr class="memitem:a01d31b8777e127c2906858dcc942a0f5"><td class="memItemLeft" align="right" valign="top">LOGGER_LEVEL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">getLogLevel</a> () const</td></tr>
 <tr class="memdesc:a01d31b8777e127c2906858dcc942a0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Log Level.  <a href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">More...</a><br /></td></tr>
 <tr class="separator:a01d31b8777e127c2906858dcc942a0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ae962f1c41aa9d41e8bd431b9fc6ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a78ae962f1c41aa9d41e8bd431b9fc6ec">setFormat</a> (const std::string &amp;t_format)</td></tr>
@@ -121,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0aa7398005008588cd349d491af6c2e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a0aa7398005008588cd349d491af6c2e8">output</a> (const std::string &amp;t_out) const =0</td></tr>
 <tr class="memdesc:a0aa7398005008588cd349d491af6c2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">output a message. to be defined by derrived classes  <a href="classutil_1_1logger__sink.html#a0aa7398005008588cd349d491af6c2e8">More...</a><br /></td></tr>
 <tr class="separator:a0aa7398005008588cd349d491af6c2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc10ce58bbc2d981cd7b72a136cd6217"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217">startOutputColorRange</a> (const <a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a> &amp;t_level) const</td></tr>
+<tr class="memitem:acc10ce58bbc2d981cd7b72a136cd6217"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217">startOutputColorRange</a> (const LOGGER_LEVEL &amp;t_level) const</td></tr>
 <tr class="memdesc:acc10ce58bbc2d981cd7b72a136cd6217"><td class="mdescLeft">&#160;</td><td class="mdescRight">add special charicters to the output stream to define colors  <a href="classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217">More...</a><br /></td></tr>
 <tr class="separator:acc10ce58bbc2d981cd7b72a136cd6217"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f825d2dafe0d93e1b1dbb482b11fcb"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1logger__sink.html#a71f825d2dafe0d93e1b1dbb482b11fcb">endOutputColorRange</a> () const</td></tr>
@@ -250,7 +249,7 @@ Protected Attributes</h2></td></tr>
 <p>restore the old color for the output stream </p>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classutil_1_1logger__console__sink.html#aadb0332ea0dc97a26cdda1f12c38afa2">util::logger_console_sink</a>, and <a class="el" href="classutil_1_1logger__server__console__sink.html#a860f3be473f947012285173d3b0fca5e">util::logger_server_console_sink</a>.</p>
+<p>Reimplemented in <a class="el" href="classutil_1_1logger__console__sink.html#aadb0332ea0dc97a26cdda1f12c38afa2">util::logger_console_sink</a>.</p>
 
 </div>
 </div>
@@ -292,7 +291,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a> util::logger_sink::getLogLevel </td>
+          <td class="memname">LOGGER_LEVEL util::logger_sink::getLogLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -342,7 +341,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classutil_1_1logger__console__sink.html#accd5093f9f77692e37adad54f799ab52">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__file__sink.html#a7451d29dfbb631ff5348ec5f999d7c99">util::logger_file_sink</a>, and <a class="el" href="classutil_1_1logger__server__console__sink.html#a7cfb6c72c05bc700f4e01e23b9e3c587">util::logger_server_console_sink</a>.</p>
+<p>Implemented in <a class="el" href="classutil_1_1logger__console__sink.html#accd5093f9f77692e37adad54f799ab52">util::logger_console_sink</a>, and <a class="el" href="classutil_1_1logger__file__sink.html#a7451d29dfbb631ff5348ec5f999d7c99">util::logger_file_sink</a>.</p>
 
 </div>
 </div>
@@ -392,7 +391,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void util::logger_sink::setLogLevel </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a> &amp;&#160;</td>
+          <td class="paramtype">const LOGGER_LEVEL &amp;&#160;</td>
           <td class="paramname"><em>t_level</em></td><td>)</td>
           <td></td>
         </tr>
@@ -426,7 +425,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual std::string util::logger_sink::startOutputColorRange </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceutil.html#a8e72eaec516a371b251df311da971a87">LOGGER_LEVEL</a> &amp;&#160;</td>
+          <td class="paramtype">const LOGGER_LEVEL &amp;&#160;</td>
           <td class="paramname"><em>t_level</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -447,7 +446,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">util::logger_console_sink</a>, and <a class="el" href="classutil_1_1logger__server__console__sink.html#ac502e1f5b94d6039648454a2ab5fec9b">util::logger_server_console_sink</a>.</p>
+<p>Reimplemented in <a class="el" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">util::logger_console_sink</a>.</p>
 
 </div>
 </div>

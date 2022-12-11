@@ -82,9 +82,9 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceutil.html">util</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>util</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceutil.html#a549d58f4c5d40b31ddd90a98fe8db634">   12</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceutil.html#a549d58f4c5d40b31ddd90a98fe8db634">CONSOLE_COLOR_CODE</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">enum class</span> CONSOLE_COLOR_CODE</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        FG_DEFAULT       = 39,</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        FG_BLACK         = 30,</div>
@@ -109,16 +109,13 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        BG_DEFAULT       = 49</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceutil.html#a42c52bd04453893b9ace947e42b92a13">   44</a></span>    std::ostream&amp; <a class="code hl_function" href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">operator&lt;&lt;</a>(std::ostream&amp; t_os, <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceutil.html#a549d58f4c5d40b31ddd90a98fe8db634">CONSOLE_COLOR_CODE</a>&amp; t_mod)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::ostream&amp; operator&lt;&lt;(std::ostream&amp; t_os, <span class="keyword">const</span> CONSOLE_COLOR_CODE&amp; t_mod)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> t_os &lt;&lt; <span class="stringliteral">&quot;\033[&quot;</span> &lt;&lt; ((int)t_mod) &lt;&lt; <span class="stringliteral">&quot;m&quot;</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div></div>
-<div class="ttc" id="anamespaceutil_html_a549d58f4c5d40b31ddd90a98fe8db634"><div class="ttname"><a href="namespaceutil.html#a549d58f4c5d40b31ddd90a98fe8db634">util::CONSOLE_COLOR_CODE</a></div><div class="ttdeci">CONSOLE_COLOR_CODE</div><div class="ttdoc">enum class to store the color codes that change the color for the output console</div><div class="ttdef"><b>Definition:</b> colormod.hpp:13</div></div>
-<div class="ttc" id="anamespaceutil_html_ac43231c61ec1cc4a58c9e3f27d406154"><div class="ttname"><a href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;t_o, const bitstream &amp;t_b)</div><div class="ttdef"><b>Definition:</b> bitstream.hpp:392</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

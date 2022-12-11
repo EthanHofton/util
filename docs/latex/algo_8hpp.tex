@@ -3,35 +3,265 @@
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include \char`\"{}random.\+hpp\char`\"{}}\newline
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \mbox{\hyperlink{namespaceutil}{util}}
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_a53d58676f94050e59fb2808fef15d659}{util\+::min}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_a53d58676f94050e59fb2808fef15d659}{util\+::min}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
 \begin{DoxyCompactList}\small\item\em generic min function. computes the min out of two values \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{util\+::max}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{util\+::max}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
 \begin{DoxyCompactList}\small\item\em generic max function. computes the max out of two values \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_ae51cb392f73c8c5e2e9c00e0bc7486b5}{util\+::clamp}} (const T \&t\+\_\+x, const T \&t\+\_\+min, const T \&t\+\_\+max)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_ae51cb392f73c8c5e2e9c00e0bc7486b5}{util\+::clamp}} (const T \&t\+\_\+x, const T \&t\+\_\+min, const T \&t\+\_\+max)
 \begin{DoxyCompactList}\small\item\em clamp function. clamps t\+\_\+x between the values t\+\_\+min and t\+\_\+max \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_a16b5d2b3794e71cf76adde3c92b76085}{util\+::abs}} (const T \&t\+\_\+a)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_a16b5d2b3794e71cf76adde3c92b76085}{util\+::abs}} (const T \&t\+\_\+a)
 \begin{DoxyCompactList}\small\item\em compute the absoulte value. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_a9a54d6a0a89d859e8a796dd4fb4852e9}{util\+::gcd}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_a9a54d6a0a89d859e8a796dd4fb4852e9}{util\+::gcd}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
 \begin{DoxyCompactList}\small\item\em computes the gratest common devisor of t\+\_\+a and t\+\_\+b (using euclidean algorithm) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceutil_a06515ad83f47d896c6a3bdd745eb8435}{util\+::lcm}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}{util\+::lcm}} (const T \&t\+\_\+a, const T \&t\+\_\+b)
 \begin{DoxyCompactList}\small\item\em computes the lowest common multiple of t\+\_\+a and t\+\_\+b (using gcd definition) \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{util\+::fmt}} (std\+::string t\+\_\+fmt)
+std\+::string \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util\+::fmt}} (std\+::string t\+\_\+fmt)
 \begin{DoxyCompactList}\small\item\em format base case \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename... Args$>$ }\\std\+::string \mbox{\hyperlink{namespaceutil_a22095db14ec99b69313ae0f72994e7fe}{util\+::fmt}} (std\+::string t\+\_\+fmt, T t\+\_\+val, Args... t\+\_\+rest)
+{\footnotesize template$<$typename T , typename... Args$>$ }\\std\+::string \mbox{\hyperlink{algo_8hpp_a22095db14ec99b69313ae0f72994e7fe}{util\+::fmt}} (std\+::string t\+\_\+fmt, T t\+\_\+val, Args... t\+\_\+rest)
 \begin{DoxyCompactList}\small\item\em format a string, replace \{\} with arguments provided in squentail order \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{util\+::strfmttime}} (const std\+::string \&fmt)
+std\+::string \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{util\+::strfmttime}} (const std\+::string \&fmt)
 \begin{DoxyCompactList}\small\item\em takes an format string and replaces the corrisponding placeholders with there values \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{namespaceutil_a50505def43e261cc1e822485e7e8dd04}{util\+::generate\+\_\+uuid\+\_\+v4}} ()
+std\+::string \mbox{\hyperlink{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}{util\+::generate\+\_\+uuid\+\_\+v4}} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 a file defining commonly used functions and algorithms 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{algo_8hpp_a16b5d2b3794e71cf76adde3c92b76085}\label{algo_8hpp_a16b5d2b3794e71cf76adde3c92b76085}} 
+\index{algo.hpp@{algo.hpp}!abs@{abs}}
+\index{abs@{abs}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::abs (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+a }\end{DoxyParamCaption})}
+
+
+
+compute the absoulte value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of t\+\_\+a \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+a} & the value to compute the absolute value for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_ae51cb392f73c8c5e2e9c00e0bc7486b5}\label{algo_8hpp_ae51cb392f73c8c5e2e9c00e0bc7486b5}} 
+\index{algo.hpp@{algo.hpp}!clamp@{clamp}}
+\index{clamp@{clamp}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::clamp (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+x,  }\item[{const T \&}]{t\+\_\+min,  }\item[{const T \&}]{t\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+clamp function. clamps t\+\_\+x between the values t\+\_\+min and t\+\_\+max 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of t\+\_\+x \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+x} & the value to be clamped \\
+\hline
+{\em t\+\_\+min} & clamp lower bound \\
+\hline
+{\em t\+\_\+max} & clamp upper bound \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}\label{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}} 
+\index{algo.hpp@{algo.hpp}!fmt@{fmt}}
+\index{fmt@{fmt}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{fmt()}{fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string util\+::fmt (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+fmt }\end{DoxyParamCaption})}
+
+
+
+format base case 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the format string to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a22095db14ec99b69313ae0f72994e7fe}\label{algo_8hpp_a22095db14ec99b69313ae0f72994e7fe}} 
+\index{algo.hpp@{algo.hpp}!fmt@{fmt}}
+\index{fmt@{fmt}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{fmt()}{fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+std\+::string util\+::fmt (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+fmt,  }\item[{T}]{t\+\_\+val,  }\item[{Args...}]{t\+\_\+rest }\end{DoxyParamCaption})}
+
+
+
+format a string, replace \{\} with arguments provided in squentail order 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the current argument \\
+\hline
+{\em Args} & the rest of the arguments \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+fmt} & the format string \\
+\hline
+{\em t\+\_\+val} & the top of the arugment list \\
+\hline
+{\em t\+\_\+rest} & the rest of the argument list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a9a54d6a0a89d859e8a796dd4fb4852e9}\label{algo_8hpp_a9a54d6a0a89d859e8a796dd4fb4852e9}} 
+\index{algo.hpp@{algo.hpp}!gcd@{gcd}}
+\index{gcd@{gcd}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::gcd (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+a,  }\item[{const T \&}]{t\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+computes the gratest common devisor of t\+\_\+a and t\+\_\+b (using euclidean algorithm) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of t\+\_\+a and t\+\_\+b \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+a} & gcd arg 1 \\
+\hline
+{\em t\+\_\+b} & gcd arg 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}\label{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}} 
+\index{algo.hpp@{algo.hpp}!generate\_uuid\_v4@{generate\_uuid\_v4}}
+\index{generate\_uuid\_v4@{generate\_uuid\_v4}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{generate\_uuid\_v4()}{generate\_uuid\_v4()}}
+{\footnotesize\ttfamily std\+::string util\+::generate\+\_\+uuid\+\_\+v4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+generate a new random v4 uuid
+
+\begin{DoxyReturn}{Returns}
+std\+::string the new v4 uuid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}\label{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}} 
+\index{algo.hpp@{algo.hpp}!lcm@{lcm}}
+\index{lcm@{lcm}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{lcm()}{lcm()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::lcm (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+a,  }\item[{const T \&}]{t\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+computes the lowest common multiple of t\+\_\+a and t\+\_\+b (using gcd definition) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of t\+\_\+a and t\+\_\+b \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+a} & lcm arg 1 \\
+\hline
+{\em t\+\_\+b} & lcm arg 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a6cd86e6329cc7fee23ecf5c5f8a3bee7}\label{algo_8hpp_a6cd86e6329cc7fee23ecf5c5f8a3bee7}} 
+\index{algo.hpp@{algo.hpp}!max@{max}}
+\index{max@{max}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::max (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+a,  }\item[{const T \&}]{t\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+generic max function. computes the max out of two values 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the two values \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+a} & max arg1 \\
+\hline
+{\em t\+\_\+b} & max arg2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a53d58676f94050e59fb2808fef15d659}\label{algo_8hpp_a53d58676f94050e59fb2808fef15d659}} 
+\index{algo.hpp@{algo.hpp}!min@{min}}
+\index{min@{min}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T util\+::min (\begin{DoxyParamCaption}\item[{const T \&}]{t\+\_\+a,  }\item[{const T \&}]{t\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+generic min function. computes the min out of two values 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the type of the two values \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+a} & min arg1 \\
+\hline
+{\em t\+\_\+b} & min arg2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}\label{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}} 
+\index{algo.hpp@{algo.hpp}!strfmttime@{strfmttime}}
+\index{strfmttime@{strfmttime}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{strfmttime()}{strfmttime()}}
+{\footnotesize\ttfamily std\+::string util\+::strfmttime (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fmt }\end{DoxyParamCaption})}
+
+
+
+takes an format string and replaces the corrisponding placeholders with there values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & format string describing what time to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}

@@ -83,7 +83,7 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;serializable_string.hpp&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceutil.html">util</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>util</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__list.html">   15</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classutil_1_1serializable__list.html">serializable_list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classutil_1_1serializable.html">serializable</a></div>
@@ -143,7 +143,7 @@ $(function() {
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    };</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T_&gt;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__list.html#a4324e3f9d0f3a0d805ab225be66fc294">  157</a></span>    std::ostream&amp; <a class="code hl_function" href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">operator &lt;&lt;</a>(std::ostream&amp; t_out, <span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__list.html">serializable_list&lt;T_&gt;</a>&amp; t_list)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__list.html#a4324e3f9d0f3a0d805ab225be66fc294">  157</a></span>    std::ostream&amp; operator &lt;&lt;(std::ostream&amp; t_out, <span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__list.html">serializable_list&lt;T_&gt;</a>&amp; t_list)</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    {</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        t_out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; t_list.m_data.size() - 1; i++)</div>
@@ -175,8 +175,6 @@ $(function() {
 <div class="ttc" id="aclassutil_1_1serializable__list_html_af6dad646c2632b2cbd2fd05d7c012e8d"><div class="ttname"><a href="classutil_1_1serializable__list.html#af6dad646c2632b2cbd2fd05d7c012e8d">util::serializable_list::read</a></div><div class="ttdeci">void read(std::ifstream &amp;t_stream) final override</div><div class="ttdoc">serializable read impl</div><div class="ttdef"><b>Definition:</b> serializable_list.hpp:76</div></div>
 <div class="ttc" id="aclassutil_1_1serializable__list_html_af8a2c495e273d661a92d00b53319f9c1"><div class="ttname"><a href="classutil_1_1serializable__list.html#af8a2c495e273d661a92d00b53319f9c1">util::serializable_list::serializable_list</a></div><div class="ttdeci">serializable_list(std::vector&lt; T &gt; &amp;&amp;t_data)</div><div class="ttdoc">Construct a new serializable list object from vector (move)</div><div class="ttdef"><b>Definition:</b> serializable_list.hpp:35</div></div>
 <div class="ttc" id="aclassutil_1_1serializable_html"><div class="ttname"><a href="classutil_1_1serializable.html">util::serializable</a></div><div class="ttdoc">this class will be inherited for serializable objects</div><div class="ttdef"><b>Definition:</b> serializable.hpp:14</div></div>
-<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div></div>
-<div class="ttc" id="anamespaceutil_html_ac43231c61ec1cc4a58c9e3f27d406154"><div class="ttname"><a href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;t_o, const bitstream &amp;t_b)</div><div class="ttdef"><b>Definition:</b> bitstream.hpp:392</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

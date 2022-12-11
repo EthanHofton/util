@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['prepend_0',['prepend',['../classutil_1_1bitstream.html#a01eb371b0ed05612643554dae99198db',1,'util::bitstream::prepend(const bitstream &amp;t_bits)'],['../classutil_1_1bitstream.html#a7641b46970b95ce0ef27d62aa46a205c',1,'util::bitstream::prepend(const bool &amp;t_bit)']]],
-  ['prng_1',['prng',['../classutil_1_1prng.html#ab116d7242835e17b7a06b6f7f698f63d',1,'util::prng']]]
+  ['randf_0',['randf',['../classutil_1_1prng.html#a27789e43f613b66d26711a2d77e20c5b',1,'util::prng']]],
+  ['randi_1',['randi',['../classutil_1_1prng.html#ad6e5902d5c33b7b80b5813530383d54a',1,'util::prng']]],
+  ['read_2',['read',['../classutil_1_1bitstream.html#ae6b666587ccfe0a58d1f100ca65beb9c',1,'util::bitstream::read()'],['../classutil_1_1serializable.html#a926595a896c4039bf2c5bf01cac1b1bb',1,'util::serializable::read()'],['../classutil_1_1serializable__list.html#af6dad646c2632b2cbd2fd05d7c012e8d',1,'util::serializable_list::read()'],['../classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c',1,'util::serializable_string::read()'],['../classutil_1_1ubint.html#a868db6b493fb643093ec9b807b4bea51',1,'util::ubint::read()']]],
+  ['removesink_3',['removeSink',['../classutil_1_1logger.html#a008fce4c0e4e773abd1b26b7ab3acb8a',1,'util::logger']]]
 ];
