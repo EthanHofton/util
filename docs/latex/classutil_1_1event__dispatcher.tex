@@ -1,0 +1,93 @@
+\hypertarget{classutil_1_1event__dispatcher}{}\doxysection{util\+::event\+\_\+dispatcher\texorpdfstring{$<$}{<} event\+Types \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutil_1_1event__dispatcher}\index{util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}}
+
+
+{\ttfamily \#include $<$event.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}{event\+\_\+dispatcher}} (\mbox{\hyperlink{classutil_1_1event}{event}}$<$ event\+Types $>$ \&t\+\_\+event)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classutil_1_1event__dispatcher_acb8e902507c171fd6501b518a2648a71}{dispatch}} (event\+Fn$<$ T $>$ t\+\_\+dispatch\+Fn)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename event\+Types$>$\newline
+class util\+::event\+\_\+dispatcher$<$ event\+Types $>$}
+@breif simple event dispatcher
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em event\+Types} & the enum class that the events belong to\\
+\hline
+\end{DoxyTemplParams}
+\hypertarget{classutil_1_1event__dispatcher_autotoc_md2}{}\doxysubsection{Example}\label{classutil_1_1event__dispatcher_autotoc_md2}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classutil_1_1event}{event}} for the beginning part of the example
+\end{DoxySeeAlso}
+implamenting a simple event disptacher using the example events for the example section in event can be done in the following way\+:
+
+bool handel\+Type(type\+Event\& t\+\_\+event) \{ std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \char`\"{}type event occured\+: \char`\"{} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} t\+\_\+event.\+to\+String() \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl; return false; \}
+
+bool handel\+Click(click\+Event\& t\+\_\+event) \{ std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \char`\"{}click event occured\+: \char`\"{} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} t\+\_\+event.\+to\+String() \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl; return true; \}
+
+template$<$typename event\+Type$>$ void on\+Event(util\+::event$<$event\+Type$>$\& t\+\_\+event) \{ util\+::event\+\_\+dispatcher$<$event\+Types$>$ event\+Dispatcher(t\+\_\+event);
+
+event\+Dispatcher.\+dispatch$<$type\+Event$>$(\&handel\+Type); event\+Dispatcher.\+dispatch$<$click\+Event$>$(\&handel\+Click); \}
+
+int main(int argc, char$\ast$$\ast$ argv) \{ type\+Event e(\textquotesingle{}c\textquotesingle{}); click\+Event e2(123, 345);
+
+on\+Event(e); on\+Event(e2);
+
+return EXIT\+\_\+\+SUCCESS; \}
+
+the on\+Event method calls an event disptacher that will call the appropriate handler for each event. a main method will call the on\+Event method with the generated event impls 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}\label{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}} 
+\index{util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}!event\_dispatcher@{event\_dispatcher}}
+\index{event\_dispatcher@{event\_dispatcher}!util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{event\_dispatcher()}{event\_dispatcher()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+\mbox{\hyperlink{classutil_1_1event__dispatcher}{util\+::event\+\_\+dispatcher}}$<$ event\+Types $>$\+::event\+\_\+dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1event}{event}}$<$ event\+Types $>$ \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@brien event disptacher constructor. intializes the event to dispatch
+
+
+\begin{DoxyParams}{Parameters}
+{\em event$<$event\+Types$>$} & the event to try dispatch \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1event__dispatcher_acb8e902507c171fd6501b518a2648a71}\label{classutil_1_1event__dispatcher_acb8e902507c171fd6501b518a2648a71}} 
+\index{util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{dispatch()}{dispatch()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classutil_1_1event__dispatcher}{util\+::event\+\_\+dispatcher}}$<$ event\+Types $>$\+::dispatch (\begin{DoxyParamCaption}\item[{event\+Fn$<$ T $>$}]{t\+\_\+dispatch\+Fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@breif dispatch function. If the events event type matches the disparch function event type, the dispatch function will be called
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em the} & typename of the event class \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em the} & event dispatrch function to be called on the event (if it matches) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wither or not the dispatch function was called 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/event.\+hpp\end{DoxyCompactItemize}

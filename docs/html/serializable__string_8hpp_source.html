@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;serializable.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>util</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceutil.html">util</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__string.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a> : <span class="keyword">public</span> <a class="code hl_class" href="classutil_1_1serializable.html">serializable</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
@@ -127,37 +127,37 @@ $(function() {
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        std::string m_data;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    };</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__string.html#a40f5723b3bde7fe5f2395d452c340252">  145</a></span>    std::ostream&amp; operator &lt;&lt;(std::ostream&amp; t_out, <span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a>&amp; t_s)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classutil_1_1serializable__string.html#a40f5723b3bde7fe5f2395d452c340252">  145</a></span>    std::ostream&amp; <a class="code hl_function" href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">operator &lt;&lt;</a>(std::ostream&amp; t_out, <span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a>&amp; t_s)</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        t_out &lt;&lt; t_s.m_data;</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> t_out;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> write&lt;serializable_string&gt;(<span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a>&amp; t_obj, std::ofstream &amp;t_stream)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="namespaceutil.html#a46dadba835389861812aa4b76704e328">  159</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceutil.html#a46dadba835389861812aa4b76704e328">write&lt;serializable_string&gt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a>&amp; t_obj, std::ofstream &amp;t_stream)</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    {</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        t_obj.<a class="code hl_function" href="classutil_1_1serializable__string.html#ac05ed645c82c2ac5174b7dc31e6635a1">write</a>(t_stream);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> read&lt;serializable_string&gt;(serializable_string* t_obj, std::ifstream &amp;t_stream)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="namespaceutil.html#a4969404889b6de418d4dd1c5d93bc486">  172</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceutil.html#a4969404889b6de418d4dd1c5d93bc486">read&lt;serializable_string&gt;</a>(<a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a>* t_obj, std::ifstream &amp;t_stream)</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        t_obj-&gt;read(t_stream);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        t_obj-&gt;<a class="code hl_function" href="classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c">read</a>(t_stream);</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> write&lt;std::string&gt;(<span class="keyword">const</span> std::string&amp; t_obj, std::ofstream &amp;t_stream)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="namespaceutil.html#aa7ddf1243cb693d18770279aeb68ebc0">  185</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceutil.html#aa7ddf1243cb693d18770279aeb68ebc0">write&lt;std::string&gt;</a>(<span class="keyword">const</span> std::string&amp; t_obj, std::ofstream &amp;t_stream)</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        serializable_string s = t_obj;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        s.write(t_stream);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a> s = t_obj;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        s.<a class="code hl_function" href="classutil_1_1serializable__string.html#ac05ed645c82c2ac5174b7dc31e6635a1">write</a>(t_stream);</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">void</span> read&lt;std::string&gt;(std::string* t_obj, std::ifstream &amp;t_stream)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="namespaceutil.html#ab7f799f39642c88a4db1db43317b3968">  199</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceutil.html#ab7f799f39642c88a4db1db43317b3968">read&lt;std::string&gt;</a>(std::string* t_obj, std::ifstream &amp;t_stream)</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    {</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        serializable_string s;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        s.read(t_stream);</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        *t_obj = s.string();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <a class="code hl_class" href="classutil_1_1serializable__string.html">serializable_string</a> s;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        s.<a class="code hl_function" href="classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c">read</a>(t_stream);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        *t_obj = s.<a class="code hl_function" href="classutil_1_1serializable__string.html#a312f186d994efbeb2b18b99a689ace1c">string</a>();</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
@@ -175,6 +175,12 @@ $(function() {
 <div class="ttc" id="aclassutil_1_1serializable__string_html_ad7959d5dab6d3145033c955027a8c83c"><div class="ttname"><a href="classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c">util::serializable_string::read</a></div><div class="ttdeci">void read(std::ifstream &amp;t_stream) final override</div><div class="ttdoc">string deserialization implementation. repeatedly reads from stream until it finds '\0' string termin...</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:92</div></div>
 <div class="ttc" id="aclassutil_1_1serializable__string_html_af212299fa9c83279616746997b3a4f7b"><div class="ttname"><a href="classutil_1_1serializable__string.html#af212299fa9c83279616746997b3a4f7b">util::serializable_string::serializable_string</a></div><div class="ttdeci">serializable_string(const char *t_data)</div><div class="ttdoc">Construct a new serializable string object.</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:24</div></div>
 <div class="ttc" id="aclassutil_1_1serializable_html"><div class="ttname"><a href="classutil_1_1serializable.html">util::serializable</a></div><div class="ttdoc">this class will be inherited for serializable objects</div><div class="ttdef"><b>Definition:</b> serializable.hpp:14</div></div>
+<div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="namespaceutil.html">util</a></div></div>
+<div class="ttc" id="anamespaceutil_html_a46dadba835389861812aa4b76704e328"><div class="ttname"><a href="namespaceutil.html#a46dadba835389861812aa4b76704e328">util::write&lt; serializable_string &gt;</a></div><div class="ttdeci">void write&lt; serializable_string &gt;(const serializable_string &amp;t_obj, std::ofstream &amp;t_stream)</div><div class="ttdoc">write serializable string specilisation</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:159</div></div>
+<div class="ttc" id="anamespaceutil_html_a4969404889b6de418d4dd1c5d93bc486"><div class="ttname"><a href="namespaceutil.html#a4969404889b6de418d4dd1c5d93bc486">util::read&lt; serializable_string &gt;</a></div><div class="ttdeci">void read&lt; serializable_string &gt;(serializable_string *t_obj, std::ifstream &amp;t_stream)</div><div class="ttdoc">read serializable string specilization</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:172</div></div>
+<div class="ttc" id="anamespaceutil_html_aa7ddf1243cb693d18770279aeb68ebc0"><div class="ttname"><a href="namespaceutil.html#aa7ddf1243cb693d18770279aeb68ebc0">util::write&lt; std::string &gt;</a></div><div class="ttdeci">void write&lt; std::string &gt;(const std::string &amp;t_obj, std::ofstream &amp;t_stream)</div><div class="ttdoc">write std::string specialization</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:185</div></div>
+<div class="ttc" id="anamespaceutil_html_ab7f799f39642c88a4db1db43317b3968"><div class="ttname"><a href="namespaceutil.html#ab7f799f39642c88a4db1db43317b3968">util::read&lt; std::string &gt;</a></div><div class="ttdeci">void read&lt; std::string &gt;(std::string *t_obj, std::ifstream &amp;t_stream)</div><div class="ttdoc">read std::string specalization</div><div class="ttdef"><b>Definition:</b> serializable_string.hpp:199</div></div>
+<div class="ttc" id="anamespaceutil_html_ac43231c61ec1cc4a58c9e3f27d406154"><div class="ttname"><a href="namespaceutil.html#ac43231c61ec1cc4a58c9e3f27d406154">util::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;t_o, const bitstream &amp;t_b)</div><div class="ttdef"><b>Definition:</b> bitstream.hpp:392</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

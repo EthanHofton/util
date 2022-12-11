@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prepend_0',['prepend',['../classutil_1_1bitstream.html#a01eb371b0ed05612643554dae99198db',1,'util::bitstream::prepend(const bitstream &amp;t_bits)'],['../classutil_1_1bitstream.html#a7641b46970b95ce0ef27d62aa46a205c',1,'util::bitstream::prepend(const bool &amp;t_bit)']]]
+  ['null_0',['null',['../namespaceutil.html#a5f2d406241c950144f2cad90d471bd2b',1,'util']]]
 ];

@@ -75,436 +75,64 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">algo.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;random.hpp&quot;</code><br />
 </div>
 <p><a href="algo_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceutil"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html">util</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a53d58676f94050e59fb2808fef15d659"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a53d58676f94050e59fb2808fef15d659"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a53d58676f94050e59fb2808fef15d659">util::min</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
-<tr class="memdesc:a53d58676f94050e59fb2808fef15d659"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic min function. computes the min out of two values  <a href="algo_8hpp.html#a53d58676f94050e59fb2808fef15d659">More...</a><br /></td></tr>
+<tr class="memitem:a53d58676f94050e59fb2808fef15d659"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a53d58676f94050e59fb2808fef15d659">util::min</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
+<tr class="memdesc:a53d58676f94050e59fb2808fef15d659"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic min function. computes the min out of two values  <a href="namespaceutil.html#a53d58676f94050e59fb2808fef15d659">More...</a><br /></td></tr>
 <tr class="separator:a53d58676f94050e59fb2808fef15d659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a6cd86e6329cc7fee23ecf5c5f8a3bee7">util::max</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
-<tr class="memdesc:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic max function. computes the max out of two values  <a href="algo_8hpp.html#a6cd86e6329cc7fee23ecf5c5f8a3bee7">More...</a><br /></td></tr>
+<tr class="memitem:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a6cd86e6329cc7fee23ecf5c5f8a3bee7">util::max</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
+<tr class="memdesc:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic max function. computes the max out of two values  <a href="namespaceutil.html#a6cd86e6329cc7fee23ecf5c5f8a3bee7">More...</a><br /></td></tr>
 <tr class="separator:a6cd86e6329cc7fee23ecf5c5f8a3bee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#ae51cb392f73c8c5e2e9c00e0bc7486b5">util::clamp</a> (const T &amp;t_x, const T &amp;t_min, const T &amp;t_max)</td></tr>
-<tr class="memdesc:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">clamp function. clamps t_x between the values t_min and t_max  <a href="algo_8hpp.html#ae51cb392f73c8c5e2e9c00e0bc7486b5">More...</a><br /></td></tr>
+<tr class="memitem:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ae51cb392f73c8c5e2e9c00e0bc7486b5">util::clamp</a> (const T &amp;t_x, const T &amp;t_min, const T &amp;t_max)</td></tr>
+<tr class="memdesc:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">clamp function. clamps t_x between the values t_min and t_max  <a href="namespaceutil.html#ae51cb392f73c8c5e2e9c00e0bc7486b5">More...</a><br /></td></tr>
 <tr class="separator:ae51cb392f73c8c5e2e9c00e0bc7486b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b5d2b3794e71cf76adde3c92b76085"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a16b5d2b3794e71cf76adde3c92b76085"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a16b5d2b3794e71cf76adde3c92b76085">util::abs</a> (const T &amp;t_a)</td></tr>
-<tr class="memdesc:a16b5d2b3794e71cf76adde3c92b76085"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the absoulte value.  <a href="algo_8hpp.html#a16b5d2b3794e71cf76adde3c92b76085">More...</a><br /></td></tr>
+<tr class="memitem:a16b5d2b3794e71cf76adde3c92b76085"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a16b5d2b3794e71cf76adde3c92b76085">util::abs</a> (const T &amp;t_a)</td></tr>
+<tr class="memdesc:a16b5d2b3794e71cf76adde3c92b76085"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the absoulte value.  <a href="namespaceutil.html#a16b5d2b3794e71cf76adde3c92b76085">More...</a><br /></td></tr>
 <tr class="separator:a16b5d2b3794e71cf76adde3c92b76085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a9a54d6a0a89d859e8a796dd4fb4852e9">util::gcd</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
-<tr class="memdesc:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the gratest common devisor of t_a and t_b (using euclidean algorithm)  <a href="algo_8hpp.html#a9a54d6a0a89d859e8a796dd4fb4852e9">More...</a><br /></td></tr>
+<tr class="memitem:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a9a54d6a0a89d859e8a796dd4fb4852e9">util::gcd</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
+<tr class="memdesc:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the gratest common devisor of t_a and t_b (using euclidean algorithm)  <a href="namespaceutil.html#a9a54d6a0a89d859e8a796dd4fb4852e9">More...</a><br /></td></tr>
 <tr class="separator:a9a54d6a0a89d859e8a796dd4fb4852e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06515ad83f47d896c6a3bdd745eb8435"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a06515ad83f47d896c6a3bdd745eb8435"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a06515ad83f47d896c6a3bdd745eb8435">util::lcm</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
-<tr class="memdesc:a06515ad83f47d896c6a3bdd745eb8435"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the lowest common multiple of t_a and t_b (using gcd definition)  <a href="algo_8hpp.html#a06515ad83f47d896c6a3bdd745eb8435">More...</a><br /></td></tr>
+<tr class="memitem:a06515ad83f47d896c6a3bdd745eb8435"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a06515ad83f47d896c6a3bdd745eb8435">util::lcm</a> (const T &amp;t_a, const T &amp;t_b)</td></tr>
+<tr class="memdesc:a06515ad83f47d896c6a3bdd745eb8435"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the lowest common multiple of t_a and t_b (using gcd definition)  <a href="namespaceutil.html#a06515ad83f47d896c6a3bdd745eb8435">More...</a><br /></td></tr>
 <tr class="separator:a06515ad83f47d896c6a3bdd745eb8435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab244f610a04eae09fbacef0e4e9bdc80"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#ab244f610a04eae09fbacef0e4e9bdc80">util::fmt</a> (std::string t_fmt)</td></tr>
-<tr class="memdesc:ab244f610a04eae09fbacef0e4e9bdc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">format base case  <a href="algo_8hpp.html#ab244f610a04eae09fbacef0e4e9bdc80">More...</a><br /></td></tr>
+<tr class="memitem:ab244f610a04eae09fbacef0e4e9bdc80"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ab244f610a04eae09fbacef0e4e9bdc80">util::fmt</a> (std::string t_fmt)</td></tr>
+<tr class="memdesc:ab244f610a04eae09fbacef0e4e9bdc80"><td class="mdescLeft">&#160;</td><td class="mdescRight">format base case  <a href="namespaceutil.html#ab244f610a04eae09fbacef0e4e9bdc80">More...</a><br /></td></tr>
 <tr class="separator:ab244f610a04eae09fbacef0e4e9bdc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22095db14ec99b69313ae0f72994e7fe"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a22095db14ec99b69313ae0f72994e7fe"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#a22095db14ec99b69313ae0f72994e7fe">util::fmt</a> (std::string t_fmt, T t_val, Args... t_rest)</td></tr>
-<tr class="memdesc:a22095db14ec99b69313ae0f72994e7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">format a string, replace {} with arguments provided in squentail order  <a href="algo_8hpp.html#a22095db14ec99b69313ae0f72994e7fe">More...</a><br /></td></tr>
+<tr class="memitem:a22095db14ec99b69313ae0f72994e7fe"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a22095db14ec99b69313ae0f72994e7fe">util::fmt</a> (std::string t_fmt, T t_val, Args... t_rest)</td></tr>
+<tr class="memdesc:a22095db14ec99b69313ae0f72994e7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">format a string, replace {} with arguments provided in squentail order  <a href="namespaceutil.html#a22095db14ec99b69313ae0f72994e7fe">More...</a><br /></td></tr>
 <tr class="separator:a22095db14ec99b69313ae0f72994e7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1d9997edb8c4fe8ae1d14dd950fddb3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algo_8hpp.html#ab1d9997edb8c4fe8ae1d14dd950fddb3">util::strfmttime</a> (const std::string &amp;fmt)</td></tr>
-<tr class="memdesc:ab1d9997edb8c4fe8ae1d14dd950fddb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">takes an format string and replaces the corrisponding placeholders with there values  <a href="algo_8hpp.html#ab1d9997edb8c4fe8ae1d14dd950fddb3">More...</a><br /></td></tr>
+<tr class="memitem:ab1d9997edb8c4fe8ae1d14dd950fddb3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ab1d9997edb8c4fe8ae1d14dd950fddb3">util::strfmttime</a> (const std::string &amp;fmt)</td></tr>
+<tr class="memdesc:ab1d9997edb8c4fe8ae1d14dd950fddb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">takes an format string and replaces the corrisponding placeholders with there values  <a href="namespaceutil.html#ab1d9997edb8c4fe8ae1d14dd950fddb3">More...</a><br /></td></tr>
 <tr class="separator:ab1d9997edb8c4fe8ae1d14dd950fddb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50505def43e261cc1e822485e7e8dd04"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a50505def43e261cc1e822485e7e8dd04">util::generate_uuid_v4</a> ()</td></tr>
+<tr class="separator:a50505def43e261cc1e822485e7e8dd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >a file defining commonly used functions and algorithms </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a16b5d2b3794e71cf76adde3c92b76085" name="a16b5d2b3794e71cf76adde3c92b76085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16b5d2b3794e71cf76adde3c92b76085">&#9670;&#160;</a></span>abs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::abs </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_a</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>compute the absoulte value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of t_a </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_a</td><td>the value to compute the absolute value for </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="ae51cb392f73c8c5e2e9c00e0bc7486b5" name="ae51cb392f73c8c5e2e9c00e0bc7486b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae51cb392f73c8c5e2e9c00e0bc7486b5">&#9670;&#160;</a></span>clamp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::clamp </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>clamp function. clamps t_x between the values t_min and t_max </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of t_x </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_x</td><td>the value to be clamped </td></tr>
-    <tr><td class="paramname">t_min</td><td>clamp lower bound </td></tr>
-    <tr><td class="paramname">t_max</td><td>clamp upper bound </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="ab244f610a04eae09fbacef0e4e9bdc80" name="ab244f610a04eae09fbacef0e4e9bdc80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab244f610a04eae09fbacef0e4e9bdc80">&#9670;&#160;</a></span>fmt() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string util::fmt </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>t_fmt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>format base case </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_fmt</td><td>the format string to return </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
-
-</div>
-</div>
-<a id="a22095db14ec99b69313ae0f72994e7fe" name="a22095db14ec99b69313ae0f72994e7fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22095db14ec99b69313ae0f72994e7fe">&#9670;&#160;</a></span>fmt() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string util::fmt </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>t_fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>t_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args...&#160;</td>
-          <td class="paramname"><em>t_rest</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>format a string, replace {} with arguments provided in squentail order </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of the current argument </td></tr>
-    <tr><td class="paramname">Args</td><td>the rest of the arguments </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_fmt</td><td>the format string </td></tr>
-    <tr><td class="paramname">t_val</td><td>the top of the arugment list </td></tr>
-    <tr><td class="paramname">t_rest</td><td>the rest of the argument list </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
-
-</div>
-</div>
-<a id="a9a54d6a0a89d859e8a796dd4fb4852e9" name="a9a54d6a0a89d859e8a796dd4fb4852e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a54d6a0a89d859e8a796dd4fb4852e9">&#9670;&#160;</a></span>gcd()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::gcd </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>computes the gratest common devisor of t_a and t_b (using euclidean algorithm) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of t_a and t_b </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_a</td><td>gcd arg 1 </td></tr>
-    <tr><td class="paramname">t_b</td><td>gcd arg 2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="a06515ad83f47d896c6a3bdd745eb8435" name="a06515ad83f47d896c6a3bdd745eb8435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06515ad83f47d896c6a3bdd745eb8435">&#9670;&#160;</a></span>lcm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::lcm </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>computes the lowest common multiple of t_a and t_b (using gcd definition) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of t_a and t_b </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_a</td><td>lcm arg 1 </td></tr>
-    <tr><td class="paramname">t_b</td><td>lcm arg 2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="a6cd86e6329cc7fee23ecf5c5f8a3bee7" name="a6cd86e6329cc7fee23ecf5c5f8a3bee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cd86e6329cc7fee23ecf5c5f8a3bee7">&#9670;&#160;</a></span>max()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::max </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>generic max function. computes the max out of two values </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of the two values </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_a</td><td>max arg1 </td></tr>
-    <tr><td class="paramname">t_b</td><td>max arg2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="a53d58676f94050e59fb2808fef15d659" name="a53d58676f94050e59fb2808fef15d659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53d58676f94050e59fb2808fef15d659">&#9670;&#160;</a></span>min()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T util::min </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>t_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>generic min function. computes the min out of two values </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of the two values </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t_a</td><td>min arg1 </td></tr>
-    <tr><td class="paramname">t_b</td><td>min arg2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
-
-</div>
-</div>
-<a id="ab1d9997edb8c4fe8ae1d14dd950fddb3" name="ab1d9997edb8c4fe8ae1d14dd950fddb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1d9997edb8c4fe8ae1d14dd950fddb3">&#9670;&#160;</a></span>strfmttime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string util::strfmttime </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>fmt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>takes an format string and replaces the corrisponding placeholders with there values </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fmt</td><td>format string describing what time to use </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

@@ -7,7 +7,7 @@
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}logger.hpp"{}}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
 \DoxyCodeLine{7 \{}
 \DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1logger__console__sink}{logger\_console\_sink}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1logger__sink}{logger\_sink}}}
 \DoxyCodeLine{13     \{}
@@ -23,18 +23,18 @@
 \DoxyCodeLine{46             std::cout << t\_out << std::endl;}
 \DoxyCodeLine{47         \}}
 \DoxyCodeLine{48 }
-\DoxyCodeLine{55         std::string \mbox{\hyperlink{classutil_1_1logger__console__sink_ab11fd4d59f6e2e0269e1f50fb329613d}{startOutputColorRange}}(\textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{55         std::string \mbox{\hyperlink{classutil_1_1logger__console__sink_ab11fd4d59f6e2e0269e1f50fb329613d}{startOutputColorRange}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)\textcolor{keyword}{ const override}}
 \DoxyCodeLine{56 \textcolor{keyword}{        }\{}
 \DoxyCodeLine{57             std::stringstream ss;}
 \DoxyCodeLine{58 }
 \DoxyCodeLine{59             \textcolor{keywordflow}{switch} (t\_level)}
 \DoxyCodeLine{60             \{}
-\DoxyCodeLine{61                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::TRACE:    ss << CONSOLE\_COLOR\_CODE::FG\_WHITE;                               \textcolor{keywordflow}{break};}
-\DoxyCodeLine{62                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::DEBUG:    ss << CONSOLE\_COLOR\_CODE::FG\_LIGHT\_MAGENTA;                       \textcolor{keywordflow}{break};}
-\DoxyCodeLine{63                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::INFO:     ss << CONSOLE\_COLOR\_CODE::FG\_BLUE;                                \textcolor{keywordflow}{break};}
-\DoxyCodeLine{64                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::WARNING:  ss << CONSOLE\_COLOR\_CODE::FG\_YELLOW;                              \textcolor{keywordflow}{break};}
-\DoxyCodeLine{65                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::ERROR:    ss << CONSOLE\_COLOR\_CODE::FG\_RED;                                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{66                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::CRITICAL: ss << CONSOLE\_COLOR\_CODE::BG\_RED << CONSOLE\_COLOR\_CODE::FG\_BLACK; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::TRACE:    ss << CONSOLE\_COLOR\_CODE::FG\_WHITE;                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::DEBUG:    ss << CONSOLE\_COLOR\_CODE::FG\_LIGHT\_MAGENTA;                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{63                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::INFO:     ss << CONSOLE\_COLOR\_CODE::FG\_BLUE;                                  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::WARNING:  ss << CONSOLE\_COLOR\_CODE::FG\_YELLOW;                                \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::ERROR:    ss << CONSOLE\_COLOR\_CODE::FG\_RED;                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{case} LOGGER\_LEVEL::CRITICAL: ss << CONSOLE\_COLOR\_CODE::BG\_RED << CONSOLE\_COLOR\_CODE::FG\_DEFAULT; \textcolor{keywordflow}{break};}
 \DoxyCodeLine{67             \}}
 \DoxyCodeLine{68 }
 \DoxyCodeLine{69             \textcolor{keywordflow}{return} ss.str();}

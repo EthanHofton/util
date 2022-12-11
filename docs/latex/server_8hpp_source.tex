@@ -1,0 +1,83 @@
+\hypertarget{server_8hpp_source}{}\doxysection{server.\+hpp}
+\label{server_8hpp_source}\index{src/server.hpp@{src/server.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTIL\_SERVER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTIL\_SERVER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <sys/\_types/\_socklen\_t.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <logger.hpp>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <logger\_console\_sink.hpp>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <future>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <sys/time.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <arpa/inet.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{algo_8hpp}{algo.hpp}}>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}} \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{enum class} SERVER\_METHOD \{}
+\DoxyCodeLine{24     TCP,}
+\DoxyCodeLine{25     UDP,}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1logger__server__console__sink}{logger\_server\_console\_sink}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1logger__sink}{util::logger\_sink}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{static} \textcolor{keywordtype}{void} str\_overwrite\_stdout() \{}
+\DoxyCodeLine{32         printf(\textcolor{stringliteral}{"{}\(\backslash\)r\%s"{}}, \textcolor{stringliteral}{"{}admin@server> "{}});}
+\DoxyCodeLine{33         fflush(stdout);}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \mbox{\hyperlink{classutil_1_1logger__server__console__sink}{logger\_server\_console\_sink}}() \{}
+\DoxyCodeLine{37         \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\_format}} = \textcolor{stringliteral}{"{}\(\backslash\)r[\%\string^\%l\%\$] \%v"{}};}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classutil_1_1logger__server__console__sink}{\string~logger\_server\_console\_sink}}()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__server__console__sink_a7cfb6c72c05bc700f4e01e23b9e3c587}{output}}(\textcolor{keyword}{const} std::string\& t\_out)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{43         printf(\textcolor{stringliteral}{"{}\(\backslash\)r\%s\(\backslash\)n"{}}, t\_out.c\_str());}
+\DoxyCodeLine{44         str\_overwrite\_stdout();}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     std::string \mbox{\hyperlink{classutil_1_1logger__server__console__sink_ac502e1f5b94d6039648454a2ab5fec9b}{startOutputColorRange}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{util::LOGGER\_LEVEL}}\& t\_level)\textcolor{keyword}{ const override}}
+\DoxyCodeLine{49 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{50         std::stringstream ss;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keywordflow}{switch} (t\_level)}
+\DoxyCodeLine{53         \{}
+\DoxyCodeLine{54             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::TRACE:    ss << util::CONSOLE\_COLOR\_CODE::FG\_WHITE;                                       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{55             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::DEBUG:    ss << util::CONSOLE\_COLOR\_CODE::FG\_LIGHT\_MAGENTA;                               \textcolor{keywordflow}{break};}
+\DoxyCodeLine{56             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::INFO:     ss << util::CONSOLE\_COLOR\_CODE::FG\_BLUE;                                        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{57             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::WARNING:  ss << util::CONSOLE\_COLOR\_CODE::FG\_YELLOW;                                      \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::ERROR:    ss << util::CONSOLE\_COLOR\_CODE::FG\_RED;                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{59             \textcolor{keywordflow}{case} util::LOGGER\_LEVEL::CRITICAL: ss << util::CONSOLE\_COLOR\_CODE::BG\_RED << util::CONSOLE\_COLOR\_CODE::FG\_DEFAULT; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} ss.str();}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     std::string \mbox{\hyperlink{classutil_1_1logger__server__console__sink_a860f3be473f947012285173d3b0fca5e}{endOutputColorRange}}()\textcolor{keyword}{ const override}}
+\DoxyCodeLine{66 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{67         std::stringstream ss;}
+\DoxyCodeLine{68         ss << util::CONSOLE\_COLOR\_CODE::BG\_DEFAULT << util::CONSOLE\_COLOR\_CODE::FG\_DEFAULT;}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} ss.str();}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     LOGGER\_SINK\_CLONE\_IMPL(\mbox{\hyperlink{classutil_1_1logger__server__console__sink}{logger\_server\_console\_sink}})}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

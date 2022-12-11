@@ -1,0 +1,132 @@
+\hypertarget{classutil_1_1event}{}\doxysection{util\+::event\texorpdfstring{$<$}{<} event\+Types \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutil_1_1event}\index{util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}}
+
+
+{\ttfamily \#include $<$event.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual event\+Types \mbox{\hyperlink{classutil_1_1event_aa3d5fbd5cf8a2e99ec143ded392a24c6}{get\+Event\+Type}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{classutil_1_1event_aebd35a6fc8c83c164aaac575d44d68ca}{get\+Name}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{classutil_1_1event_ab044b1a2346b022526d9b7d14e24686f}{to\+String}} () const
+\item 
+bool \mbox{\hyperlink{classutil_1_1event_a03c34f7a666a6a9b692e476c85b5f19b}{handled}} ()
+\begin{DoxyCompactList}\small\item\em returns weither or not the event has been handled yet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1event_a8cc3f321f9a6e3c4a175d8e458a3fd69}\label{classutil_1_1event_a8cc3f321f9a6e3c4a175d8e458a3fd69}} 
+bool {\bfseries m\+\_\+handled}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1event_a04a5e48dcae280114e529345561be958}\label{classutil_1_1event_a04a5e48dcae280114e529345561be958}} 
+{\footnotesize template$<$typename T $>$ }\\class {\bfseries event\+\_\+dispatcher}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename event\+Types$>$\newline
+class util\+::event$<$ event\+Types $>$}
+@breif event class
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em event\+Types} & must be an ENUM class\\
+\hline
+\end{DoxyTemplParams}
+\hypertarget{classutil_1_1event_autotoc_md1}{}\doxysubsection{Example}\label{classutil_1_1event_autotoc_md1}
+the event class can be implamented in the following way to create two different event types, key typed, mouse pressed\+:
+
+enum event\+Types \{ type, click \};
+
+class type\+Event \+: public util\+::event$<$event\+Types$>$ \{ public\+: \begin{DoxyVerb}typeEvent(char t_c) : pressedChar(t_c) {}
+
+virtual std::string toString() const override {
+    return "typeEvent: {typedChar: "+std::string(1, pressedChar)+"}";
+}
+
+char getTypedChar() { return pressedChar; }
+
+EVENT_CLASS_TYPE(eventTypes, type);
+\end{DoxyVerb}
+ private\+: \begin{DoxyVerb}char pressedChar;
+\end{DoxyVerb}
+ \};
+
+class click\+Event \+: public util\+::event$<$event\+Types$>$ \{ public\+: \begin{DoxyVerb}clickEvent(int x, int y) : m_x(x), m_y(y) {}
+
+virtual std::string toString() const override {
+    std::stringstream ss;
+    ss << "clickEvent{x:" << m_x << ", y: " << m_y << "}";
+    return ss.str();
+}
+
+EVENT_CLASS_TYPE(eventTypes, mouseMove);
+\end{DoxyVerb}
+ private\+: \begin{DoxyVerb}int m_x, m_y;
+\end{DoxyVerb}
+ \};
+
+note for each event class, EVENT\+\_\+\+CLASS\+\_\+\+TYPE is called with the event enum, and specifc event type for that class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1event_aa3d5fbd5cf8a2e99ec143ded392a24c6}\label{classutil_1_1event_aa3d5fbd5cf8a2e99ec143ded392a24c6}} 
+\index{util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}!getEventType@{getEventType}}
+\index{getEventType@{getEventType}!util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{getEventType()}{getEventType()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+virtual event\+Types \mbox{\hyperlink{classutil_1_1event}{util\+::event}}$<$ event\+Types $>$\+::get\+Event\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@breif get the event type of the event (from event\+Types tparam)
+
+\begin{DoxyReturn}{Returns}
+event\+Types the event type of the event 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1event_aebd35a6fc8c83c164aaac575d44d68ca}\label{classutil_1_1event_aebd35a6fc8c83c164aaac575d44d68ca}} 
+\index{util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}!getName@{getName}}
+\index{getName@{getName}!util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+virtual std\+::string \mbox{\hyperlink{classutil_1_1event}{util\+::event}}$<$ event\+Types $>$\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@breif gets the name of the event type
+
+\begin{DoxyReturn}{Returns}
+std\+::string the string value of the event type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1event_a03c34f7a666a6a9b692e476c85b5f19b}\label{classutil_1_1event_a03c34f7a666a6a9b692e476c85b5f19b}} 
+\index{util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}!handled@{handled}}
+\index{handled@{handled}!util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{handled()}{handled()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+bool \mbox{\hyperlink{classutil_1_1event}{util\+::event}}$<$ event\+Types $>$\+::handled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns weither or not the event has been handled yet 
+
+\begin{DoxyReturn}{Returns}
+bool m\+\_\+handel getter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1event_ab044b1a2346b022526d9b7d14e24686f}\label{classutil_1_1event_ab044b1a2346b022526d9b7d14e24686f}} 
+\index{util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}!toString@{toString}}
+\index{toString@{toString}!util::event$<$ eventTypes $>$@{util::event$<$ eventTypes $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
+virtual std\+::string \mbox{\hyperlink{classutil_1_1event}{util\+::event}}$<$ event\+Types $>$\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+@breif event to string method
+
+\begin{DoxyReturn}{Returns}
+string the string value of the event 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/event.\+hpp\end{DoxyCompactItemize}

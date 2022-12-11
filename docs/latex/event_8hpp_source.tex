@@ -1,0 +1,67 @@
+\hypertarget{event_8hpp_source}{}\doxysection{event.\+hpp}
+\label{event_8hpp_source}\index{src/event.hpp@{src/event.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTIL\_EVENT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTIL\_EVENT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>} }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}} \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#define EVENT\_CLASS\_TYPE(eventTypes, type) static eventTypes getStaticType() \{ return eventTypes::type; \} \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{                                   virtual eventTypes getEventType() const override \{ return getStaticType(); \} \(\backslash\)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{                                   virtual std::string getName() const override \{ return \#type; \}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{73     \textcolor{keyword}{template} <\textcolor{keyword}{typename} eventTypes>}
+\DoxyCodeLine{74     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1event}{event}} \{}
+\DoxyCodeLine{75     }
+\DoxyCodeLine{76         \textcolor{comment}{// * make the event dispatcher a fried class}}
+\DoxyCodeLine{77         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{78         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1event__dispatcher}{event\_dispatcher}};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keyword}{public}:   }
+\DoxyCodeLine{81         }
+\DoxyCodeLine{87         \textcolor{keyword}{virtual} eventTypes \mbox{\hyperlink{classutil_1_1event_aa3d5fbd5cf8a2e99ec143ded392a24c6}{getEventType}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{93         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classutil_1_1event_aebd35a6fc8c83c164aaac575d44d68ca}{getName}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{99         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classutil_1_1event_ab044b1a2346b022526d9b7d14e24686f}{toString}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1event_aebd35a6fc8c83c164aaac575d44d68ca}{getName}}(); \}}
+\DoxyCodeLine{105         \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1event_a03c34f7a666a6a9b692e476c85b5f19b}{handled}}() \{ \textcolor{keywordflow}{return} m\_handled; \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{108         }
+\DoxyCodeLine{109         \textcolor{comment}{// * stores if the event has been handled yet}}
+\DoxyCodeLine{110         \textcolor{keywordtype}{bool} m\_handled;}
+\DoxyCodeLine{111     \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{158     \textcolor{keyword}{template} <\textcolor{keyword}{typename} eventTypes>}
+\DoxyCodeLine{159     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1event__dispatcher}{event\_dispatcher}}}
+\DoxyCodeLine{160     \{}
+\DoxyCodeLine{161         \textcolor{comment}{// * typedef the event function (bool -\/> T\&)}}
+\DoxyCodeLine{162         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{163         \textcolor{keyword}{using }eventFn = std::function<bool(T\&)>;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keyword}{public}:}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{172         \mbox{\hyperlink{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}{event\_dispatcher}}(\mbox{\hyperlink{classutil_1_1event}{event<eventTypes>}} \&t\_event) : m\_event(t\_event) \{\}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{181         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{182         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1event__dispatcher_acb8e902507c171fd6501b518a2648a71}{dispatch}}(eventFn<T> t\_dispatchFn) \{}
+\DoxyCodeLine{183             \textcolor{keywordflow}{if} (m\_event.getEventType() == T::getStaticType()) \{}
+\DoxyCodeLine{184                 m\_event.m\_handled = t\_dispatchFn(*(T*)\&m\_event);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{187             \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{190         \} }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keyword}{private}:}
+\DoxyCodeLine{193         }
+\DoxyCodeLine{194         \mbox{\hyperlink{classutil_1_1event}{event<eventTypes>}} \&m\_event;}
+\DoxyCodeLine{195     \};}
+\DoxyCodeLine{196 \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

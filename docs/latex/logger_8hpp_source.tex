@@ -12,9 +12,9 @@
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sstream>}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <thread>}}
 \DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
 \DoxyCodeLine{12 \{}
-\DoxyCodeLine{17     \textcolor{keyword}{enum class} LOGGER\_LEVEL}
+\DoxyCodeLine{17     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}}
 \DoxyCodeLine{18     \{}
 \DoxyCodeLine{19         TRACE    = 0,}
 \DoxyCodeLine{20         DEBUG    = 1,}
@@ -24,7 +24,7 @@
 \DoxyCodeLine{24         CRITICAL = 5}
 \DoxyCodeLine{25     \};}
 \DoxyCodeLine{26 }
-\DoxyCodeLine{34     std::ostream\& operator<<(std::ostream\& t\_os, \textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)}
+\DoxyCodeLine{34     std::ostream\& \mbox{\hyperlink{namespaceutil_ac43231c61ec1cc4a58c9e3f27d406154}{operator<<}}(std::ostream\& t\_os, \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)}
 \DoxyCodeLine{35     \{}
 \DoxyCodeLine{36         \textcolor{keywordflow}{switch} (t\_level)}
 \DoxyCodeLine{37         \{}
@@ -45,15 +45,15 @@
 \DoxyCodeLine{63         \mbox{\hyperlink{classutil_1_1logger__sink_ad6f804adb7ba775a386b6362c2a40156}{logger\_sink}}() \{\}}
 \DoxyCodeLine{68         \textcolor{keyword}{virtual} \mbox{\hyperlink{classutil_1_1logger__sink_a86eb391763969c1ad0e7ed2844629ef5}{\string~logger\_sink}}() = 0;}
 \DoxyCodeLine{69 }
-\DoxyCodeLine{75         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__sink_a8c945df74d587a5447255db63bf342cc}{setLogLevel}}(\textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level) \{ m\_level = t\_level; \}}
-\DoxyCodeLine{81         LOGGER\_LEVEL \mbox{\hyperlink{classutil_1_1logger__sink_a01d31b8777e127c2906858dcc942a0f5}{getLogLevel}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_level; \}}
+\DoxyCodeLine{75         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__sink_a8c945df74d587a5447255db63bf342cc}{setLogLevel}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level) \{ m\_level = t\_level; \}}
+\DoxyCodeLine{81         \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}} \mbox{\hyperlink{classutil_1_1logger__sink_a01d31b8777e127c2906858dcc942a0f5}{getLogLevel}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_level; \}}
 \DoxyCodeLine{82 }
 \DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__sink_a78ae962f1c41aa9d41e8bd431b9fc6ec}{setFormat}}(\textcolor{keyword}{const} std::string\& t\_format) \{ \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\_format}} = t\_format; \}}
 \DoxyCodeLine{94         std::string \mbox{\hyperlink{classutil_1_1logger__sink_a0bd9705e13323136ecd40e0cc58b81a6}{getFormat}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\_format}}; \}}
 \DoxyCodeLine{95 }
 \DoxyCodeLine{101         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger__sink_a0aa7398005008588cd349d491af6c2e8}{output}}(\textcolor{keyword}{const} std::string\& t\_out) \textcolor{keyword}{const} = 0;}
 \DoxyCodeLine{102 }
-\DoxyCodeLine{109         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}{startOutputColorRange}}(\textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}}; \}}
+\DoxyCodeLine{109         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}{startOutputColorRange}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}}; \}}
 \DoxyCodeLine{115         \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}{endOutputColorRange}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}}; \}}
 \DoxyCodeLine{116 }
 \DoxyCodeLine{122         \textcolor{keyword}{virtual} \mbox{\hyperlink{classutil_1_1logger__sink}{logger\_sink}}* \mbox{\hyperlink{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}{clone}}() \textcolor{keyword}{const} = 0;}
@@ -64,7 +64,7 @@
 \DoxyCodeLine{134         std::string \mbox{\hyperlink{classutil_1_1logger__sink_a99f55201bc0d1183116850b5ea465112}{m\_format}} = \textcolor{stringliteral}{"{}[\%Y-\/\%m-\/\%d \%H:\%M:\%S] [\%n] [\%\string^\%l\%\$] \%v"{}};}
 \DoxyCodeLine{135     \textcolor{keyword}{private}:}
 \DoxyCodeLine{136         std::string m\_loggerName;}
-\DoxyCodeLine{137         LOGGER\_LEVEL m\_level = LOGGER\_LEVEL::INFO;}
+\DoxyCodeLine{137         \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}} m\_level = LOGGER\_LEVEL::INFO;}
 \DoxyCodeLine{138         \textcolor{keyword}{friend} \mbox{\hyperlink{classutil_1_1logger}{logger}};}
 \DoxyCodeLine{139     \};}
 \DoxyCodeLine{140 }
@@ -94,95 +94,95 @@
 \DoxyCodeLine{232         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}{removeSink}}(\textcolor{keyword}{const} std::string\& t\_index)}
 \DoxyCodeLine{233         \{ \textcolor{keywordflow}{if} (m\_sinks.find(t\_index) != m\_sinks.end()) \{ m\_sinks.erase(t\_index); \} \}}
 \DoxyCodeLine{234 }
-\DoxyCodeLine{241         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}{setSinkLogLevel}}(\textcolor{keyword}{const} std::string\& t\_index, \textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)}
+\DoxyCodeLine{241         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}{setSinkLogLevel}}(\textcolor{keyword}{const} std::string\& t\_index, \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)}
 \DoxyCodeLine{242         \{ m\_sinks[t\_index]-\/>setLogLevel(t\_level); \}}
-\DoxyCodeLine{249         LOGGER\_LEVEL \mbox{\hyperlink{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}{getSinkLogLevel}}(\textcolor{keyword}{const} std::string\& t\_index)}
+\DoxyCodeLine{249         \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}} \mbox{\hyperlink{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}{getSinkLogLevel}}(\textcolor{keyword}{const} std::string\& t\_index)}
 \DoxyCodeLine{250         \{ \textcolor{keywordflow}{return} m\_sinks[t\_index]-\/>getLogLevel(); \}}
 \DoxyCodeLine{251 }
 \DoxyCodeLine{259         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a7ecce168a7f7645c35518b9cccfbafe7}{setSinkFormat}}(\textcolor{keyword}{const} std::string\& t\_index, \textcolor{keyword}{const} std::string\& t\_format) \{ m\_sinks[t\_index]-\/>setFormat(t\_format); \}}
 \DoxyCodeLine{266         std::string \mbox{\hyperlink{classutil_1_1logger_a0f67ce37c0447ed74344ab8f99eaccb6}{getSinkFormat}}(\textcolor{keyword}{const} std::string\& t\_index) \{ \textcolor{keywordflow}{return} m\_sinks[t\_index]-\/>getFormat(); \}}
 \DoxyCodeLine{267 }
-\DoxyCodeLine{275         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level, \textcolor{keyword}{const} std::string\& t\_sink)}
+\DoxyCodeLine{275         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level, \textcolor{keyword}{const} std::string\& t\_sink)}
 \DoxyCodeLine{276         \{ \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})t\_level >= (\textcolor{keywordtype}{int})(m\_sinks[t\_sink]-\/>getLogLevel())) m\_sinks[t\_sink]-\/>output(format(t\_sink, t\_msg, t\_level)); \}}
 \DoxyCodeLine{277 }
-\DoxyCodeLine{284         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}{log}}(\textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)}
+\DoxyCodeLine{284         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}{log}}(\textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)}
 \DoxyCodeLine{285         \{ \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} sink : m\_sinks) \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_msg, t\_level, sink.first); \}}
 \DoxyCodeLine{286 }
 \DoxyCodeLine{292         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a0a8fc47d716b0f143f6868b6e18b9128}{logTrace}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{293         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::TRACE); \}}
 \DoxyCodeLine{301         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{302         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a2c0c92ad0348b7f42763222968891561}{logTrace}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{303         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::TRACE); \}}
+\DoxyCodeLine{303         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::TRACE); \}}
 \DoxyCodeLine{304 }
 \DoxyCodeLine{311         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a81975fc6e46c5f7c2bc014c37628e929}{logSinkTrace}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{312         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::TRACE, t\_sink); \}}
 \DoxyCodeLine{321         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{322         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a19d11fd91779d1e2808d117404a9cd29}{logSinkTrace}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{323         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::TRACE, t\_sink); \}}
+\DoxyCodeLine{323         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::TRACE, t\_sink); \}}
 \DoxyCodeLine{324 }
 \DoxyCodeLine{330         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_aacd31b656afafbd5e3b2d861da4be728}{logDebug}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{331         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::DEBUG); \}}
 \DoxyCodeLine{339         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{340         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_aff5737dcfc8bf89240d6551e751068d7}{logDebug}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{341         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::DEBUG); \}}
+\DoxyCodeLine{341         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::DEBUG); \}}
 \DoxyCodeLine{342 }
 \DoxyCodeLine{349         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a084b1e60f69f7bba1d3270e0f1316458}{logSinkDebug}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{350         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::DEBUG, t\_sink); \}}
 \DoxyCodeLine{359         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{360         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a907d5ea84a810ee5e8ac645df510275b}{logSinkDebug}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{361         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::DEBUG, t\_sink); \}}
+\DoxyCodeLine{361         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::DEBUG, t\_sink); \}}
 \DoxyCodeLine{362 }
 \DoxyCodeLine{368         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a439ea95b2f807582b546373949aeaf8e}{logInfo}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{369         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::INFO); \}}
 \DoxyCodeLine{377         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{378         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a815f5cc8bcdeed692767ad6aa45bef9b}{logInfo}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{379         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::INFO); \}}
+\DoxyCodeLine{379         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::INFO); \}}
 \DoxyCodeLine{380 }
 \DoxyCodeLine{387         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a05e8baef29499f7f63c95abef8f07752}{logSinkInfo}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{388         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::INFO, t\_sink); \}}
 \DoxyCodeLine{397         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{398         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a54d7d045577e53d562c4c91b1da1e57d}{logSinkInfo}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{399         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::INFO, t\_sink); \}}
+\DoxyCodeLine{399         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::INFO, t\_sink); \}}
 \DoxyCodeLine{400 }
 \DoxyCodeLine{406         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a6360e0753a524b4a21df203cc50286af}{logWarning}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{407         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::WARNING); \}}
 \DoxyCodeLine{415         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{416         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_ae934e6c1c871c4069c09d1208833428f}{logWarning}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{417         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::WARNING); \}}
+\DoxyCodeLine{417         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::WARNING); \}}
 \DoxyCodeLine{418 }
 \DoxyCodeLine{425         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_ad28698a93648e2cf6dee374388f7a11a}{logSinkWarning}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{426         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::WARNING, t\_sink); \}}
 \DoxyCodeLine{435         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{436         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a5bd7ae652315d65113637b3a41204c86}{logSinkWarning}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{437         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::WARNING, t\_sink); \}}
+\DoxyCodeLine{437         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::WARNING, t\_sink); \}}
 \DoxyCodeLine{438 }
 \DoxyCodeLine{444         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a34afa68e31d2ad5b7beb9d81a8352025}{logError}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{445         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::ERROR); \}}
 \DoxyCodeLine{453         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{454         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a21f34b89df2ccf57e76cea4a62c8c152}{logError}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{455         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::ERROR); \}}
+\DoxyCodeLine{455         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::ERROR); \}}
 \DoxyCodeLine{456 }
 \DoxyCodeLine{463         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_aff904ced975af606c59ee70eceb622e7}{logSinkError}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{464         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::ERROR, t\_sink); \}}
 \DoxyCodeLine{473         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{474         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a7d84b429d7769337d4af2a52df93e5ed}{logSinkError}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{475         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::ERROR, t\_sink); \}}
+\DoxyCodeLine{475         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::ERROR, t\_sink); \}}
 \DoxyCodeLine{476 }
 \DoxyCodeLine{482         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a8a4cb5e9e804882ba24c8c892cc40c59}{logCritical}}(\textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{483         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::CRITICAL); \}}
 \DoxyCodeLine{491         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{492         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a72b4c91f1d85aa20fb0e8be2a89b3e2c}{logCritical}}(\textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{493         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::CRITICAL); \}}
+\DoxyCodeLine{493         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::CRITICAL); \}}
 \DoxyCodeLine{494 }
 \DoxyCodeLine{501         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_ac8d6477ebb5baf612ae4ec4a1a08ab2d}{logSinkCritical}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt)}
 \DoxyCodeLine{502         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_fmt, LOGGER\_LEVEL::CRITICAL, t\_sink); \}}
 \DoxyCodeLine{511         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{512         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1logger_a741994ed817e2dd1c0322d73a3a8ce16}{logSinkCritical}}(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_fmt, Args\&\&... t\_args)}
-\DoxyCodeLine{513         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::CRITICAL, t\_sink); \}}
+\DoxyCodeLine{513         \{ \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(\mbox{\hyperlink{namespaceutil_ab244f610a04eae09fbacef0e4e9bdc80}{fmt}}(t\_fmt, t\_args...), LOGGER\_LEVEL::CRITICAL, t\_sink); \}}
 \DoxyCodeLine{514 }
 \DoxyCodeLine{515     \textcolor{keyword}{private}:}
 \DoxyCodeLine{516 }
-\DoxyCodeLine{517         std::string format(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} LOGGER\_LEVEL\& t\_level)}
+\DoxyCodeLine{517         std::string format(\textcolor{keyword}{const} std::string\& t\_sink, \textcolor{keyword}{const} std::string\& t\_msg, \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\_LEVEL}}\& t\_level)}
 \DoxyCodeLine{518         \{}
 \DoxyCodeLine{519             std::string result = m\_sinks[t\_sink]-\/>getFormat();}
 \DoxyCodeLine{520             \textcolor{keywordtype}{size\_t} pos = result.find(\textcolor{stringliteral}{"{}\%"{}});}
@@ -207,10 +207,10 @@
 \DoxyCodeLine{539                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'B'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'m'}: }
 \DoxyCodeLine{540                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'H'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'I'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'M'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'S'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'p'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}: }
 \DoxyCodeLine{541                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'T'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'X'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'z'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'R'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'}:}
-\DoxyCodeLine{542                         replValue = \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(std::string(\textcolor{stringliteral}{"{}\%"{}}) + command); \textcolor{keywordflow}{break};}
-\DoxyCodeLine{543                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}: replValue = \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%g"{}}); \textcolor{keywordflow}{break};}
-\DoxyCodeLine{544                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'Y'}: replValue = \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%G"{}}); \textcolor{keywordflow}{break};}
-\DoxyCodeLine{545                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'D'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'x'}: replValue = \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%D"{}}); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{542                         replValue = \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(std::string(\textcolor{stringliteral}{"{}\%"{}}) + command); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{543                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}: replValue = \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%g"{}}); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{544                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'Y'}: replValue = \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%G"{}}); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{545                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'D'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'x'}: replValue = \mbox{\hyperlink{namespaceutil_ab1d9997edb8c4fe8ae1d14dd950fddb3}{strfmttime}}(\textcolor{stringliteral}{"{}\%D"{}}); \textcolor{keywordflow}{break};}
 \DoxyCodeLine{546                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'\string^'}: replValue = m\_sinks[t\_sink]-\/>startOutputColorRange(t\_level); \textcolor{keywordflow}{break};}
 \DoxyCodeLine{547                     \textcolor{keywordflow}{case} \textcolor{charliteral}{'\$'}: replValue = m\_sinks[t\_sink]-\/>endOutputColorRange(); \textcolor{keywordflow}{break};}
 \DoxyCodeLine{548                 \}}

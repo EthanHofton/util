@@ -9,7 +9,7 @@
 \DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}serializable\_string.hpp"{}}}
 \DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
 \DoxyCodeLine{9 \{}
 \DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1ubint}{ubint}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1serializable}{serializable}}}
 \DoxyCodeLine{15     \{}
@@ -204,26 +204,26 @@
 \DoxyCodeLine{519         std::string m\_digits;}
 \DoxyCodeLine{520     \};}
 \DoxyCodeLine{521 }
-\DoxyCodeLine{522     \textcolor{keywordtype}{bool} null(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_u)}
+\DoxyCodeLine{522     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_u)}
 \DoxyCodeLine{523     \{}
 \DoxyCodeLine{524         \textcolor{keywordflow}{return} (t\_u.m\_digits.size() == 1 \&\& t\_u.m\_digits[0] == 0);}
 \DoxyCodeLine{525     \}}
 \DoxyCodeLine{526 }
-\DoxyCodeLine{527     \textcolor{keywordtype}{int} length(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_u)}
+\DoxyCodeLine{527     \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_u)}
 \DoxyCodeLine{528     \{}
 \DoxyCodeLine{529         \textcolor{keywordflow}{return} t\_u.m\_digits.size();}
 \DoxyCodeLine{530     \}}
 \DoxyCodeLine{531 }
-\DoxyCodeLine{532     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator+=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{532     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_a7cd352c3aa91110a61e797f17a4e7666}{operator+=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{533     \{}
 \DoxyCodeLine{534         \textcolor{comment}{// * t = carry, s = sum, i = index, n = length(a), m = length(b)}}
 \DoxyCodeLine{535         \textcolor{keywordtype}{int} t = 0, s, i;}
-\DoxyCodeLine{536         \textcolor{keywordtype}{int} n = length(t\_a), m = length(t\_b);}
+\DoxyCodeLine{536         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a), m = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_b);}
 \DoxyCodeLine{537 }
 \DoxyCodeLine{538         \textcolor{keywordflow}{if} (m > n)}
 \DoxyCodeLine{539         \{}
 \DoxyCodeLine{540             t\_a.m\_digits.append(m -\/ n, 0);}
-\DoxyCodeLine{541             n = length(t\_a);}
+\DoxyCodeLine{541             n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a);}
 \DoxyCodeLine{542         \}}
 \DoxyCodeLine{543 }
 \DoxyCodeLine{544         \textcolor{keywordflow}{for} (i = 0; i < n; i++)}
@@ -248,21 +248,21 @@
 \DoxyCodeLine{563         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{564     \}}
 \DoxyCodeLine{565 }
-\DoxyCodeLine{566     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{566     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a85cb16820c8d6185862793b801f2ccb3}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{567     \{}
 \DoxyCodeLine{568         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{569         tmp += t\_b;}
 \DoxyCodeLine{570         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{571     \}}
 \DoxyCodeLine{572 }
-\DoxyCodeLine{573     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator-\/=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{573     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_a90763321500e0ecc846fd68d86683be4}{operator-\/=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{574     \{}
 \DoxyCodeLine{575         \textcolor{keywordflow}{if} (t\_a < t\_b)}
 \DoxyCodeLine{576         \{}
 \DoxyCodeLine{577             \textcolor{keywordflow}{throw} std::underflow\_error(\textcolor{stringliteral}{"{}underflow. a cannot be less than b"{}});}
 \DoxyCodeLine{578         \}}
 \DoxyCodeLine{579 }
-\DoxyCodeLine{580         \textcolor{keywordtype}{int} n = length(t\_a), m = length(t\_b);}
+\DoxyCodeLine{580         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a), m = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_b);}
 \DoxyCodeLine{581         \textcolor{keywordtype}{int} i, t = 0, s;}
 \DoxyCodeLine{582 }
 \DoxyCodeLine{583         \textcolor{keywordflow}{for} (i = 0; i < n; i++)}
@@ -298,22 +298,22 @@
 \DoxyCodeLine{613         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{614     \}}
 \DoxyCodeLine{615 }
-\DoxyCodeLine{616     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{616     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a21c9de179244fe55518eb54a93de3e53}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{617     \{}
 \DoxyCodeLine{618         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{619         tmp -\/= t\_b;}
 \DoxyCodeLine{620         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{621     \}}
 \DoxyCodeLine{622 }
-\DoxyCodeLine{623     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator*=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{623     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_ae3fce2be91ba98dea6592be528614a67}{operator*=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{624     \{}
-\DoxyCodeLine{625         \textcolor{keywordflow}{if} (null(t\_a) || null(t\_b))}
+\DoxyCodeLine{625         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(t\_a) || \mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(t\_b))}
 \DoxyCodeLine{626         \{}
 \DoxyCodeLine{627             t\_a = \mbox{\hyperlink{classutil_1_1ubint}{ubint}}();}
 \DoxyCodeLine{628             \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{629         \}}
 \DoxyCodeLine{630 }
-\DoxyCodeLine{631         \textcolor{keywordtype}{int} n = length(t\_a), m = length(t\_b);}
+\DoxyCodeLine{631         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a), m = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_b);}
 \DoxyCodeLine{632         std::vector<int> v(n + m, 0);}
 \DoxyCodeLine{633         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
 \DoxyCodeLine{634         \{}
@@ -340,21 +340,21 @@
 \DoxyCodeLine{655         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{656     \}}
 \DoxyCodeLine{657 }
-\DoxyCodeLine{658     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{658     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a5eca5409c7ed744a173dd19623e40a59}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{659     \{}
 \DoxyCodeLine{660         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{661         tmp *= t\_b;}
 \DoxyCodeLine{662         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{663     \}}
 \DoxyCodeLine{664 }
-\DoxyCodeLine{665     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator/=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{665     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_a2b9e913adc7574416999a1159d79d17a}{operator/=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{666     \{}
-\DoxyCodeLine{667         \textcolor{keywordflow}{if} (null(t\_b))}
+\DoxyCodeLine{667         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(t\_b))}
 \DoxyCodeLine{668         \{}
 \DoxyCodeLine{669             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}cannot divide by zero"{}});}
 \DoxyCodeLine{670         \}}
 \DoxyCodeLine{671 }
-\DoxyCodeLine{672         \textcolor{keywordflow}{if} (null(t\_a))}
+\DoxyCodeLine{672         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(t\_a))}
 \DoxyCodeLine{673         \{}
 \DoxyCodeLine{674             \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{675         \}}
@@ -372,7 +372,7 @@
 \DoxyCodeLine{687         \}}
 \DoxyCodeLine{688 }
 \DoxyCodeLine{689         \textcolor{keywordtype}{int} i, lgcat = 0, cc;}
-\DoxyCodeLine{690         \textcolor{keywordtype}{int} n = length(t\_a);}
+\DoxyCodeLine{690         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a);}
 \DoxyCodeLine{691         std::vector<int> cat(n, 0);}
 \DoxyCodeLine{692         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} t;}
 \DoxyCodeLine{693         \textcolor{keywordflow}{for} (i = n -\/ 1; t * 10 + t\_a.m\_digits[i] < t\_b; i-\/-\/)}
@@ -399,16 +399,16 @@
 \DoxyCodeLine{714         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{715     \}}
 \DoxyCodeLine{716 }
-\DoxyCodeLine{717     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator/(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{717     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a32b5142f2a46dbe1a23bea8ffccb8be5}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{718     \{}
 \DoxyCodeLine{719         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{720         tmp /= t\_b;}
 \DoxyCodeLine{721         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{722     \}}
 \DoxyCodeLine{723 }
-\DoxyCodeLine{724     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator\%=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{724     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_ab5544bff5b7b1817c124116ab6d7ea76}{operator\%=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{725     \{}
-\DoxyCodeLine{726         \textcolor{keywordflow}{if} (null(t\_b))}
+\DoxyCodeLine{726         \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(t\_b))}
 \DoxyCodeLine{727         \{}
 \DoxyCodeLine{728             \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}cannot divide by zero"{}});}
 \DoxyCodeLine{729         \}}
@@ -425,7 +425,7 @@
 \DoxyCodeLine{740         \}}
 \DoxyCodeLine{741 }
 \DoxyCodeLine{742         \textcolor{keywordtype}{int} i, lgcat = 0, cc;}
-\DoxyCodeLine{743         \textcolor{keywordtype}{int} n = length(t\_a);}
+\DoxyCodeLine{743         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a);}
 \DoxyCodeLine{744         std::vector<int> cat(n, 0);}
 \DoxyCodeLine{745         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} t;}
 \DoxyCodeLine{746         \textcolor{keywordflow}{for} (i = n -\/ 1; t * 10 + t\_a.m\_digits[i] < t\_b; i-\/-\/)}
@@ -446,14 +446,14 @@
 \DoxyCodeLine{761         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{762     \}}
 \DoxyCodeLine{763 }
-\DoxyCodeLine{764     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator\%(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{764     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_af343d9bb2569a6048c42a6268dbbc476}{operator\%}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{765     \{}
 \DoxyCodeLine{766         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{767         tmp \%= t\_b;}
 \DoxyCodeLine{768         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{769     \}}
 \DoxyCodeLine{770 }
-\DoxyCodeLine{771     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator<<=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{771     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_aeb624df5ac9f383fb66dc38ebbfbb985}{operator<<=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{772     \{}
 \DoxyCodeLine{773         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classutil_1_1ubint}{ubint}} i = 0ULL; i < t\_b; i++)}
 \DoxyCodeLine{774         \{}
@@ -463,14 +463,14 @@
 \DoxyCodeLine{778         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{779     \}}
 \DoxyCodeLine{780         }
-\DoxyCodeLine{781     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator<<(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{781     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_ac43231c61ec1cc4a58c9e3f27d406154}{operator<<}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{782     \{}
 \DoxyCodeLine{783         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{784         tmp <<= t\_b;}
 \DoxyCodeLine{785         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{786     \}}
 \DoxyCodeLine{787     }
-\DoxyCodeLine{788     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator>>=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{788     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_a03acfd782dd24096d55d3d26b782441e}{operator>>=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{789     \{}
 \DoxyCodeLine{790         \textcolor{keywordflow}{for} (\mbox{\hyperlink{classutil_1_1ubint}{ubint}} i = 0ULL; i < t\_b; i++)}
 \DoxyCodeLine{791         \{}
@@ -491,19 +491,19 @@
 \DoxyCodeLine{806         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{807     \}}
 \DoxyCodeLine{808     }
-\DoxyCodeLine{809     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator>>(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{809     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a4ec6c595870f26ca9d65399a251688b0}{operator>>}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{810     \{}
 \DoxyCodeLine{811         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{812         tmp >>= t\_b;}
 \DoxyCodeLine{813         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{814     \}}
 \DoxyCodeLine{815 }
-\DoxyCodeLine{816     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&operator\string^=(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{816     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \&\mbox{\hyperlink{namespaceutil_add67afa3e2b307ca532e248c4f2e61fd}{operator\string^=}}(\mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{817     \{}
 \DoxyCodeLine{818         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} exp = t\_b, base = t\_a;}
 \DoxyCodeLine{819         t\_a = 1;}
 \DoxyCodeLine{820 }
-\DoxyCodeLine{821         \textcolor{keywordflow}{while} (!null(exp))}
+\DoxyCodeLine{821         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{namespaceutil_a5f2d406241c950144f2cad90d471bd2b}{null}}(exp))}
 \DoxyCodeLine{822         \{}
 \DoxyCodeLine{823             \textcolor{keywordflow}{if} (exp[0] \& 1)}
 \DoxyCodeLine{824             \{}
@@ -517,36 +517,36 @@
 \DoxyCodeLine{832         \textcolor{keywordflow}{return} t\_a;}
 \DoxyCodeLine{833     \}}
 \DoxyCodeLine{834 }
-\DoxyCodeLine{835     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} operator\string^(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{835     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a9966122604c2006e17b33139843d916a}{operator\string^}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{836     \{}
 \DoxyCodeLine{837         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} tmp = t\_a;}
 \DoxyCodeLine{838         tmp \string^= t\_b;}
 \DoxyCodeLine{839         \textcolor{keywordflow}{return} tmp;}
 \DoxyCodeLine{840     \}}
 \DoxyCodeLine{841 }
-\DoxyCodeLine{842     \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{842     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_a37302fce761b99dd81c7ce18b7cb5036}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{843     \{}
 \DoxyCodeLine{844         \textcolor{keywordflow}{return} t\_a.m\_digits == t\_b.m\_digits;}
 \DoxyCodeLine{845     \}}
 \DoxyCodeLine{846 }
-\DoxyCodeLine{847     \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{847     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_a32a21b234540c04836d8116cf8b598d9}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{848     \{}
 \DoxyCodeLine{849         \textcolor{keywordflow}{return} !(t\_a == t\_b);}
 \DoxyCodeLine{850     \}}
 \DoxyCodeLine{851 }
-\DoxyCodeLine{852     \textcolor{keywordtype}{bool} operator>(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{852     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_a9adcb138b08df791ad8c2f3d248ea533}{operator>}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{853     \{}
 \DoxyCodeLine{854         \textcolor{keywordflow}{return} t\_b < t\_a;}
 \DoxyCodeLine{855     \}}
 \DoxyCodeLine{856 }
-\DoxyCodeLine{857     \textcolor{keywordtype}{bool} operator>=(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{857     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_ada14165835b45fa7f543600ae38fd662}{operator>=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{858     \{}
 \DoxyCodeLine{859         \textcolor{keywordflow}{return} !(t\_a < t\_b);}
 \DoxyCodeLine{860     \}}
 \DoxyCodeLine{861 }
-\DoxyCodeLine{862     \textcolor{keywordtype}{bool} operator<(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{862     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_aa213333e85b44645d7422cbc7cdbfc83}{operator<}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{863     \{}
-\DoxyCodeLine{864         \textcolor{keywordtype}{int} n = length(t\_a), m = length(t\_b);}
+\DoxyCodeLine{864         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_a), m = \mbox{\hyperlink{namespaceutil_a92db35eba7932cba832238228cc87601}{length}}(t\_b);}
 \DoxyCodeLine{865         \textcolor{keywordflow}{if} (n != m)}
 \DoxyCodeLine{866         \{}
 \DoxyCodeLine{867             \textcolor{keywordflow}{return} n < m;}
@@ -563,12 +563,12 @@
 \DoxyCodeLine{878         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{879     \}}
 \DoxyCodeLine{880 }
-\DoxyCodeLine{881     \textcolor{keywordtype}{bool} operator<=(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{881     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutil_a0aaf757931cbe33de10b9a6403df8bcb}{operator<=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{882     \{}
 \DoxyCodeLine{883         \textcolor{keywordflow}{return} !(t\_a > t\_b);}
 \DoxyCodeLine{884     \}}
 \DoxyCodeLine{885 }
-\DoxyCodeLine{886     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} sqrt(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_n)}
+\DoxyCodeLine{886     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_aa9b1e5e8f8172d020c3d8b800dd01435}{sqrt}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_n)}
 \DoxyCodeLine{887     \{}
 \DoxyCodeLine{888         \mbox{\hyperlink{classutil_1_1ubint}{ubint}} left = 1, right = t\_n, v = 1, mid, prod;}
 \DoxyCodeLine{889         right >>= 1;}
@@ -596,27 +596,27 @@
 \DoxyCodeLine{911         \textcolor{keywordflow}{return} v;}
 \DoxyCodeLine{912     \}}
 \DoxyCodeLine{913 }
-\DoxyCodeLine{914     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{algo_8hpp_a53d58676f94050e59fb2808fef15d659}{min}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{914     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a53d58676f94050e59fb2808fef15d659}{min}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{915     \{}
 \DoxyCodeLine{916         \textcolor{keywordflow}{return} (t\_a < t\_b) ? t\_a : t\_b;}
 \DoxyCodeLine{917     \}}
 \DoxyCodeLine{918 }
-\DoxyCodeLine{919     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{algo_8hpp_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{max}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
+\DoxyCodeLine{919     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a6cd86e6329cc7fee23ecf5c5f8a3bee7}{max}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_a, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_b)}
 \DoxyCodeLine{920     \{}
 \DoxyCodeLine{921         \textcolor{keywordflow}{return} (t\_a > t\_b) ? t\_a : t\_b;}
 \DoxyCodeLine{922     \}}
 \DoxyCodeLine{923 }
-\DoxyCodeLine{924     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} factorial(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_n)}
+\DoxyCodeLine{924     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_a158efe3291328713351ec4c19d0ebeda}{factorial}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_n)}
 \DoxyCodeLine{925     \{}
 \DoxyCodeLine{926         \textcolor{keywordflow}{if} (t\_n == 1)}
 \DoxyCodeLine{927         \{}
 \DoxyCodeLine{928             \textcolor{keywordflow}{return} 1;}
 \DoxyCodeLine{929         \}}
 \DoxyCodeLine{930 }
-\DoxyCodeLine{931         \textcolor{keywordflow}{return} t\_n * factorial(t\_n -\/ 1);}
+\DoxyCodeLine{931         \textcolor{keywordflow}{return} t\_n * \mbox{\hyperlink{namespaceutil_a158efe3291328713351ec4c19d0ebeda}{factorial}}(t\_n -\/ 1);}
 \DoxyCodeLine{932     \}}
 \DoxyCodeLine{933 }
-\DoxyCodeLine{934     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} map(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x, }
+\DoxyCodeLine{934     \mbox{\hyperlink{classutil_1_1ubint}{ubint}} \mbox{\hyperlink{namespaceutil_af6344fdd284a35dba60b043b9b22ee4e}{map}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x, }
 \DoxyCodeLine{935         \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_orig\_lower,}
 \DoxyCodeLine{936         \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_orig\_upper,}
 \DoxyCodeLine{937         \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_dest\_lower,}
@@ -627,7 +627,7 @@
 \DoxyCodeLine{942              + t\_dest\_lower;}
 \DoxyCodeLine{943     \}}
 \DoxyCodeLine{944 }
-\DoxyCodeLine{945     std::ostream\& operator<<(std::ostream\& t\_out, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x)}
+\DoxyCodeLine{945     std::ostream\& \mbox{\hyperlink{namespaceutil_ac43231c61ec1cc4a58c9e3f27d406154}{operator<<}}(std::ostream\& t\_out, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x)}
 \DoxyCodeLine{946     \{}
 \DoxyCodeLine{947         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = t\_x.m\_digits.size() -\/ 1; i >= 0; i-\/-\/)}
 \DoxyCodeLine{948         \{}
@@ -637,7 +637,7 @@
 \DoxyCodeLine{952         \textcolor{keywordflow}{return} t\_out;}
 \DoxyCodeLine{953     \}}
 \DoxyCodeLine{954 }
-\DoxyCodeLine{955     std::istream\& operator>>(std::istream\& t\_in, \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x)}
+\DoxyCodeLine{955     std::istream\& \mbox{\hyperlink{namespaceutil_a4ec6c595870f26ca9d65399a251688b0}{operator>>}}(std::istream\& t\_in, \mbox{\hyperlink{classutil_1_1ubint}{ubint}}\& t\_x)}
 \DoxyCodeLine{956     \{}
 \DoxyCodeLine{957         std::string s;}
 \DoxyCodeLine{958         t\_in >> s;}

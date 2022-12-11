@@ -95,21 +95,30 @@ $(function() {
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>data()&#160;:&#160;<a class="el" href="classutil_1_1serializable__list.html#a496c8da115f26ba01892f25ae08fc104">util::serializable_list&lt; T &gt;</a></li>
 <li>deserialize()&#160;:&#160;<a class="el" href="classutil_1_1serializable.html#a37a3ac1b4126907bba6c6cd6d1539a03">util::serializable</a></li>
+<li>dispatch()&#160;:&#160;<a class="el" href="classutil_1_1event__dispatcher.html#acb8e902507c171fd6501b518a2648a71">util::event_dispatcher&lt; eventTypes &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
 <li>end()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a1f4b5f0af54a471ed4eb4280c3a0815e">util::bitstream</a></li>
-<li>endOutputColorRange()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#aadb0332ea0dc97a26cdda1f12c38afa2">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#a71f825d2dafe0d93e1b1dbb482b11fcb">util::logger_sink</a></li>
+<li>endOutputColorRange()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#aadb0332ea0dc97a26cdda1f12c38afa2">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__server__console__sink.html#a860f3be473f947012285173d3b0fca5e">util::logger_server_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#a71f825d2dafe0d93e1b1dbb482b11fcb">util::logger_sink</a></li>
+<li>event_dispatcher()&#160;:&#160;<a class="el" href="classutil_1_1event__dispatcher.html#a939e2abac7e3b4a5bf855bad85e6e453">util::event_dispatcher&lt; eventTypes &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a091db5b721fcec6378ca0010e4dcf913">util::bitstream</a></li>
+<li>getEventType()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aa3d5fbd5cf8a2e99ec143ded392a24c6">util::event&lt; eventTypes &gt;</a></li>
 <li>getFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a0bd9705e13323136ecd40e0cc58b81a6">util::logger_sink</a></li>
 <li>getLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">util::logger_sink</a></li>
+<li>getName()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aebd35a6fc8c83c164aaac575d44d68ca">util::event&lt; eventTypes &gt;</a></li>
 <li>getSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a0f67ce37c0447ed74344ab8f99eaccb6">util::logger</a></li>
 <li>getSinkLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#aac3a1ac294d395b3435370f6c74ec76e">util::logger</a></li>
+</ul>
+
+
+<h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>handled()&#160;:&#160;<a class="el" href="classutil_1_1event.html#a03c34f7a666a6a9b692e476c85b5f19b">util::event&lt; eventTypes &gt;</a></li>
 </ul>
 
 
@@ -144,16 +153,19 @@ $(function() {
 <li>operator--()&#160;:&#160;<a class="el" href="classutil_1_1ubint.html#ab181839b35a530c36ac91cd8b116ef32">util::ubint</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a8f26fea9d9cd5495e74ab3d9eff5fc15">util::bitstream</a>, <a class="el" href="classutil_1_1serializable__list.html#ae59802a2e070f7b7938f4ab40aa9241e">util::serializable_list&lt; T &gt;</a>, <a class="el" href="classutil_1_1serializable__string.html#acd1da8d96596c903258a8cabb2684469">util::serializable_string</a>, <a class="el" href="classutil_1_1ubint.html#aefe5c4419a72d0ee54b9833ec4ca326c">util::ubint</a></li>
 <li>operator[]()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a1225f2d7d7c3ec75945a9c4157615b66">util::bitstream</a>, <a class="el" href="classutil_1_1serializable__list.html#a377c8abf370f6ecf20ff4eaa71ddbdb8">util::serializable_list&lt; T &gt;</a>, <a class="el" href="classutil_1_1ubint.html#a5c20ded16dfebb95878e877a4e0cb56e">util::ubint</a></li>
-<li>output()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#accd5093f9f77692e37adad54f799ab52">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__file__sink.html#a7451d29dfbb631ff5348ec5f999d7c99">util::logger_file_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#a0aa7398005008588cd349d491af6c2e8">util::logger_sink</a></li>
+<li>output()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#accd5093f9f77692e37adad54f799ab52">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__file__sink.html#a7451d29dfbb631ff5348ec5f999d7c99">util::logger_file_sink</a>, <a class="el" href="classutil_1_1logger__server__console__sink.html#a7cfb6c72c05bc700f4e01e23b9e3c587">util::logger_server_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#a0aa7398005008588cd349d491af6c2e8">util::logger_sink</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>prepend()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a01eb371b0ed05612643554dae99198db">util::bitstream</a></li>
+<li>prng()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#ab116d7242835e17b7a06b6f7f698f63d">util::prng</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>randf()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#a27789e43f613b66d26711a2d77e20c5b">util::prng</a></li>
+<li>randi()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#ad6e5902d5c33b7b80b5813530383d54a">util::prng</a></li>
 <li>read()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae6b666587ccfe0a58d1f100ca65beb9c">util::bitstream</a>, <a class="el" href="classutil_1_1serializable.html#a926595a896c4039bf2c5bf01cac1b1bb">util::serializable</a>, <a class="el" href="classutil_1_1serializable__list.html#af6dad646c2632b2cbd2fd05d7c012e8d">util::serializable_list&lt; T &gt;</a>, <a class="el" href="classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c">util::serializable_string</a>, <a class="el" href="classutil_1_1ubint.html#a868db6b493fb643093ec9b807b4bea51">util::ubint</a></li>
 <li>removeSink()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a008fce4c0e4e773abd1b26b7ab3acb8a">util::logger</a></li>
 </ul>
@@ -168,7 +180,7 @@ $(function() {
 <li>setSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a7ecce168a7f7645c35518b9cccfbafe7">util::logger</a></li>
 <li>setSinkLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a5f04c91d35a96a83cd85897b9007442a">util::logger</a></li>
 <li>size()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae2dbde873c92a4ca61be88cb6e47e1c7">util::bitstream</a>, <a class="el" href="classutil_1_1serializable__list.html#adb6e806b17fa433913e0db3a79b8305c">util::serializable_list&lt; T &gt;</a></li>
-<li>startOutputColorRange()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217">util::logger_sink</a></li>
+<li>startOutputColorRange()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#ab11fd4d59f6e2e0269e1f50fb329613d">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__server__console__sink.html#ac502e1f5b94d6039648454a2ab5fec9b">util::logger_server_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#acc10ce58bbc2d981cd7b72a136cd6217">util::logger_sink</a></li>
 <li>string()&#160;:&#160;<a class="el" href="classutil_1_1serializable__string.html#a312f186d994efbeb2b18b99a689ace1c">util::serializable_string</a></li>
 </ul>
 
@@ -177,6 +189,7 @@ $(function() {
 <li>toAscci()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae594445ce9f80651ad2e2e8d7b6e66c0">util::bitstream</a></li>
 <li>toBinary()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a76ecc93df4c4f3fa69b45ab4255af7e7">util::bitstream</a></li>
 <li>toInt()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae6543e0ea41583118d0b37f56dfb6707">util::bitstream</a></li>
+<li>toString()&#160;:&#160;<a class="el" href="classutil_1_1event.html#ab044b1a2346b022526d9b7d14e24686f">util::event&lt; eventTypes &gt;</a></li>
 <li>toUbint()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#af76a9e5b2a4b1a6cb56da532a642af71">util::bitstream</a></li>
 </ul>
 

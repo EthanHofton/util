@@ -24,17 +24,17 @@ logger class. takes sinks to output structed messages too.
 \begin{DoxyCompactList}\small\item\em add a new output sink \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutil_1_1logger_a008fce4c0e4e773abd1b26b7ab3acb8a}{remove\+Sink}} (const std\+::string \&t\+\_\+index)
 \begin{DoxyCompactList}\small\item\em remove an output sink \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}{set\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level)
+void \mbox{\hyperlink{classutil_1_1logger_a5f04c91d35a96a83cd85897b9007442a}{set\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index, const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&t\+\_\+level)
 \begin{DoxyCompactList}\small\item\em Set the sinks log level. \end{DoxyCompactList}\item 
-LOGGER\+\_\+\+LEVEL \mbox{\hyperlink{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}{get\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index)
+\mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \mbox{\hyperlink{classutil_1_1logger_aac3a1ac294d395b3435370f6c74ec76e}{get\+Sink\+Log\+Level}} (const std\+::string \&t\+\_\+index)
 \begin{DoxyCompactList}\small\item\em Get a sinks log level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutil_1_1logger_a7ecce168a7f7645c35518b9cccfbafe7}{set\+Sink\+Format}} (const std\+::string \&t\+\_\+index, const std\+::string \&t\+\_\+format)
 \begin{DoxyCompactList}\small\item\em Set the sinks Format (see logger class breif) \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classutil_1_1logger_a0f67ce37c0447ed74344ab8f99eaccb6}{get\+Sink\+Format}} (const std\+::string \&t\+\_\+index)
 \begin{DoxyCompactList}\small\item\em Get the Sink Format string. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}} (const std\+::string \&t\+\_\+msg, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level, const std\+::string \&t\+\_\+sink)
+void \mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}} (const std\+::string \&t\+\_\+msg, const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&t\+\_\+level, const std\+::string \&t\+\_\+sink)
 \begin{DoxyCompactList}\small\item\em log a message to an output sink \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}{log}} (const std\+::string \&t\+\_\+msg, const LOGGER\+\_\+\+LEVEL \&t\+\_\+level)
+void \mbox{\hyperlink{classutil_1_1logger_a99ea66d6a877bb4e3a67b8405e185dc2}{log}} (const std\+::string \&t\+\_\+msg, const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&t\+\_\+level)
 \begin{DoxyCompactList}\small\item\em log a message to all output sinks \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutil_1_1logger_a0a8fc47d716b0f143f6868b6e18b9128}{log\+Trace}} (const std\+::string \&t\+\_\+fmt)
 \begin{DoxyCompactList}\small\item\em log a message at trace prioirty to all sinks \end{DoxyCompactList}\item 
@@ -182,7 +182,7 @@ std\+::string
 \index{util::logger@{util::logger}!getSinkLogLevel@{getSinkLogLevel}}
 \index{getSinkLogLevel@{getSinkLogLevel}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{getSinkLogLevel()}{getSinkLogLevel()}}
-{\footnotesize\ttfamily LOGGER\+\_\+\+LEVEL util\+::logger\+::get\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} util\+::logger\+::get\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -200,7 +200,7 @@ LOGGER\+\_\+\+LEVEL
 \index{util::logger@{util::logger}!log@{log}}
 \index{log@{log}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -217,7 +217,7 @@ log a message to all output sinks
 \index{util::logger@{util::logger}!log@{log}}
 \index{log@{log}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level,  }\item[{const std\+::string \&}]{t\+\_\+sink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void util\+::logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+msg,  }\item[{const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&}]{t\+\_\+level,  }\item[{const std\+::string \&}]{t\+\_\+sink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -751,7 +751,7 @@ Set the sinks Format (see logger class breif)
 \index{util::logger@{util::logger}!setSinkLogLevel@{setSinkLogLevel}}
 \index{setSinkLogLevel@{setSinkLogLevel}!util::logger@{util::logger}}
 \doxysubsubsection{\texorpdfstring{setSinkLogLevel()}{setSinkLogLevel()}}
-{\footnotesize\ttfamily void util\+::logger\+::set\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index,  }\item[{const LOGGER\+\_\+\+LEVEL \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void util\+::logger\+::set\+Sink\+Log\+Level (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+index,  }\item[{const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{LOGGER\+\_\+\+LEVEL}} \&}]{t\+\_\+level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

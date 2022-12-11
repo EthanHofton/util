@@ -7,7 +7,7 @@
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}serializable.hpp"{}}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
 \DoxyCodeLine{7 \{}
 \DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1serializable}{serializable}}}
 \DoxyCodeLine{12     \{}
@@ -52,37 +52,37 @@
 \DoxyCodeLine{135         std::string m\_data;}
 \DoxyCodeLine{136     \};}
 \DoxyCodeLine{137 }
-\DoxyCodeLine{145     std::ostream\& operator <<(std::ostream\& t\_out, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}}\& t\_s)}
+\DoxyCodeLine{145     std::ostream\& \mbox{\hyperlink{namespaceutil_ac43231c61ec1cc4a58c9e3f27d406154}{operator <<}}(std::ostream\& t\_out, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}}\& t\_s)}
 \DoxyCodeLine{146     \{}
 \DoxyCodeLine{147         t\_out << t\_s.m\_data;}
 \DoxyCodeLine{148         \textcolor{keywordflow}{return} t\_out;}
 \DoxyCodeLine{149     \}}
 \DoxyCodeLine{150 }
 \DoxyCodeLine{158     \textcolor{keyword}{template}<>}
-\DoxyCodeLine{159     \textcolor{keywordtype}{void} write<serializable\_string>(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}}\& t\_obj, std::ofstream \&t\_stream)}
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a46dadba835389861812aa4b76704e328}{write<serializable\_string>}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}}\& t\_obj, std::ofstream \&t\_stream)}
 \DoxyCodeLine{160     \{}
 \DoxyCodeLine{161         t\_obj.\mbox{\hyperlink{classutil_1_1serializable__string_ac05ed645c82c2ac5174b7dc31e6635a1}{write}}(t\_stream);}
 \DoxyCodeLine{162     \}}
 \DoxyCodeLine{163 }
 \DoxyCodeLine{171     \textcolor{keyword}{template}<>}
-\DoxyCodeLine{172     \textcolor{keywordtype}{void} read<serializable\_string>(serializable\_string* t\_obj, std::ifstream \&t\_stream)}
+\DoxyCodeLine{172     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a4969404889b6de418d4dd1c5d93bc486}{read<serializable\_string>}}(\mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}}* t\_obj, std::ifstream \&t\_stream)}
 \DoxyCodeLine{173     \{}
-\DoxyCodeLine{174         t\_obj-\/>read(t\_stream);}
+\DoxyCodeLine{174         t\_obj-\/>\mbox{\hyperlink{classutil_1_1serializable__string_ad7959d5dab6d3145033c955027a8c83c}{read}}(t\_stream);}
 \DoxyCodeLine{175     \}}
 \DoxyCodeLine{176 }
 \DoxyCodeLine{184     \textcolor{keyword}{template}<>}
-\DoxyCodeLine{185     \textcolor{keywordtype}{void} write<std::string>(\textcolor{keyword}{const} std::string\& t\_obj, std::ofstream \&t\_stream)}
+\DoxyCodeLine{185     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_aa7ddf1243cb693d18770279aeb68ebc0}{write<std::string>}}(\textcolor{keyword}{const} std::string\& t\_obj, std::ofstream \&t\_stream)}
 \DoxyCodeLine{186     \{}
-\DoxyCodeLine{187         serializable\_string s = t\_obj;}
-\DoxyCodeLine{188         s.write(t\_stream);}
+\DoxyCodeLine{187         \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}} s = t\_obj;}
+\DoxyCodeLine{188         s.\mbox{\hyperlink{classutil_1_1serializable__string_ac05ed645c82c2ac5174b7dc31e6635a1}{write}}(t\_stream);}
 \DoxyCodeLine{189     \}}
 \DoxyCodeLine{190 }
 \DoxyCodeLine{198     \textcolor{keyword}{template}<>}
-\DoxyCodeLine{199     \textcolor{keywordtype}{void} read<std::string>(std::string* t\_obj, std::ifstream \&t\_stream)}
+\DoxyCodeLine{199     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_ab7f799f39642c88a4db1db43317b3968}{read<std::string>}}(std::string* t\_obj, std::ifstream \&t\_stream)}
 \DoxyCodeLine{200     \{}
-\DoxyCodeLine{201         serializable\_string s;}
-\DoxyCodeLine{202         s.read(t\_stream);}
-\DoxyCodeLine{203         *t\_obj = s.string();}
+\DoxyCodeLine{201         \mbox{\hyperlink{classutil_1_1serializable__string}{serializable\_string}} s;}
+\DoxyCodeLine{202         s.\mbox{\hyperlink{classutil_1_1serializable__string_ad7959d5dab6d3145033c955027a8c83c}{read}}(t\_stream);}
+\DoxyCodeLine{203         *t\_obj = s.\mbox{\hyperlink{classutil_1_1serializable__string_a312f186d994efbeb2b18b99a689ace1c}{string}}();}
 \DoxyCodeLine{204     \}}
 \DoxyCodeLine{205 \}}
 \DoxyCodeLine{206 }

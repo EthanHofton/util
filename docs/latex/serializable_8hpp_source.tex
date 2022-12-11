@@ -9,7 +9,7 @@
 \DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iterator>}}
 \DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
 \DoxyCodeLine{9 \{}
 \DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1serializable}{serializable}}}
 \DoxyCodeLine{14     \{}
@@ -47,13 +47,13 @@
 \DoxyCodeLine{67     }
 \DoxyCodeLine{68 }
 \DoxyCodeLine{76     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{77     \textcolor{keywordtype}{void} write(\textcolor{keyword}{const} T\& t\_obj, std::ofstream \&t\_stream)}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a71f52c848a2e0c9e933a9999c8d45ca5}{write}}(\textcolor{keyword}{const} T\& t\_obj, std::ofstream \&t\_stream)}
 \DoxyCodeLine{78     \{}
 \DoxyCodeLine{79         t\_stream.write(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&t\_obj), \textcolor{keyword}{sizeof}(T));}
 \DoxyCodeLine{80     \}}
 \DoxyCodeLine{81 }
 \DoxyCodeLine{89     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{90     \textcolor{keywordtype}{void} read(T* t\_obj, std::ifstream \&t\_stream)}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a7aee44c41e1debedff55660e1c53f50b}{read}}(T* t\_obj, std::ifstream \&t\_stream)}
 \DoxyCodeLine{91     \{}
 \DoxyCodeLine{92         t\_stream.read(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(t\_obj), \textcolor{keyword}{sizeof}(T));}
 \DoxyCodeLine{93     \}}
