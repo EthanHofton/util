@@ -39,6 +39,10 @@ enum class SERVER_EVENTS {
     // * logger events
     before_log,
     after_log,
+
+    // * startup and shutdown events
+    server_startup,
+    server_shutdown,
 };
 
 class server_before_log_event : public util::event<SERVER_EVENTS> {
@@ -147,6 +151,45 @@ private:
     int m_clientBuffSize;
 };
 
+class server_startup_event : public util::event<SERVER_EVENTS> {
+
+public:
+
+    server_startup_event(const int& t_serverFd, const int& t_port, const SERVER_METHOD& t_method) :
+        m_serverFd(t_serverFd), m_port(t_port), m_serverMethod(t_method) {}
+
+    int getServerFd() const { return m_serverFd; }
+    int getPort() const { return m_port; }
+    SERVER_METHOD getServerMethod() const { return m_serverMethod; }
+
+    EVENT_CLASS_TYPE(SERVER_EVENTS, server_startup)
+
+private:
+
+    int m_serverFd;
+    int m_port;
+    SERVER_METHOD m_serverMethod;
+};
+
+class server_shutdown_event : public util::event<SERVER_EVENTS> {
+
+public:
+
+    server_shutdown_event(const int& t_serverFd, const int& t_port, std::map<std::string, int> t_clientMap) : m_serverFd(t_serverFd), m_port(t_port), m_clientMap(t_clientMap) {}
+
+    int getServerFd() const { return m_serverFd; }
+    int getPort() const { return m_port; }
+    std::map<std::string, int> getClientMap() const { return m_clientMap; }
+
+    EVENT_CLASS_TYPE(SERVER_EVENTS, server_shutdown);
+
+private:
+
+    int m_serverFd;
+    int m_port;
+    std::map<std::string, int> m_clientMap;
+};
+
 class server {
 
     // * the event function that will be called to run events
@@ -204,39 +247,33 @@ public:
         // * log the the server was properly initalized
         logMessage(util::LOGGER_LEVEL::INFO, util::fmt("initalized server on port {}", m_port));
 
+        // * create a server startup event and dispactch
+        server_startup_event startupEv(m_serverFd, m_port, m_serverMethod);
+        m_eventFunction(startupEv);
+
         // * set the listening flag
         m_listening = true;
         m_listenThread = std::async(std::launch::async, &server::serverListen, this);
     }
 
-    /*
-    * TODO
-    */
     void sendClient(const std::string& t_clientId, const std::string& t_message) {
         handleSend(t_clientId, t_message.c_str(), strlen(t_message.c_str()));
     }
 
-    /*
-    * TODO
-    */
     void sendClient(const std::string& t_clientId, char* t_buff, const size_t& t_buffSize) {
-
+        handleSend(t_clientId, t_buff, t_buffSize);
     }
 
-    /*
-    * TODO
-    */
     void sendAllClients(const std::string& t_message) {
         for (auto &clientConn : m_clientMap) {
             sendClient(clientConn.first, t_message);
         }
     }
 
-    /*
-    * TODO
-    */
     void sendAllClients(char* t_buff, const size_t& t_buffSize) {
-
+        for (auto &clientConn : m_clientMap) {
+            sendClient(clientConn.first, t_buff, t_buffSize);
+        }
     }
 
     ~server() {
@@ -244,6 +281,10 @@ public:
         // * unset the listening flag and wait for listneing thread to join
         m_listening = false;
         m_listenThread.wait();
+
+        // * server shutdown event and dispatch
+        server_shutdown_event shutdownEv(m_serverFd, m_port, m_clientMap);
+        m_eventFunction(shutdownEv);
 
         // * close all outgoing server connections
         std::vector<std::string> clientsToDisconnect;
@@ -263,9 +304,6 @@ public:
 
 private:
 
-    /**
-    * TODO
-    */
     void handleSend(const std::string& t_clientId, const char* t_data, const size_t& t_dataSize) {
         // * declare vars needed for rest of func
         int clientFd = m_clientMap[t_clientId];
