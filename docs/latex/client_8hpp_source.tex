@@ -1,0 +1,301 @@
+\hypertarget{client_8hpp_source}{}\doxysection{client.\+hpp}
+\label{client_8hpp_source}\index{src/client.hpp@{src/client.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTIL\_CLIENT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTIL\_CLIENT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <future>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <event.hpp>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <logger.hpp>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <arpa/inet.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }util \{}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{21 \textcolor{keyword}{enum class} CLIENT\_EVENTS \{}
+\DoxyCodeLine{22     \textcolor{comment}{// * logging events}}
+\DoxyCodeLine{23     before\_log,}
+\DoxyCodeLine{24     after\_log,}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// * connect events}}
+\DoxyCodeLine{27     server\_connected,}
+\DoxyCodeLine{28     server\_disconccected,}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{// * send/recv events}}
+\DoxyCodeLine{31     client\_send,}
+\DoxyCodeLine{32     client\_receve,}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{// * intialzieation/shutdown events}}
+\DoxyCodeLine{35     client\_finished\_listen,}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__before__log__event}{client\_before\_log\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, before\_log);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__after__log__event}{client\_after\_log\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, after\_log);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__finished__listen__event}{client\_finished\_listen\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{53 \textcolor{keyword}{public}:}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, client\_finished\_listen);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__connect__event}{client\_connect\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{60 \textcolor{keyword}{public}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, server\_connected);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__disconnect__event}{client\_disconnect\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, server\_disconccected);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__send__event}{client\_send\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{74 \textcolor{keyword}{public}:}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, client\_send);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client__receve__event}{client\_receve\_event}} : \textcolor{keyword}{public} \mbox{\hyperlink{classutil_1_1event}{util::event}}<CLIENT\_EVENTS> \{}
+\DoxyCodeLine{81 \textcolor{keyword}{public}:}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     EVENT\_CLASS\_TYPE(CLIENT\_EVENTS, client\_receve);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1client}{client}} \{}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keyword}{using }eventFn = std::function<void(\mbox{\hyperlink{classutil_1_1event}{util::event<CLIENT\_EVENTS>}}\&)>;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keyword}{public}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \mbox{\hyperlink{classutil_1_1client}{client}}(\textcolor{keyword}{const} std::string\& t\_ip, \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& t\_port, eventFn t\_eventFn, \mbox{\hyperlink{classutil_1_1logger}{util::logger}}\& t\_logger) : m\_ip(t\_ip), m\_port(t\_port), m\_logger(t\_logger), m\_eventFunction(t\_eventFn) \{}
+\DoxyCodeLine{94         m\_alive = \textcolor{keyword}{false};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{comment}{// * create server socket and check for error}}
+\DoxyCodeLine{97         \textcolor{keywordflow}{if} ((m\_serverFd = socket(AF\_INET, SOCK\_STREAM, 0)) < 0) \{}
+\DoxyCodeLine{98             logMessage(util::LOGGER\_LEVEL::CRITICAL, \textcolor{stringliteral}{"{}failed to create server socket"{}});}
+\DoxyCodeLine{99             logMessage(util::LOGGER\_LEVEL::ERROR, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}socket error: \{\}"{}}, strerror(errno)));}
+\DoxyCodeLine{100             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}failed to create server socket"{}});}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102         m\_closed = \textcolor{keyword}{false};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \textcolor{comment}{// * define server port and address}}
+\DoxyCodeLine{105         sockaddr\_in serveraddr;}
+\DoxyCodeLine{106         serveraddr.sin\_port = htons(m\_port);}
+\DoxyCodeLine{107         serveraddr.sin\_family = AF\_INET;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{comment}{// * conver IPv4 to IPv6 and set in sockaddr\_in struct and check for error}}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} (inet\_pton(AF\_INET, m\_ip.c\_str(), \&serveraddr.sin\_addr) <= 0) \{}
+\DoxyCodeLine{111             logMessage(util::LOGGER\_LEVEL::CRITICAL, \textcolor{stringliteral}{"{}server IP address not valid"{}});}
+\DoxyCodeLine{112             logMessage(util::LOGGER\_LEVEL::ERROR, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}inet\_pron error: \{\}"{}}, strerror(errno)));}
+\DoxyCodeLine{113             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}server IP address not valid"{}});}
+\DoxyCodeLine{114         \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         \textcolor{comment}{// * log that the clinet is about to connect to server}}
+\DoxyCodeLine{117         logMessage(util::LOGGER\_LEVEL::INFO, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}connecting to server at ip \{\} on port \{\}"{}}, m\_ip, m\_port));}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119         \textcolor{comment}{// * connect to server}}
+\DoxyCodeLine{120         \textcolor{keywordflow}{if} ((m\_clientFd = connect(m\_serverFd, (sockaddr*)\&serveraddr, \textcolor{keyword}{sizeof}(serveraddr))) < 0) \{}
+\DoxyCodeLine{121             logMessage(util::LOGGER\_LEVEL::CRITICAL, \textcolor{stringliteral}{"{}failed to connect to server"{}});}
+\DoxyCodeLine{122             logMessage(util::LOGGER\_LEVEL::ERROR, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}connect error: \{\}"{}}, strerror(errno)));}
+\DoxyCodeLine{123             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}failed to connect to server"{}});}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \textcolor{comment}{// * server connected evnet and dispatch}}
+\DoxyCodeLine{127         \mbox{\hyperlink{classutil_1_1client__connect__event}{client\_connect\_event}} connEv;}
+\DoxyCodeLine{128         m\_eventFunction(connEv);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{comment}{// * log client is connected}}
+\DoxyCodeLine{131         logMessage(util::LOGGER\_LEVEL::INFO, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}connected to server at ip \{\} on port \{\}"{}}, m\_ip, m\_port));}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \textcolor{comment}{// * set active to true as server is initalized and launch the listen thread}}
+\DoxyCodeLine{134         logMessage(util::LOGGER\_LEVEL::INFO, \textcolor{stringliteral}{"{}starting client listen thread..."{}});}
+\DoxyCodeLine{135         m\_alive = \textcolor{keyword}{true};}
+\DoxyCodeLine{136         m\_clientThread = std::async(std::launch::async, \&client::clientListen, \textcolor{keyword}{this});}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} disconnect() \{}
+\DoxyCodeLine{140         handleDisconnect();}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} sendServer(\textcolor{keyword}{const} std::string\& t\_message) \{}
+\DoxyCodeLine{144         handleSend(t\_message.c\_str(), strlen(t\_message.c\_str()));}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} sendServer(\textcolor{keywordtype}{char}* t\_buff, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t}\& t\_buffSize) \{}
+\DoxyCodeLine{148         handleSend(t\_buff, t\_buffSize);}
+\DoxyCodeLine{149     \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \mbox{\hyperlink{classutil_1_1client}{\string~client}}() \{}
+\DoxyCodeLine{152         handleDisconnect();}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keywordtype}{bool} alive()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_alive; \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{private}:}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keywordtype}{void} handleSend(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* t\_data, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t}\& t\_dataSize) \{}
+\DoxyCodeLine{160         \textcolor{comment}{// * get message in human readable format to log}}
+\DoxyCodeLine{161         std::string message(t\_data, t\_dataSize);}
+\DoxyCodeLine{162         \textcolor{comment}{// * remove newline to not mess up terminal output}}
+\DoxyCodeLine{163         message.erase(std::remove(message.begin(), message.end(), \textcolor{charliteral}{'\(\backslash\)n'}), message.cend());}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \textcolor{comment}{// * log the message was sent}}
+\DoxyCodeLine{166         logMessage(util::LOGGER\_LEVEL::INFO, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}sending server (ip \{\}, port \{\}) data: \{\}"{}}, m\_ip, m\_port, message));}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168         \textcolor{comment}{// * create send message event and dispatch to event function}}
+\DoxyCodeLine{169         \mbox{\hyperlink{classutil_1_1client__send__event}{client\_send\_event}} sendEv;}
+\DoxyCodeLine{170         m\_eventFunction(sendEv);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \textcolor{comment}{// * send the bytes to the client}}
+\DoxyCodeLine{173         send(m\_serverFd, (\textcolor{keywordtype}{void}*)t\_data, t\_dataSize, 0);}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{keywordtype}{void} clientListen() \{}
+\DoxyCodeLine{178         logMessage(util::LOGGER\_LEVEL::INFO, \textcolor{stringliteral}{"{}client listining for activity"{}});}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180         \textcolor{comment}{// * setup file discriptor set and timeout}}
+\DoxyCodeLine{181         fd\_set readfds;}
+\DoxyCodeLine{182         timeval tv;}
+\DoxyCodeLine{183         tv.tv\_sec = 3;}
+\DoxyCodeLine{184         tv.tv\_usec = 50;}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186         \textcolor{keywordflow}{while} (m\_alive) \{}
+\DoxyCodeLine{187             \textcolor{comment}{// * clear the file discriptor set}}
+\DoxyCodeLine{188             FD\_ZERO(\&readfds);}
+\DoxyCodeLine{189             \textcolor{comment}{// * add the server socket to the file discriptor set}}
+\DoxyCodeLine{190             FD\_SET(m\_serverFd, \&readfds);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192             \textcolor{comment}{// * get the activity of the set}}
+\DoxyCodeLine{193             \textcolor{keywordtype}{int} activity = select(m\_serverFd + 1, \&readfds, NULL, NULL, \&tv);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195             \textcolor{comment}{// * negative activity means error, deal with accordingly}}
+\DoxyCodeLine{196             \textcolor{keywordflow}{if} (activity < 0) \{}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198             \}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200             \textcolor{comment}{// * zero activity means timeout (or no activity)}}
+\DoxyCodeLine{201             \textcolor{keywordflow}{if} (activity == 0) \{}
+\DoxyCodeLine{202                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{203             \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205             \textcolor{comment}{// * check for activity of the socket}}
+\DoxyCodeLine{206             \textcolor{keywordflow}{if} (FD\_ISSET(m\_serverFd, \&readfds)) \{}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{if} (handleServerActivity()) \{}
+\DoxyCodeLine{208                     m\_alive = \textcolor{keyword}{false};}
+\DoxyCodeLine{209                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{210                 \}}
+\DoxyCodeLine{211             \}}
+\DoxyCodeLine{212         \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214         \mbox{\hyperlink{classutil_1_1client__finished__listen__event}{client\_finished\_listen\_event}} finishedListenEv;}
+\DoxyCodeLine{215         m\_eventFunction(finishedListenEv);}
+\DoxyCodeLine{216         logMessage(util::LOGGER\_LEVEL::INFO, \textcolor{stringliteral}{"{}client stopped listinig for activity"{}});}
+\DoxyCodeLine{217     \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219     \textcolor{keywordtype}{bool} handleServerActivity() \{}
+\DoxyCodeLine{220         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} bufSize = 1024;}
+\DoxyCodeLine{221         \textcolor{keywordtype}{char} buf[bufSize];}
+\DoxyCodeLine{222         \textcolor{keywordtype}{size\_t} size;}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224         \textcolor{keywordflow}{if} ((size = read(m\_serverFd, buf, bufSize)) == 0) \{}
+\DoxyCodeLine{225             \textcolor{comment}{// * server disconnected}}
+\DoxyCodeLine{226             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229         handleRead(buf, size);}
+\DoxyCodeLine{230         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{231     \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     \textcolor{keywordtype}{void} handleRead(\textcolor{keywordtype}{char} *t\_buf, \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t}\& t\_size) \{}
+\DoxyCodeLine{234         \textcolor{comment}{// * conver the buffer to a string}}
+\DoxyCodeLine{235         std::string message(t\_buf, t\_size);}
+\DoxyCodeLine{236         \textcolor{comment}{// * remove newline to not mess up terminal output}}
+\DoxyCodeLine{237         message.erase(std::remove(message.begin(), message.end(), \textcolor{charliteral}{'\(\backslash\)n'}), message.cend());}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239         \textcolor{comment}{// * log read}}
+\DoxyCodeLine{240         logMessage(util::LOGGER\_LEVEL::INFO, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}server (ip \{\}, port \{\}) sent: \{\}"{}}, m\_ip, m\_port, message));}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242         \textcolor{comment}{// * create and dispatch read event}}
+\DoxyCodeLine{243         \mbox{\hyperlink{classutil_1_1client__receve__event}{client\_receve\_event}} readEv; }
+\DoxyCodeLine{244         m\_eventFunction(readEv);}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{keywordtype}{void} logMessage(\textcolor{keyword}{const} util::LOGGER\_LEVEL\& t\_level, \textcolor{keyword}{const} std::string\& t\_message)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{249         \textcolor{comment}{// * creater the before log event and send it to the event function}}
+\DoxyCodeLine{250         \mbox{\hyperlink{classutil_1_1client__before__log__event}{client\_before\_log\_event}} beforeLog;}
+\DoxyCodeLine{251         m\_eventFunction(beforeLog);}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253         \textcolor{comment}{// * log the message to ALL sinks}}
+\DoxyCodeLine{254         m\_logger.\mbox{\hyperlink{classutil_1_1logger_a33f5598c0bdda53f2736eeec95eaeff0}{log}}(t\_message, t\_level);}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256         \textcolor{comment}{// * create the after log event and send it to the event function}}
+\DoxyCodeLine{257         \mbox{\hyperlink{classutil_1_1client__after__log__event}{client\_after\_log\_event}} afterLog;}
+\DoxyCodeLine{258         m\_eventFunction(afterLog);}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \textcolor{keywordtype}{void} handleDisconnect() \{}
+\DoxyCodeLine{262         \textcolor{keyword}{using namespace }std::chrono\_literals;}
+\DoxyCodeLine{263         \textcolor{keywordflow}{if} (m\_clientThread.wait\_for(0ms) != std::future\_status::ready) \{}
+\DoxyCodeLine{264             logMessage(util::LOGGER\_LEVEL::INFO, \textcolor{stringliteral}{"{}stopping client listen thread..."{}});}
+\DoxyCodeLine{265             \textcolor{comment}{// * set active to false and wait for listen thread to join back}}
+\DoxyCodeLine{266             m\_alive = \textcolor{keyword}{false};}
+\DoxyCodeLine{267             m\_clientThread.wait();}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270         \textcolor{keywordflow}{if} (!m\_closed) \{}
+\DoxyCodeLine{271             \textcolor{comment}{// * log client disconnect}}
+\DoxyCodeLine{272             logMessage(util::LOGGER\_LEVEL::INFO, \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util::fmt}}(\textcolor{stringliteral}{"{}client disconnecting from server at ip \{\} on port \{\}"{}}, m\_ip, m\_port));}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274             \textcolor{comment}{// * close the client server connection}}
+\DoxyCodeLine{275             close(m\_serverFd);}
+\DoxyCodeLine{276             m\_closed = \textcolor{keyword}{true};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278             \textcolor{comment}{// * client shutdown and dispach event}}
+\DoxyCodeLine{279             \mbox{\hyperlink{classutil_1_1client__disconnect__event}{client\_disconnect\_event}} disconEv;}
+\DoxyCodeLine{280             m\_eventFunction(disconEv);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282             logMessage(util::LOGGER\_LEVEL::INFO, \textcolor{stringliteral}{"{}client shutdown"{}});}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284     \}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286     \textcolor{keywordtype}{int} m\_serverFd, m\_clientFd;}
+\DoxyCodeLine{287     \textcolor{keywordtype}{int} m\_port;}
+\DoxyCodeLine{288     std::string m\_ip;}
+\DoxyCodeLine{289     \mbox{\hyperlink{classutil_1_1logger}{util::logger}}\& m\_logger;}
+\DoxyCodeLine{290     eventFn m\_eventFunction;}
+\DoxyCodeLine{291     \textcolor{keywordtype}{bool} m\_alive;}
+\DoxyCodeLine{292     std::future<void> m\_clientThread;}
+\DoxyCodeLine{293     std::future<void> m\_shutdownThread;}
+\DoxyCodeLine{294     \textcolor{keywordtype}{bool} m\_closed;}
+\DoxyCodeLine{295 \};}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
