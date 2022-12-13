@@ -80,28 +80,209 @@ $(function() {
   <div class="headertitle"><div class="title">util::client Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>client class. uses RIAA. when the client is created, it connects to the server and starts the listen thread. when it is deleted it disconnects and distroies the socket. However, the reconnect and disconnect will allow to do this early (the methods have been set up so that if disconnect/reconnect is called twice, it is ignored)  
+ <a href="classutil_1_1client.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="client_8hpp_source.html">client.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab772bf2734cc18ec34f8ac6d963c8026"><td class="memItemLeft" align="right" valign="top"><a id="ab772bf2734cc18ec34f8ac6d963c8026" name="ab772bf2734cc18ec34f8ac6d963c8026"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>client</b> (const std::string &amp;t_ip, const int &amp;t_port, eventFn t_eventFn, <a class="el" href="classutil_1_1logger.html">util::logger</a> &amp;t_logger)</td></tr>
+<tr class="memitem:ab772bf2734cc18ec34f8ac6d963c8026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1client.html#ab772bf2734cc18ec34f8ac6d963c8026">client</a> (const std::string &amp;t_ip, const int &amp;t_port, eventFn t_eventFn, <a class="el" href="classutil_1_1logger.html">util::logger</a> &amp;t_logger)</td></tr>
+<tr class="memdesc:ab772bf2734cc18ec34f8ac6d963c8026"><td class="mdescLeft">&#160;</td><td class="mdescRight">client constructor. whenn the consturcor is called, it connects to the server, and starts the listen thread  <a href="classutil_1_1client.html#ab772bf2734cc18ec34f8ac6d963c8026">More...</a><br /></td></tr>
 <tr class="separator:ab772bf2734cc18ec34f8ac6d963c8026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a1fcf3809c8462d3e63fd388c355e1"><td class="memItemLeft" align="right" valign="top"><a id="ae1a1fcf3809c8462d3e63fd388c355e1" name="ae1a1fcf3809c8462d3e63fd388c355e1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>disconnect</b> ()</td></tr>
+<tr class="memdesc:ae1a1fcf3809c8462d3e63fd388c355e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">disconnect from the server. can be called more then once. If allready disconnected, the function will do nothing. <br /></td></tr>
 <tr class="separator:ae1a1fcf3809c8462d3e63fd388c355e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcbfa3a2987178209b593c2a54a77650"><td class="memItemLeft" align="right" valign="top"><a id="abcbfa3a2987178209b593c2a54a77650" name="abcbfa3a2987178209b593c2a54a77650"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reconnect</b> ()</td></tr>
+<tr class="memdesc:abcbfa3a2987178209b593c2a54a77650"><td class="mdescLeft">&#160;</td><td class="mdescRight">reconnect to the server. If client is allready connected, the function will do nothing <br /></td></tr>
 <tr class="separator:abcbfa3a2987178209b593c2a54a77650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43c59f7b85b838518baec03d085be0c0"><td class="memItemLeft" align="right" valign="top"><a id="a43c59f7b85b838518baec03d085be0c0" name="a43c59f7b85b838518baec03d085be0c0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendServer</b> (const std::string &amp;t_message)</td></tr>
+<tr class="memitem:a43c59f7b85b838518baec03d085be0c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1client.html#a43c59f7b85b838518baec03d085be0c0">sendServer</a> (const std::string &amp;t_message)</td></tr>
+<tr class="memdesc:a43c59f7b85b838518baec03d085be0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">send the server a (string) message  <a href="classutil_1_1client.html#a43c59f7b85b838518baec03d085be0c0">More...</a><br /></td></tr>
 <tr class="separator:a43c59f7b85b838518baec03d085be0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36124d3cb0e215f517db904f4bdf9660"><td class="memItemLeft" align="right" valign="top"><a id="a36124d3cb0e215f517db904f4bdf9660" name="a36124d3cb0e215f517db904f4bdf9660"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendServer</b> (char *t_buff, const size_t &amp;t_buffSize)</td></tr>
+<tr class="memitem:a36124d3cb0e215f517db904f4bdf9660"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1client.html#a36124d3cb0e215f517db904f4bdf9660">sendServer</a> (char *t_buff, const size_t &amp;t_buffSize)</td></tr>
+<tr class="memdesc:a36124d3cb0e215f517db904f4bdf9660"><td class="mdescLeft">&#160;</td><td class="mdescRight">send the server a message  <a href="classutil_1_1client.html#a36124d3cb0e215f517db904f4bdf9660">More...</a><br /></td></tr>
 <tr class="separator:a36124d3cb0e215f517db904f4bdf9660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a897b797bc56f54f0a24209d112c996a5"><td class="memItemLeft" align="right" valign="top"><a id="a897b797bc56f54f0a24209d112c996a5" name="a897b797bc56f54f0a24209d112c996a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>alive</b> () const</td></tr>
+<tr class="memitem:a4a22e42b9437ba83b152f5ef7fd3f976"><td class="memItemLeft" align="right" valign="top"><a id="a4a22e42b9437ba83b152f5ef7fd3f976" name="a4a22e42b9437ba83b152f5ef7fd3f976"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~client</b> ()</td></tr>
+<tr class="memdesc:a4a22e42b9437ba83b152f5ef7fd3f976"><td class="mdescLeft">&#160;</td><td class="mdescRight">client destructor. disconnects from the server. If allready disconnected, will do nothing <br /></td></tr>
+<tr class="separator:a4a22e42b9437ba83b152f5ef7fd3f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897b797bc56f54f0a24209d112c996a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1client.html#a897b797bc56f54f0a24209d112c996a5">alive</a> () const</td></tr>
+<tr class="memdesc:a897b797bc56f54f0a24209d112c996a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">alive getter. will return true if the client is currently listening  <a href="classutil_1_1client.html#a897b797bc56f54f0a24209d112c996a5">More...</a><br /></td></tr>
 <tr class="separator:a897b797bc56f54f0a24209d112c996a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >client class. uses RIAA. when the client is created, it connects to the server and starts the listen thread. when it is deleted it disconnects and distroies the socket. However, the reconnect and disconnect will allow to do this early (the methods have been set up so that if disconnect/reconnect is called twice, it is ignored) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab772bf2734cc18ec34f8ac6d963c8026" name="ab772bf2734cc18ec34f8ac6d963c8026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab772bf2734cc18ec34f8ac6d963c8026">&#9670;&#160;</a></span>client()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">util::client::client </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>t_ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>t_port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">eventFn&#160;</td>
+          <td class="paramname"><em>t_eventFn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutil_1_1logger.html">util::logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_logger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>client constructor. whenn the consturcor is called, it connects to the server, and starts the listen thread </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_ip</td><td>the IP of the server </td></tr>
+    <tr><td class="paramname">t_port</td><td>the listen port of the server </td></tr>
+    <tr><td class="paramname">t_eventFn</td><td>the event function to use </td></tr>
+    <tr><td class="paramname">t_logger</td><td>the logger to use (PRE-INITALIZED) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a897b797bc56f54f0a24209d112c996a5" name="a897b797bc56f54f0a24209d112c996a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897b797bc56f54f0a24209d112c996a5">&#9670;&#160;</a></span>alive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool util::client::alive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>alive getter. will return true if the client is currently listening </p>
+<dl class="section return"><dt>Returns</dt><dd>if the server is alive or not </dd></dl>
+
+</div>
+</div>
+<a id="a36124d3cb0e215f517db904f4bdf9660" name="a36124d3cb0e215f517db904f4bdf9660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36124d3cb0e215f517db904f4bdf9660">&#9670;&#160;</a></span>sendServer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util::client::sendServer </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>t_buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>t_buffSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>send the server a message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_buff</td><td>the bytes to send </td></tr>
+    <tr><td class="paramname">t_buffSize</td><td>the size of the message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43c59f7b85b838518baec03d085be0c0" name="a43c59f7b85b838518baec03d085be0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c59f7b85b838518baec03d085be0c0">&#9670;&#160;</a></span>sendServer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void util::client::sendServer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>t_message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>send the server a (string) message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_message</td><td>the message to send </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="client_8hpp_source.html">client.hpp</a></li>
 </ul>

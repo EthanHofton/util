@@ -1,5 +1,14 @@
 \hypertarget{classutil_1_1client__communication__event}{}\doxysection{util\+::client\+\_\+communication\+\_\+event Class Reference}
 \label{classutil_1_1client__communication__event}\index{util::client\_communication\_event@{util::client\_communication\_event}}
+
+
+client communication evnet. is used to generalize events that involve comunnivation (e.\+g send, recv)  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
 Inheritance diagram for util\+::client\+\_\+communication\+\_\+event\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,19 +18,96 @@ Inheritance diagram for util\+::client\+\_\+communication\+\_\+event\+:\begin{fi
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classutil_1_1client__communication__event_a0ba92b360e279581098a894dcfea01d1}{client\+\_\+communication\+\_\+event}} (const int \&t\+\_\+server\+Fd, const char $\ast$t\+\_\+data, const size\+\_\+t \&t\+\_\+data\+Size)
+\begin{DoxyCompactList}\small\item\em client communication event constructor. copied the data buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client__communication__event_a17f3272c9ccefcf339de24541fb5940d}\label{classutil_1_1client__communication__event_a17f3272c9ccefcf339de24541fb5940d}} 
+{\bfseries $\sim$client\+\_\+communication\+\_\+event} ()
+\begin{DoxyCompactList}\small\item\em client comminication event disctrictor, free the memory that was created \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1client__communication__event_a8777a2fb5e589ae4363390d1e62e7771}{get\+Data\+As\+String}} () const
+\begin{DoxyCompactList}\small\item\em return the data buffer as a string \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classutil_1_1client__communication__event_a7067dfdd119f5d40bf643c8027da7c5c}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get the data as a cosnt char $\ast$ \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classutil_1_1client__communication__event_aef9be1d738c91ab5c86a1e56e68b5f57}{get\+Data\+Size}} () const
+\begin{DoxyCompactList}\small\item\em get the size of the data buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1client__communication__event_a4865d7c865173cc11d8720e8fb2d9a2c}\label{classutil_1_1client__communication__event_a4865d7c865173cc11d8720e8fb2d9a2c}} 
+int {\bfseries m\+\_\+server\+Fd}
+\begin{DoxyCompactList}\small\item\em the server file discriptor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client__communication__event_a61c33e5507dbfa83c74f9f2d85e0ec6c}\label{classutil_1_1client__communication__event_a61c33e5507dbfa83c74f9f2d85e0ec6c}} 
+char $\ast$ {\bfseries m\+\_\+data}
+\begin{DoxyCompactList}\small\item\em the data that was comminicated \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client__communication__event_aeda1cc1506faa14851ff979f51000669}\label{classutil_1_1client__communication__event_aeda1cc1506faa14851ff979f51000669}} 
+size\+\_\+t {\bfseries m\+\_\+data\+Size}
+\begin{DoxyCompactList}\small\item\em the size of the data buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+client communication evnet. is used to generalize events that involve comunnivation (e.\+g send, recv) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classutil_1_1client__communication__event_a0ba92b360e279581098a894dcfea01d1}\label{classutil_1_1client__communication__event_a0ba92b360e279581098a894dcfea01d1}} 
-{\bfseries client\+\_\+communication\+\_\+event} (const int \&t\+\_\+server\+Fd, const char $\ast$t\+\_\+data, const size\+\_\+t \&t\+\_\+data\+Size)
-\item 
-\mbox{\Hypertarget{classutil_1_1client__communication__event_a8777a2fb5e589ae4363390d1e62e7771}\label{classutil_1_1client__communication__event_a8777a2fb5e589ae4363390d1e62e7771}} 
-std\+::string {\bfseries get\+Data\+As\+String} () const
-\item 
+\index{util::client\_communication\_event@{util::client\_communication\_event}!client\_communication\_event@{client\_communication\_event}}
+\index{client\_communication\_event@{client\_communication\_event}!util::client\_communication\_event@{util::client\_communication\_event}}
+\doxysubsubsection{\texorpdfstring{client\_communication\_event()}{client\_communication\_event()}}
+{\footnotesize\ttfamily util\+::client\+\_\+communication\+\_\+event\+::client\+\_\+communication\+\_\+event (\begin{DoxyParamCaption}\item[{const int \&}]{t\+\_\+server\+Fd,  }\item[{const char $\ast$}]{t\+\_\+data,  }\item[{const size\+\_\+t \&}]{t\+\_\+data\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client communication event constructor. copied the data buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+server\+Fd} & the server file discriptor \\
+\hline
+{\em t\+\_\+data} & the data that was comminicated \\
+\hline
+{\em t\+\_\+data\+Size} & the size of the data buffer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classutil_1_1client__communication__event_a7067dfdd119f5d40bf643c8027da7c5c}\label{classutil_1_1client__communication__event_a7067dfdd119f5d40bf643c8027da7c5c}} 
-const char $\ast$ {\bfseries get\+Data} () const
-\item 
+\index{util::client\_communication\_event@{util::client\_communication\_event}!getData@{getData}}
+\index{getData@{getData}!util::client\_communication\_event@{util::client\_communication\_event}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const char $\ast$ util\+::client\+\_\+communication\+\_\+event\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the data as a cosnt char $\ast$ 
+
+\begin{DoxyReturn}{Returns}
+the data buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1client__communication__event_a8777a2fb5e589ae4363390d1e62e7771}\label{classutil_1_1client__communication__event_a8777a2fb5e589ae4363390d1e62e7771}} 
+\index{util::client\_communication\_event@{util::client\_communication\_event}!getDataAsString@{getDataAsString}}
+\index{getDataAsString@{getDataAsString}!util::client\_communication\_event@{util::client\_communication\_event}}
+\doxysubsubsection{\texorpdfstring{getDataAsString()}{getDataAsString()}}
+{\footnotesize\ttfamily std\+::string util\+::client\+\_\+communication\+\_\+event\+::get\+Data\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the data buffer as a string 
+
+\begin{DoxyReturn}{Returns}
+the data buffer as a string 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classutil_1_1client__communication__event_aef9be1d738c91ab5c86a1e56e68b5f57}\label{classutil_1_1client__communication__event_aef9be1d738c91ab5c86a1e56e68b5f57}} 
-size\+\_\+t {\bfseries get\+Data\+Size} () const
-\end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\index{util::client\_communication\_event@{util::client\_communication\_event}!getDataSize@{getDataSize}}
+\index{getDataSize@{getDataSize}!util::client\_communication\_event@{util::client\_communication\_event}}
+\doxysubsubsection{\texorpdfstring{getDataSize()}{getDataSize()}}
+{\footnotesize\ttfamily size\+\_\+t util\+::client\+\_\+communication\+\_\+event\+::get\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the size of the data buffer 
+
+\begin{DoxyReturn}{Returns}
+the size of the data buffer 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

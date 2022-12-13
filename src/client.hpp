@@ -88,12 +88,40 @@ public:
 class client_connect_event : public util::event<CLIENT_EVENTS> {
 public:
 
+    /**
+    * @brief client connection event constructor
+    *
+    * @param t_serverFd the server file descriptor
+    * @param t_clientFd the client file descriptor
+    * @param t_ip the ip adress of the server
+    * @param t_port the listen port of the server
+    */
     client_connect_event(const int& t_serverFd, const int& t_clientFd, const std::string& t_ip, const int& t_port) 
         : m_serverFd(t_serverFd), m_clientFd(t_clientFd), m_ip(t_ip), m_port(t_port) {}
 
+    /**
+    * @brief server file desciptor getter
+    *
+    * @return the server file desciptor
+    */
     int getServerFd() const { return m_serverFd; }
+    /**
+    * @brief client file desciptor getter
+    *
+    * @return the clinet connection id
+    */
     int getClientFd() const { return m_clientFd; }
+    /**
+    * @brief server port getter
+    *
+    * @return the listen port of the server
+    */
     int getPort() const { return m_port; }
+    /**
+    * @brief server ip getter
+    *
+    * @return the ip adress of the server
+    */
     std::string getIp() const { return m_ip; }
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, server_connected);
