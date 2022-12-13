@@ -32,6 +32,7 @@ enum class CLIENT_EVENTS {
     client_receve,
 
     // * intialzieation/shutdown events
+    client_start_listen,
     client_finished_listen,
 };
 
@@ -49,7 +50,18 @@ public:
 
 };
 
-class client_finished_listen_event : public util::event<CLIENT_EVENTS> {
+class client_listen_event : public util::event<CLIENT_EVENTS> {
+
+};
+
+class client_finished_listen_event : public client_listen_event {
+public:
+
+    EVENT_CLASS_TYPE(CLIENT_EVENTS, client_finished_listen);
+
+};
+
+class client_start_listen_event : public client_listen_event {
 public:
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, client_finished_listen);
@@ -59,7 +71,22 @@ public:
 class client_connect_event : public util::event<CLIENT_EVENTS> {
 public:
 
+    client_connect_event(const int& t_serverFd, const int& t_clientFd, const std::string& t_ip, const int& t_port) 
+        : m_serverFd(t_serverFd), m_clientFd(t_clientFd), m_ip(t_ip), m_port(t_port) {}
+
+    int getServerFd() const { return m_serverFd; }
+    int getClientFd() const { return m_clientFd; }
+    int getPort() const { return m_port; }
+    std::string getIp() const { return m_ip; }
+
     EVENT_CLASS_TYPE(CLIENT_EVENTS, server_connected);
+
+private:
+
+    int m_serverFd;
+    int m_clientFd;
+    std::string m_ip;
+    int m_port;
 
 };
 
@@ -70,15 +97,47 @@ public:
 
 };
 
-class client_send_event : public util::event<CLIENT_EVENTS> {
+class client_communication_event : public util::event<CLIENT_EVENTS> {
+
 public:
+    
+    client_communication_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : m_serverFd(t_serverFd), m_dataSize(t_dataSize) {
+        m_data = new char[m_dataSize];
+        memcpy(m_data, t_data, (size_t)m_dataSize);
+    }
+
+    ~client_communication_event() {
+        delete[] m_data;
+    }
+
+    std::string getDataAsString() const { return std::string(m_data, m_dataSize); }
+    const char* getData() const { return m_data; }
+    size_t getDataSize() const { return m_dataSize; }
+
+private:
+
+    int m_serverFd;
+    char* m_data;
+    size_t m_dataSize;
+};
+
+
+class client_send_event : public client_communication_event {
+public:
+
+    client_send_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : client_communication_event(t_serverFd, t_data, t_dataSize) {}
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, client_send);
 
+private:
+
+
 };
 
-class client_receve_event : public util::event<CLIENT_EVENTS> {
+class client_receve_event : public client_communication_event {
 public:
+
+    client_receve_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : client_communication_event(t_serverFd, t_data, t_dataSize) {}
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, client_receve);
 
@@ -92,52 +151,18 @@ public:
 
     client(const std::string& t_ip, const int& t_port, eventFn t_eventFn, util::logger& t_logger) : m_ip(t_ip), m_port(t_port), m_logger(t_logger), m_eventFunction(t_eventFn) {
         m_alive = false;
-
-        // * create server socket and check for error
-        if ((m_serverFd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-            logMessage(util::LOGGER_LEVEL::CRITICAL, "failed to create server socket");
-            logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("socket error: {}", strerror(errno)));
-            throw std::runtime_error("failed to create server socket");
-        }
-        m_closed = false;
-
-        // * define server port and address
-        sockaddr_in serveraddr;
-        serveraddr.sin_port = htons(m_port);
-        serveraddr.sin_family = AF_INET;
-
-        // * conver IPv4 to IPv6 and set in sockaddr_in struct and check for error
-        if (inet_pton(AF_INET, m_ip.c_str(), &serveraddr.sin_addr) <= 0) {
-            logMessage(util::LOGGER_LEVEL::CRITICAL, "server IP address not valid");
-            logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("inet_pron error: {}", strerror(errno)));
-            throw std::runtime_error("server IP address not valid");
-        }
-
-        // * log that the clinet is about to connect to server
-        logMessage(util::LOGGER_LEVEL::INFO, util::fmt("connecting to server at ip {} on port {}", m_ip, m_port));
-
-        // * connect to server
-        if ((m_clientFd = connect(m_serverFd, (sockaddr*)&serveraddr, sizeof(serveraddr))) < 0) {
-            logMessage(util::LOGGER_LEVEL::CRITICAL, "failed to connect to server");
-            logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("connect error: {}", strerror(errno)));
-            throw std::runtime_error("failed to connect to server");
-        }
-
-        // * server connected evnet and dispatch
-        client_connect_event connEv;
-        m_eventFunction(connEv);
-
-        // * log client is connected
-        logMessage(util::LOGGER_LEVEL::INFO, util::fmt("connected to server at ip {} on port {}", m_ip, m_port));
-
-        // * set active to true as server is initalized and launch the listen thread
-        logMessage(util::LOGGER_LEVEL::INFO, "starting client listen thread...");
-        m_alive = true;
-        m_clientThread = std::async(std::launch::async, &client::clientListen, this);
+        m_closed = true;
+        connectServer();
+        startListenThread();
     }
 
     void disconnect() {
         handleDisconnect();
+    }
+
+    void reconnect() {
+        connectServer();
+        startListenThread();
     }
 
     void sendServer(const std::string& t_message) {
@@ -156,6 +181,63 @@ public:
 
 private:
 
+    void startListenThread() {
+        // * only restart the listen thread if it is not started allready 
+        using namespace std::chrono_literals;
+        if (m_clientThread.wait_for(0ms) != std::future_status::ready) {
+            // * set active to true as server is initalized and launch the listen thread
+            logMessage(util::LOGGER_LEVEL::INFO, "starting client listen thread...");
+            m_alive = true;
+            m_clientThread = std::async(std::launch::async, &client::clientListen, this);
+
+            // * dispatch the listen event
+            client_start_listen_event listenStartEv;
+            m_eventFunction(listenStartEv);
+        }
+    }
+
+    void connectServer() {
+        // * only connect if the server socket has been closed
+        if (m_closed == true) {
+            // * create server socket and check for error
+            if ((m_serverFd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+                logMessage(util::LOGGER_LEVEL::CRITICAL, "failed to create server socket");
+                logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("socket error: {}", strerror(errno)));
+                throw std::runtime_error("failed to create server socket");
+            }
+            m_closed = false;
+
+            // * define server port and address
+            sockaddr_in serveraddr;
+            serveraddr.sin_port = htons(m_port);
+            serveraddr.sin_family = AF_INET;
+
+            // * conver IPv4 to IPv6 and set in sockaddr_in struct and check for error
+            if (inet_pton(AF_INET, m_ip.c_str(), &serveraddr.sin_addr) <= 0) {
+                logMessage(util::LOGGER_LEVEL::CRITICAL, "server IP address not valid");
+                logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("inet_pron error: {}", strerror(errno)));
+                throw std::runtime_error("server IP address not valid");
+            }
+
+            // * log that the clinet is about to connect to server
+            logMessage(util::LOGGER_LEVEL::INFO, util::fmt("connecting to server at ip {} on port {}", m_ip, m_port));
+
+            // * connect to server
+            if ((m_clientFd = connect(m_serverFd, (sockaddr*)&serveraddr, sizeof(serveraddr))) < 0) {
+                logMessage(util::LOGGER_LEVEL::CRITICAL, "failed to connect to server");
+                logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("connect error: {}", strerror(errno)));
+                throw std::runtime_error("failed to connect to server");
+            }
+
+            // * server connected evnet and dispatch
+            client_connect_event connEv(m_serverFd, m_clientFd, m_ip, m_port);
+            m_eventFunction(connEv);
+
+            // * log client is connected
+            logMessage(util::LOGGER_LEVEL::INFO, util::fmt("connected to server at ip {} on port {}", m_ip, m_port));
+        }
+    }
+
     void handleSend(const char* t_data, const size_t& t_dataSize) {
         // * get message in human readable format to log
         std::string message(t_data, t_dataSize);
@@ -166,7 +248,7 @@ private:
         logMessage(util::LOGGER_LEVEL::INFO, util::fmt("sending server (ip {}, port {}) data: {}", m_ip, m_port, message));
 
         // * create send message event and dispatch to event function
-        client_send_event sendEv;
+        client_send_event sendEv = client_send_event(m_serverFd, t_data, t_dataSize);
         m_eventFunction(sendEv);
 
         // * send the bytes to the client
@@ -175,6 +257,8 @@ private:
 
 
     void clientListen() {
+        client_start_listen_event startListenEv;
+        m_eventFunction(startListenEv);
         logMessage(util::LOGGER_LEVEL::INFO, "client listining for activity");
 
         // * setup file discriptor set and timeout
@@ -223,6 +307,7 @@ private:
 
         if ((size = read(m_serverFd, buf, bufSize)) == 0) {
             // * server disconnected
+            logMessage(util::LOGGER_LEVEL::INFO, "connection closed by forigin host");
             return true;
         }
 
@@ -240,7 +325,7 @@ private:
         logMessage(util::LOGGER_LEVEL::INFO, util::fmt("server (ip {}, port {}) sent: {}", m_ip, m_port, message));
 
         // * create and dispatch read event
-        client_receve_event readEv; 
+        client_receve_event readEv(m_serverFd, t_buf, t_size); 
         m_eventFunction(readEv);
     }
 

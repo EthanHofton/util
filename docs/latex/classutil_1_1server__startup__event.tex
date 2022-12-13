@@ -1,5 +1,14 @@
 \hypertarget{classutil_1_1server__startup__event}{}\doxysection{util\+::server\+\_\+startup\+\_\+event Class Reference}
 \label{classutil_1_1server__startup__event}\index{util::server\_startup\_event@{util::server\_startup\_event}}
+
+
+server startup event. gets called when the server has started up  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
 Inheritance diagram for util\+::server\+\_\+startup\+\_\+event\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,19 +18,82 @@ Inheritance diagram for util\+::server\+\_\+startup\+\_\+event\+:\begin{figure}[
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classutil_1_1server__startup__event_a22c68e4204b26a53a876e85bb4a98857}\label{classutil_1_1server__startup__event_a22c68e4204b26a53a876e85bb4a98857}} 
-{\bfseries server\+\_\+startup\+\_\+event} (const int \&t\+\_\+server\+Fd, const int \&t\+\_\+port, const SERVER\+\_\+\+METHOD \&t\+\_\+method)
-\item 
-\mbox{\Hypertarget{classutil_1_1server__startup__event_ade87e76d25241f86a50d01e8aaaa53e6}\label{classutil_1_1server__startup__event_ade87e76d25241f86a50d01e8aaaa53e6}} 
-int {\bfseries get\+Server\+Fd} () const
-\item 
-\mbox{\Hypertarget{classutil_1_1server__startup__event_abfd0b21a5fe2805c4f88c621993cee81}\label{classutil_1_1server__startup__event_abfd0b21a5fe2805c4f88c621993cee81}} 
-int {\bfseries get\+Port} () const
-\item 
-\mbox{\Hypertarget{classutil_1_1server__startup__event_a7afab8874b293418822d8d628c326cd0}\label{classutil_1_1server__startup__event_a7afab8874b293418822d8d628c326cd0}} 
-SERVER\+\_\+\+METHOD {\bfseries get\+Server\+Method} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classutil_1_1server__startup__event_a22c68e4204b26a53a876e85bb4a98857}{server\+\_\+startup\+\_\+event}} (const int \&t\+\_\+server\+Fd, const int \&t\+\_\+port, const SERVER\+\_\+\+METHOD \&t\+\_\+method)
+\begin{DoxyCompactList}\small\item\em server statrup event consturcotr \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1server__startup__event_ade87e76d25241f86a50d01e8aaaa53e6}{get\+Server\+Fd}} () const
+\begin{DoxyCompactList}\small\item\em get the server file descriptor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1server__startup__event_abfd0b21a5fe2805c4f88c621993cee81}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em get the listen port \end{DoxyCompactList}\item 
+SERVER\+\_\+\+METHOD \mbox{\hyperlink{classutil_1_1server__startup__event_a7afab8874b293418822d8d628c326cd0}{get\+Server\+Method}} () const
+\begin{DoxyCompactList}\small\item\em server method getter \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+server startup event. gets called when the server has started up 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1server__startup__event_a22c68e4204b26a53a876e85bb4a98857}\label{classutil_1_1server__startup__event_a22c68e4204b26a53a876e85bb4a98857}} 
+\index{util::server\_startup\_event@{util::server\_startup\_event}!server\_startup\_event@{server\_startup\_event}}
+\index{server\_startup\_event@{server\_startup\_event}!util::server\_startup\_event@{util::server\_startup\_event}}
+\doxysubsubsection{\texorpdfstring{server\_startup\_event()}{server\_startup\_event()}}
+{\footnotesize\ttfamily util\+::server\+\_\+startup\+\_\+event\+::server\+\_\+startup\+\_\+event (\begin{DoxyParamCaption}\item[{const int \&}]{t\+\_\+server\+Fd,  }\item[{const int \&}]{t\+\_\+port,  }\item[{const SERVER\+\_\+\+METHOD \&}]{t\+\_\+method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server statrup event consturcotr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+server\+Fd} & the server socket descriptor \\
+\hline
+{\em t\+\_\+port} & the port the server is listening on \\
+\hline
+{\em t\+\_\+method} & the protocal used for connections on the socket \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1server__startup__event_abfd0b21a5fe2805c4f88c621993cee81}\label{classutil_1_1server__startup__event_abfd0b21a5fe2805c4f88c621993cee81}} 
+\index{util::server\_startup\_event@{util::server\_startup\_event}!getPort@{getPort}}
+\index{getPort@{getPort}!util::server\_startup\_event@{util::server\_startup\_event}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int util\+::server\+\_\+startup\+\_\+event\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the listen port 
+
+\begin{DoxyReturn}{Returns}
+the port the server is listening on 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__startup__event_ade87e76d25241f86a50d01e8aaaa53e6}\label{classutil_1_1server__startup__event_ade87e76d25241f86a50d01e8aaaa53e6}} 
+\index{util::server\_startup\_event@{util::server\_startup\_event}!getServerFd@{getServerFd}}
+\index{getServerFd@{getServerFd}!util::server\_startup\_event@{util::server\_startup\_event}}
+\doxysubsubsection{\texorpdfstring{getServerFd()}{getServerFd()}}
+{\footnotesize\ttfamily int util\+::server\+\_\+startup\+\_\+event\+::get\+Server\+Fd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the server file descriptor 
+
+\begin{DoxyReturn}{Returns}
+the server file descript 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__startup__event_a7afab8874b293418822d8d628c326cd0}\label{classutil_1_1server__startup__event_a7afab8874b293418822d8d628c326cd0}} 
+\index{util::server\_startup\_event@{util::server\_startup\_event}!getServerMethod@{getServerMethod}}
+\index{getServerMethod@{getServerMethod}!util::server\_startup\_event@{util::server\_startup\_event}}
+\doxysubsubsection{\texorpdfstring{getServerMethod()}{getServerMethod()}}
+{\footnotesize\ttfamily SERVER\+\_\+\+METHOD util\+::server\+\_\+startup\+\_\+event\+::get\+Server\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server method getter 
+
+\begin{DoxyReturn}{Returns}
+the protocal the server is using 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

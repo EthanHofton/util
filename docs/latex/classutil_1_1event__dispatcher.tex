@@ -2,48 +2,61 @@
 \label{classutil_1_1event__dispatcher}\index{util::event\_dispatcher$<$ eventTypes $>$@{util::event\_dispatcher$<$ eventTypes $>$}}
 
 
+event dispatcher class. must be initalized with same event\+Type enum as the event it is dispatching. The event dispatcher dispatches events to the given functions if there event type matches.  
+
+
+
+
 {\ttfamily \#include $<$event.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}{event\+\_\+dispatcher}} (\mbox{\hyperlink{classutil_1_1event}{event}}$<$ event\+Types $>$ \&t\+\_\+event)
-\item 
+\begin{DoxyCompactList}\small\item\em event dispatcher constructor. stores the given event \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classutil_1_1event__dispatcher_acb8e902507c171fd6501b518a2648a71}{dispatch}} (event\+Fn$<$ T $>$ t\+\_\+dispatch\+Fn)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em event handler dispatch method. the event function will only get called if the events static type matches the tparam {\ttfamily T\+::get\+Static\+Type()}. The event handler fucntion should return a boolean value. It should return true if the event was handled and does not need to get dispatched again, false if it is not yet handled and may need to get dispached again. The handle event method should take a derrived event. If the derived events type matches the event to dispaches type, the handler method will get invoked \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename event\+Types$>$\newline
 class util\+::event\+\_\+dispatcher$<$ event\+Types $>$}
-@breif simple event dispatcher
+event dispatcher class. must be initalized with same event\+Type enum as the event it is dispatching. The event dispatcher dispatches events to the given functions if there event type matches. 
+
+\hypertarget{classutil_1_1event__dispatcher_autotoc_md2}{}\doxysubsection{Example}\label{classutil_1_1event__dispatcher_autotoc_md2}
+using the event implamentation example from the {\ttfamily event} class, we can use the event dispatcher to dispatch those events as follows\+: \begin{DoxyVerb}bool handleType(typeEvent& t_event) {
+    std::cout << "type event occured: " << t_event.toString() << std::endl;
+}
+
+bool handleClick(clickEvent& t_event) {
+    std::cout << "click event occured: " << t_event.toString() << std::endl;
+}
+
+void onEvent(util::event<eventTypes>& t_event) {
+    util::event_dispatcher<eventTypes> eventDispatcher(t_event);
+
+    eventDispatcher.dispatch<typeEvent>(&handleType);
+    eventDispatcher.dispatch<clickEvent>(&handleClick);
+}
+
+int main(int argc, char** argv) {
+    typeEvent e1('c');
+    clickEvent e2(100, 200);
+
+    onEvent(e1);
+    onEvent(e2);
+
+    return EXIT_SUCCESS;
+}
+\end{DoxyVerb}
+ In the above example, we create two handler methods. One for click, and one for type. in our on event method, we create an event dispatcher and dispatch the events to the corrisponding event handler. if the given event in the on event function is the same type as the template paramiter, it will get dispatched to that handler. The handlers event static type must be the same type as the dispach methods tparam.
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em event\+Types} & the enum class that the events belong to\\
+{\em event\+Types} & the enum that stores all of the event types \\
 \hline
 \end{DoxyTemplParams}
-\hypertarget{classutil_1_1event__dispatcher_autotoc_md2}{}\doxysubsection{Example}\label{classutil_1_1event__dispatcher_autotoc_md2}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classutil_1_1event}{event}} for the beginning part of the example
-\end{DoxySeeAlso}
-implamenting a simple event disptacher using the example events for the example section in event can be done in the following way\+:
 
-bool handel\+Type(type\+Event\& t\+\_\+event) \{ std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \char`\"{}type event occured\+: \char`\"{} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} t\+\_\+event.\+to\+String() \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl; return false; \}
-
-bool handel\+Click(click\+Event\& t\+\_\+event) \{ std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} \char`\"{}click event occured\+: \char`\"{} \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} t\+\_\+event.\+to\+String() \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl; return true; \}
-
-template$<$typename event\+Type$>$ void on\+Event(util\+::event$<$event\+Type$>$\& t\+\_\+event) \{ util\+::event\+\_\+dispatcher$<$event\+Types$>$ event\+Dispatcher(t\+\_\+event);
-
-event\+Dispatcher.\+dispatch$<$type\+Event$>$(\&handel\+Type); event\+Dispatcher.\+dispatch$<$click\+Event$>$(\&handel\+Click); \}
-
-int main(int argc, char$\ast$$\ast$ argv) \{ type\+Event e(\textquotesingle{}c\textquotesingle{}); click\+Event e2(123, 345);
-
-on\+Event(e); on\+Event(e2);
-
-return EXIT\+\_\+\+SUCCESS; \}
-
-the on\+Event method calls an event disptacher that will call the appropriate handler for each event. a main method will call the on\+Event method with the generated event impls 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}\label{classutil_1_1event__dispatcher_a939e2abac7e3b4a5bf855bad85e6e453}} 
@@ -53,11 +66,13 @@ the on\+Event method calls an event disptacher that will call the appropriate ha
 {\footnotesize\ttfamily template$<$typename event\+Types $>$ \\
 \mbox{\hyperlink{classutil_1_1event__dispatcher}{util\+::event\+\_\+dispatcher}}$<$ event\+Types $>$\+::event\+\_\+dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1event}{event}}$<$ event\+Types $>$ \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-@brien event disptacher constructor. intializes the event to dispatch
+
+
+event dispatcher constructor. stores the given event 
 
 
 \begin{DoxyParams}{Parameters}
-{\em event$<$event\+Types$>$\&} & the event to try dispatch \\
+{\em t\+\_\+event} & the event to dispatch to the correct handlers \\
 \hline
 \end{DoxyParams}
 
@@ -71,20 +86,22 @@ the on\+Event method calls an event disptacher that will call the appropriate ha
 template$<$typename T $>$ \\
 bool \mbox{\hyperlink{classutil_1_1event__dispatcher}{util\+::event\+\_\+dispatcher}}$<$ event\+Types $>$\+::dispatch (\begin{DoxyParamCaption}\item[{event\+Fn$<$ T $>$}]{t\+\_\+dispatch\+Fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-@breif dispatch function. If the events event type matches the disparch function event type, the dispatch function will be called
+
+
+event handler dispatch method. the event function will only get called if the events static type matches the tparam {\ttfamily T\+::get\+Static\+Type()}. The event handler fucntion should return a boolean value. It should return true if the event was handled and does not need to get dispatched again, false if it is not yet handled and may need to get dispached again. The handle event method should take a derrived event. If the derived events type matches the event to dispaches type, the handler method will get invoked 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em the} & typename of the event class \\
+{\em T} & the event type derrived class from event. \\
 \hline
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em the} & event dispatrch function to be called on the event (if it matches) \\
+{\em t\+\_\+dispatch\+Fn} & the function that gets called if the event should be dispatched.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-wither or not the dispatch function was called 
+true if the event handler method was called 
 \end{DoxyReturn}
 
 

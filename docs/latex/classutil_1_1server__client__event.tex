@@ -1,5 +1,14 @@
 \hypertarget{classutil_1_1server__client__event}{}\doxysection{util\+::server\+\_\+client\+\_\+event Class Reference}
 \label{classutil_1_1server__client__event}\index{util::server\_client\_event@{util::server\_client\_event}}
+
+
+server client event class, stores all the fields and methods common to the clinet events  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
 Inheritance diagram for util\+::server\+\_\+client\+\_\+event\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,39 +18,116 @@ Inheritance diagram for util\+::server\+\_\+client\+\_\+event\+:\begin{figure}[H
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classutil_1_1server__client__event_a7aa04e0642faf3dba8d1c7c2a1ae76b0}\label{classutil_1_1server__client__event_a7aa04e0642faf3dba8d1c7c2a1ae76b0}} 
-int {\bfseries get\+Client\+Sd} () const
-\item 
-\mbox{\Hypertarget{classutil_1_1server__client__event_ab1f5c50167f54bb6e75c5dffba28cd7a}\label{classutil_1_1server__client__event_ab1f5c50167f54bb6e75c5dffba28cd7a}} 
-int {\bfseries get\+Client\+Port} () const
-\item 
-\mbox{\Hypertarget{classutil_1_1server__client__event_a9929d28c07c56fd62cb3beff961049e2}\label{classutil_1_1server__client__event_a9929d28c07c56fd62cb3beff961049e2}} 
-std\+::string {\bfseries get\+Client\+Ip} () const
-\item 
-\mbox{\Hypertarget{classutil_1_1server__client__event_a9b644f4ab5bbf7aabd505ba432d0238e}\label{classutil_1_1server__client__event_a9b644f4ab5bbf7aabd505ba432d0238e}} 
-std\+::string {\bfseries get\+Client\+Id} () const
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{classutil_1_1server__client__event_a7aa04e0642faf3dba8d1c7c2a1ae76b0}{get\+Client\+Sd}} () const
+\begin{DoxyCompactList}\small\item\em clinet socket discriptor getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1server__client__event_ab1f5c50167f54bb6e75c5dffba28cd7a}{get\+Client\+Port}} () const
+\begin{DoxyCompactList}\small\item\em client port getter \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1server__client__event_a9929d28c07c56fd62cb3beff961049e2}{get\+Client\+Ip}} () const
+\begin{DoxyCompactList}\small\item\em client ip getter \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1server__client__event_a9b644f4ab5bbf7aabd505ba432d0238e}{get\+Client\+Id}} () const
+\begin{DoxyCompactList}\small\item\em client id getter \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classutil_1_1server__client__event_a358c11f4cc892235e3646afc45ffb3e3}\label{classutil_1_1server__client__event_a358c11f4cc892235e3646afc45ffb3e3}} 
-{\bfseries server\+\_\+client\+\_\+event} (const int \&t\+\_\+client\+Sd, const int \&t\+\_\+client\+Port, const std\+::string \&t\+\_\+client\+Ip, const std\+::string \&t\+\_\+client\+Id)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classutil_1_1server__client__event_a358c11f4cc892235e3646afc45ffb3e3}{server\+\_\+client\+\_\+event}} (const int \&t\+\_\+client\+Sd, const int \&t\+\_\+client\+Port, const std\+::string \&t\+\_\+client\+Ip, const std\+::string \&t\+\_\+client\+Id)
+\begin{DoxyCompactList}\small\item\em server client event constructor. set all of the fields the constructor takes \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classutil_1_1server__client__event_a282ae0cbcaf22f9c8acf60a0c81749a1}\label{classutil_1_1server__client__event_a282ae0cbcaf22f9c8acf60a0c81749a1}} 
 int {\bfseries m\+\_\+client\+Sd}
-\item 
+\begin{DoxyCompactList}\small\item\em the socket discriptor of the client \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classutil_1_1server__client__event_ae8719ec5dcf7ee5dae7aba9076a3c8cc}\label{classutil_1_1server__client__event_ae8719ec5dcf7ee5dae7aba9076a3c8cc}} 
 int {\bfseries m\+\_\+client\+Port}
-\item 
+\begin{DoxyCompactList}\small\item\em the port the client is on \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classutil_1_1server__client__event_a83f73e0927605b1ee7230900d648a09b}\label{classutil_1_1server__client__event_a83f73e0927605b1ee7230900d648a09b}} 
 std\+::string {\bfseries m\+\_\+client\+Ip}
-\item 
+\begin{DoxyCompactList}\small\item\em the ip of the client \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classutil_1_1server__client__event_a3622beb5f5c2aa1b480fa0a2d22f8bbe}\label{classutil_1_1server__client__event_a3622beb5f5c2aa1b480fa0a2d22f8bbe}} 
 std\+::string {\bfseries m\+\_\+client\+Id}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the id of the client \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+server client event class, stores all the fields and methods common to the clinet events 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1server__client__event_a358c11f4cc892235e3646afc45ffb3e3}\label{classutil_1_1server__client__event_a358c11f4cc892235e3646afc45ffb3e3}} 
+\index{util::server\_client\_event@{util::server\_client\_event}!server\_client\_event@{server\_client\_event}}
+\index{server\_client\_event@{server\_client\_event}!util::server\_client\_event@{util::server\_client\_event}}
+\doxysubsubsection{\texorpdfstring{server\_client\_event()}{server\_client\_event()}}
+{\footnotesize\ttfamily util\+::server\+\_\+client\+\_\+event\+::server\+\_\+client\+\_\+event (\begin{DoxyParamCaption}\item[{const int \&}]{t\+\_\+client\+Sd,  }\item[{const int \&}]{t\+\_\+client\+Port,  }\item[{const std\+::string \&}]{t\+\_\+client\+Ip,  }\item[{const std\+::string \&}]{t\+\_\+client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+server client event constructor. set all of the fields the constructor takes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+client\+Sd} & the file discriptor of the client \\
+\hline
+{\em t\+\_\+client\+Port} & the port the clinet is on \\
+\hline
+{\em t\+\_\+client\+Ip} & the ip adress of the client \\
+\hline
+{\em t\+\_\+client\+Id} & the address of the client on the server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1server__client__event_a9b644f4ab5bbf7aabd505ba432d0238e}\label{classutil_1_1server__client__event_a9b644f4ab5bbf7aabd505ba432d0238e}} 
+\index{util::server\_client\_event@{util::server\_client\_event}!getClientId@{getClientId}}
+\index{getClientId@{getClientId}!util::server\_client\_event@{util::server\_client\_event}}
+\doxysubsubsection{\texorpdfstring{getClientId()}{getClientId()}}
+{\footnotesize\ttfamily std\+::string util\+::server\+\_\+client\+\_\+event\+::get\+Client\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client id getter 
+
+\begin{DoxyReturn}{Returns}
+the clinets ID in the server 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__client__event_a9929d28c07c56fd62cb3beff961049e2}\label{classutil_1_1server__client__event_a9929d28c07c56fd62cb3beff961049e2}} 
+\index{util::server\_client\_event@{util::server\_client\_event}!getClientIp@{getClientIp}}
+\index{getClientIp@{getClientIp}!util::server\_client\_event@{util::server\_client\_event}}
+\doxysubsubsection{\texorpdfstring{getClientIp()}{getClientIp()}}
+{\footnotesize\ttfamily std\+::string util\+::server\+\_\+client\+\_\+event\+::get\+Client\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client ip getter 
+
+\begin{DoxyReturn}{Returns}
+the clients ip address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__client__event_ab1f5c50167f54bb6e75c5dffba28cd7a}\label{classutil_1_1server__client__event_ab1f5c50167f54bb6e75c5dffba28cd7a}} 
+\index{util::server\_client\_event@{util::server\_client\_event}!getClientPort@{getClientPort}}
+\index{getClientPort@{getClientPort}!util::server\_client\_event@{util::server\_client\_event}}
+\doxysubsubsection{\texorpdfstring{getClientPort()}{getClientPort()}}
+{\footnotesize\ttfamily int util\+::server\+\_\+client\+\_\+event\+::get\+Client\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client port getter 
+
+\begin{DoxyReturn}{Returns}
+the clients port 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__client__event_a7aa04e0642faf3dba8d1c7c2a1ae76b0}\label{classutil_1_1server__client__event_a7aa04e0642faf3dba8d1c7c2a1ae76b0}} 
+\index{util::server\_client\_event@{util::server\_client\_event}!getClientSd@{getClientSd}}
+\index{getClientSd@{getClientSd}!util::server\_client\_event@{util::server\_client\_event}}
+\doxysubsubsection{\texorpdfstring{getClientSd()}{getClientSd()}}
+{\footnotesize\ttfamily int util\+::server\+\_\+client\+\_\+event\+::get\+Client\+Sd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+clinet socket discriptor getter 
+
+\begin{DoxyReturn}{Returns}
+the clinets socket discriptor 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -10,15 +10,15 @@
 namespace util {
 
     /**
-    * @brief a psuedorandom number generator
+    * @brief a pseudo random number generator class. Uses a Mersenne Twiste generator to generate the numbers and a uniform distribution to distrubute the random number
     */
     class prng {
     public: 
         
         /**
-        * @breif prng constructor
+        * @brief prng constructor. initalizes the mt generator with a random seed
         *
-        * @param t_seed the seed to initalize the prng with
+        * @param t_seed seed to be used to initalize the random generator, if left empty, a random seed is used
         */
         prng(std::string t_seed = "") {
             std::random_device rd;
@@ -32,11 +32,12 @@ namespace util {
         }
 
         /**
-        * @breif generate a random float
+        * @brief generate a random float between `t_lower` and `t_upper`
         *
-        * @param t_lower the lower bound to gernerate the random number with
-        * @param t_upper the upper bound to gernerate the random number with
-        * @return float a random float between t_lower and t_upper
+        * @param t_lower the lower bound (0 default)
+        * @param t_upper the upper bound (1 default)
+        *
+        * @return a random float between the lower and upper bound
         */
         float randf(float t_lower = 0.0f, float t_upper = 1.0f) {
             std::uniform_real_distribution<> dist(t_lower, t_upper);
@@ -44,11 +45,12 @@ namespace util {
         }
 
         /**
-        * @breif generate a random int
+        * @brief generate a random interger between `t_lower` and `t_upper`
         *
-        * @param t_lower the lower bound to gernerate the random number with
-        * @param t_upper the upper bound to gernerate the random number with
-        * @return float a random int between t_lower and t_upper
+        * @param t_lower the lower bound for the distrubution (0 default)
+        * @param t_upper the upper bound for the distrubution (1 default)
+        *
+        * @return a random interger between the lower and upper bound
         */
         int randi(int t_lower = 0, int t_upper = 1) {
             std::uniform_int_distribution<> dist(t_lower, t_upper);

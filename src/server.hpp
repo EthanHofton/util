@@ -22,11 +22,17 @@
 
 namespace util {
 
+/**
+* @brief enum for the different types of connection protocalls for the server
+*/
 enum class SERVER_METHOD {
     TCP,
     UDP,
 };
 
+/**
+* @brief enum for all the different events the server may dispatch
+*/
 enum class SERVER_EVENTS {
     // * send/receve events
     send,
@@ -45,6 +51,9 @@ enum class SERVER_EVENTS {
     server_shutdown,
 };
 
+/**
+* @brief server before log event class
+*/
 class server_before_log_event : public util::event<SERVER_EVENTS> {
     
 public:
@@ -53,6 +62,9 @@ public:
 
 };
 
+/**
+* @brief server after log event class
+*/
 class server_after_log_event : public util::event<SERVER_EVENTS> {
     
 public:
@@ -61,61 +73,152 @@ public:
 
 };
 
+/**
+* @brief server client event class, stores all the fields and methods common to the clinet events
+*/
 class server_client_event : public util::event<SERVER_EVENTS> {
 
 public:
 
+    /**
+    * @brief clinet socket discriptor getter
+    *
+    * @return the clinets socket discriptor
+    */
     int getClientSd() const { return m_clientSd; }
+    /**
+    * @brief client port getter
+    *
+    * @return the clients port 
+    */
     int getClientPort() const { return m_clientPort; }
+    /**
+    * @brief client ip getter
+    *
+    * @return the clients ip address
+    */
     std::string getClientIp() const { return m_clientIp; }
+    /**
+    * @brief client id getter
+    *
+    * @return the clinets ID in the server
+    */
     std::string getClientId() const { return m_clientId; }
 
 protected:
 
+    /**
+    * @brief server client event constructor. set all of the fields the constructor takes
+    *
+    * @param t_clientSd the file discriptor of the client
+    * @param t_clientPort the port the clinet is on
+    * @param t_clientIp the ip adress of the client
+    * @param t_clientId the address of the client on the server
+    */
     server_client_event(const int& t_clientSd, const int& t_clientPort, const std::string& t_clientIp, const std::string& t_clientId) : 
         m_clientSd(t_clientSd), m_clientPort(t_clientPort), m_clientIp(t_clientIp), m_clientId(t_clientId) {}
 
+    /**
+    * @brief the socket discriptor of the client
+    */
     int m_clientSd;
+    /**
+    * @brief the port the client is on
+    */
     int m_clientPort;
+    /**
+    * @brief the ip of the client
+    */
     std::string m_clientIp;
+    /**
+    * @brief the id of the client
+    */
     std::string m_clientId;
 };
 
+/**
+* @brief server client disconnection event
+*/
 class server_client_disconnect_event : public server_client_event {
 
 public:
 
+    /**
+    * @brief construcor. pass the varaibles to the server_client_event consturcotr
+    *
+    * @param t_clientSd the socket discriptor of the client
+    * @param t_clientPort the port of the client
+    * @param t_clientIp the ip of the client
+    * @param t_clientId the Id of the client
+    */
     server_client_disconnect_event(const int& t_clientSd, const int& t_clientPort, const std::string& t_clientIp, const std::string& t_clientId) : 
        server_client_event(t_clientSd, t_clientPort, t_clientIp, t_clientId) {}
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, client_disconnect);
 };
 
+/**
+* @brief client connection event
+*/
 class server_client_connect_event : public server_client_event {
 
 public:
 
+    /**
+    * @brief server-clinet connection evnent. gets called when a new client connections to the server
+    *
+    * @param t_clientSd the socket discriptor of the client
+    * @param t_clientPort the port the client is on
+    * @param t_clientIp the ip of the client
+    * @param t_clientId the ID of the client
+    */
     server_client_connect_event(const int& t_clientSd, const int& t_clientPort, const std::string& t_clientIp, const std::string& t_clientId) : 
        server_client_event(t_clientSd, t_clientPort, t_clientIp, t_clientId) {}
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, client_connect);
 };
 
+/**
+* @brief server read event. gets called after the server has read a new message from the client
+*/
 class server_read_event : public server_client_event {
 
 public:
         
+    /**
+    * @brief server read event constuctor
+    *
+    * @param t_clientId the id of the client
+    * @param t_clientSd the socket discriptor of the client
+    * @param t_clientIp the ip of the client
+    * @param t_clientPort the port the client is on
+    * @param t_clientBuff the buff the server read
+    * @param t_clientBuffSize the size of the buffer the server read
+    */
     server_read_event(const std::string& t_clientId, const int& t_clientSd, const std::string& t_clientIp, const int& t_clientPort, char* t_clientBuff, const int& t_clientBuffSize) :
         server_client_event(t_clientSd, t_clientPort, t_clientIp, t_clientId), m_clientBuffSize(t_clientBuffSize) {
         m_clientBuff = new char[m_clientBuffSize];
         memcpy(m_clientBuff, t_clientBuff, (size_t)m_clientBuffSize);
     }
 
+    /**
+    * @brief server read desctructor
+    */
     ~server_read_event() {
         delete[] m_clientBuff;
     }
 
+    /**
+    * @brief buffer size getter
+    *
+    * @return the size of the buffer 
+    */
     int getBuffSize() const { return m_clientBuffSize; }
+    /**
+    * @brief client buffer getter
+    *
+    * @return the buffer the client sent
+    */
     const char *getClientBuff() const{ return m_clientBuff; }
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, recv);
@@ -126,21 +229,47 @@ private:
     int m_clientBuffSize;
 };
 
+/**
+* @brief server send message event. gets called when the server sends a message to a socket
+*/
 class server_send_event : public server_client_event {
 
 public:
         
+    /**
+    * @brief server send event constructor
+    *
+    * @param t_clientId the Id of the client
+    * @param t_clientSd the sokcet descriptor of the client
+    * @param t_clientIp the ip of the client
+    * @param t_clientPort the port the client is on 
+    * @param t_clientBuff the buffer the client sent 
+    * @param t_clientBuffSize the size of the buffer the client send
+    */
     server_send_event(const std::string& t_clientId, const int& t_clientSd, const std::string& t_clientIp, const int& t_clientPort, const char* t_clientBuff, const int& t_clientBuffSize) :
         server_client_event(t_clientSd, t_clientPort, t_clientIp, t_clientId), m_clientBuffSize(t_clientBuffSize) {
         m_clientBuff = new char[m_clientBuffSize];
         memcpy(m_clientBuff, t_clientBuff, (size_t)m_clientBuffSize);
     }
 
+    /**
+    * @brief server send event desctructor 
+    */
     ~server_send_event() {
         delete[] m_clientBuff;
     }
 
+    /**
+    * @brief get the size of the client buffer
+    *
+    * @return the size of the client buffer
+    */
     int getBuffSize() const { return m_clientBuffSize; }
+    /**
+    * @brief get the buffer the client sent
+    *
+    * @return the clinet buffer
+    */
     const char *getClientBuff() const{ return m_clientBuff; }
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, send);
@@ -151,15 +280,40 @@ private:
     int m_clientBuffSize;
 };
 
+/**
+ * @brief server startup event. gets called when the server has started up
+ */
 class server_startup_event : public util::event<SERVER_EVENTS> {
 
 public:
 
+    /**
+    * @brief server statrup event consturcotr
+    *
+    * @param t_serverFd the server socket descriptor
+    * @param t_port the port the server is listening on
+    * @param t_method the protocal used for connections on the socket
+    */
     server_startup_event(const int& t_serverFd, const int& t_port, const SERVER_METHOD& t_method) :
         m_serverFd(t_serverFd), m_port(t_port), m_serverMethod(t_method) {}
 
+    /**
+    * @brief get the server file descriptor
+    *
+    * @return the server file descript
+    */
     int getServerFd() const { return m_serverFd; }
+    /**
+    * @brief get the listen port
+    *
+    * @return the port the server is listening on
+    */
     int getPort() const { return m_port; }
+    /**
+    * @brief server method getter
+    *
+    * @return the protocal the server is using
+    */
     SERVER_METHOD getServerMethod() const { return m_serverMethod; }
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, server_startup)
@@ -171,14 +325,39 @@ private:
     SERVER_METHOD m_serverMethod;
 };
 
+/**
+* @brief server shutdown evetn. is triggered just before the server shuts down
+*/
 class server_shutdown_event : public util::event<SERVER_EVENTS> {
 
 public:
 
+    /**
+    * @brief server shut down event cosntructor
+    *
+    * @param t_serverFd the file descriptor of the server
+    * @param t_port the port the server is listening on
+    * @param t_clientMap the map of client ids to client file descriptors
+    */
     server_shutdown_event(const int& t_serverFd, const int& t_port, std::map<std::string, int> t_clientMap) : m_serverFd(t_serverFd), m_port(t_port), m_clientMap(t_clientMap) {}
 
+    /**
+    * @brief get the server file descript
+    *
+    * @return the server file descript
+    */
     int getServerFd() const { return m_serverFd; }
+    /**
+    * @brief get the port the server is listening on
+    *
+    * @return the port the server is listening on
+    */
     int getPort() const { return m_port; }
+    /**
+    * @brief get the map of client ids to file descritors
+    *
+    * @return the map of client ids to fds 
+    */
     std::map<std::string, int> getClientMap() const { return m_clientMap; }
 
     EVENT_CLASS_TYPE(SERVER_EVENTS, server_shutdown);
@@ -190,6 +369,9 @@ private:
     std::map<std::string, int> m_clientMap;
 };
 
+/**
+* @brief server class. uses RAII. the server is started in the constructor and shutdown in the destructor
+*/
 class server {
 
     // * the event function that will be called to run events
@@ -197,6 +379,14 @@ class server {
 
 public:
 
+    /**
+    * @brief server constructor. on construction, the server is started
+    *
+    * @param t_port the port to listen for new connections on
+    * @param t_serverMethod the protocol the server will use for connections
+    * @param t_eventFn the event function that will be called when an event is diespacthed
+    * @param t_serverLogger the logger the server should use. PRE-INITALIZED
+    */
     server(const int& t_port, const SERVER_METHOD& t_serverMethod, eventFn t_eventFn, util::logger& t_serverLogger) : m_serverLogger(t_serverLogger) {
         // * set the port, server method and event function
         m_port = t_port;
@@ -256,26 +446,53 @@ public:
         m_listenThread = std::async(std::launch::async, &server::serverListen, this);
     }
 
+    /**
+    * @brief send a (string) message to a client
+    *
+    * @param t_clientId the id of the client the server should send the message to
+    * @param t_message the message to send to the client
+    */
     void sendClient(const std::string& t_clientId, const std::string& t_message) {
         handleSend(t_clientId, t_message.c_str(), strlen(t_message.c_str()));
     }
 
+    /**
+    * @brief send an array of bytes to a client
+    *
+    * @param t_clientId the id of the client to send the bytes to
+    * @param t_buff the buffer of bytes to send
+    * @param t_buffSize the lenght of the buffer to send
+    */
     void sendClient(const std::string& t_clientId, char* t_buff, const size_t& t_buffSize) {
         handleSend(t_clientId, t_buff, t_buffSize);
     }
 
+    /**
+    * @brief send a (string) message to all clients connected
+    *
+    * @param t_message the message to send
+    */
     void sendAllClients(const std::string& t_message) {
         for (auto &clientConn : m_clientMap) {
             sendClient(clientConn.first, t_message);
         }
     }
 
+    /**
+    * @brief send an array of bytes to all clients
+    *
+    * @param t_buff the bytes to send
+    * @param t_buffSize the size of the array
+    */
     void sendAllClients(char* t_buff, const size_t& t_buffSize) {
         for (auto &clientConn : m_clientMap) {
             sendClient(clientConn.first, t_buff, t_buffSize);
         }
     }
 
+    /**
+    * @brief server desctutor. closes the server and all outgoing connections
+    */
     ~server() {
         logMessage(util::LOGGER_LEVEL::INFO, "stopping listener thread...");
         // * unset the listening flag and wait for listneing thread to join
@@ -300,7 +517,20 @@ public:
         shutdown(m_serverFd, SHUT_RDWR);
     }
 
+    /**
+    * @brief server logger getter
+    *
+    * @return a reference to the server logger
+    */
     util::logger& getLogger() { return m_serverLogger; }
+
+    /**
+    * @brief getter for the client map
+    *
+    * @return the map of client ids to fds 
+    */
+    std::map<std::string, int> getClientMap() const { return m_clientMap; }
+
 
 private:
 

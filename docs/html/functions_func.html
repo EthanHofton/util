@@ -88,7 +88,7 @@ $(function() {
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>cbegin()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a679199e99585cf48a247355ccd04965c">util::bitstream</a></li>
 <li>cend()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a651d4a16844b0f4c84a1c0babf38b9b5">util::bitstream</a></li>
-<li>clone()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#ab14b048357d032f61297fea0c25d4847">util::logger_sink</a></li>
+<li>clone()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#a0224e4a902280f886879d5165f72f625">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__file__sink.html#a93d2e36c56cccdd3dad9283b23f130db">util::logger_file_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#ab14b048357d032f61297fea0c25d4847">util::logger_sink</a></li>
 </ul>
 
 
@@ -108,10 +108,21 @@ $(function() {
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a091db5b721fcec6378ca0010e4dcf913">util::bitstream</a></li>
+<li>getBuffSize()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#af370b34c76adbe0db845ab466dbc62be">util::server_read_event</a>, <a class="el" href="classutil_1_1server__send__event.html#ae6b6fa8b9218c1d2614b431fafd6e9ce">util::server_send_event</a></li>
+<li>getClientBuff()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a1b16be2a59d7ce37a9b5ce1074bb4158">util::server_read_event</a>, <a class="el" href="classutil_1_1server__send__event.html#ac2e17e4afa58c6cecd4ee98a52faeacb">util::server_send_event</a></li>
+<li>getClientId()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a9b644f4ab5bbf7aabd505ba432d0238e">util::server_client_event</a></li>
+<li>getClientIp()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a9929d28c07c56fd62cb3beff961049e2">util::server_client_event</a></li>
+<li>getClientMap()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a7c8951f4f93495c132fe5aad55eb9ab6">util::server</a>, <a class="el" href="classutil_1_1server__shutdown__event.html#aa81dfe87019f0a8b2b0593cf5ebf5633">util::server_shutdown_event</a></li>
+<li>getClientPort()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#ab1f5c50167f54bb6e75c5dffba28cd7a">util::server_client_event</a></li>
+<li>getClientSd()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a7aa04e0642faf3dba8d1c7c2a1ae76b0">util::server_client_event</a></li>
 <li>getEventType()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aa3d5fbd5cf8a2e99ec143ded392a24c6">util::event&lt; eventTypes &gt;</a></li>
 <li>getFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a0bd9705e13323136ecd40e0cc58b81a6">util::logger_sink</a></li>
+<li>getLogger()&#160;:&#160;<a class="el" href="classutil_1_1server.html#aec17efa0e51828d2866aff5521bcec2f">util::server</a></li>
 <li>getLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">util::logger_sink</a></li>
 <li>getName()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aebd35a6fc8c83c164aaac575d44d68ca">util::event&lt; eventTypes &gt;</a></li>
+<li>getPort()&#160;:&#160;<a class="el" href="classutil_1_1server__shutdown__event.html#a693256dfdc96f247cb201dcaeb184f74">util::server_shutdown_event</a>, <a class="el" href="classutil_1_1server__startup__event.html#abfd0b21a5fe2805c4f88c621993cee81">util::server_startup_event</a></li>
+<li>getServerFd()&#160;:&#160;<a class="el" href="classutil_1_1server__shutdown__event.html#ac718ec3bb7f15e9c4fd9685e76d54d7b">util::server_shutdown_event</a>, <a class="el" href="classutil_1_1server__startup__event.html#ade87e76d25241f86a50d01e8aaaa53e6">util::server_startup_event</a></li>
+<li>getServerMethod()&#160;:&#160;<a class="el" href="classutil_1_1server__startup__event.html#a7afab8874b293418822d8d628c326cd0">util::server_startup_event</a></li>
 <li>getSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a0f67ce37c0447ed74344ab8f99eaccb6">util::logger</a></li>
 <li>getSinkLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#aac3a1ac294d395b3435370f6c74ec76e">util::logger</a></li>
 </ul>
@@ -172,9 +183,19 @@ $(function() {
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>sendAllClients()&#160;:&#160;<a class="el" href="classutil_1_1server.html#ad83147fb1042186c295ffeb4714c005e">util::server</a></li>
+<li>sendClient()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a860641f560127ba36f6f8e4e5f1bd1b6">util::server</a></li>
 <li>serializable_list()&#160;:&#160;<a class="el" href="classutil_1_1serializable__list.html#a1ceb78c999b17e9ea9470d2c83537548">util::serializable_list&lt; T &gt;</a></li>
 <li>serializable_string()&#160;:&#160;<a class="el" href="classutil_1_1serializable__string.html#a2bbabde5dd8309218149c2b522f73b95">util::serializable_string</a></li>
 <li>serialize()&#160;:&#160;<a class="el" href="classutil_1_1serializable.html#a804bcd68e6038cb81dc0d51ff4f8b922">util::serializable</a></li>
+<li>server()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a0d8a86ad52c86f5347d7a2141345e977">util::server</a></li>
+<li>server_client_connect_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__connect__event.html#ab827307e6206701d2d139e38c8c21462">util::server_client_connect_event</a></li>
+<li>server_client_disconnect_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__disconnect__event.html#a098e52fd3ed046c673d370c6b17aaa61">util::server_client_disconnect_event</a></li>
+<li>server_client_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a358c11f4cc892235e3646afc45ffb3e3">util::server_client_event</a></li>
+<li>server_read_event()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a983f0ef7351f14ba3f5139a0e81e0d05">util::server_read_event</a></li>
+<li>server_send_event()&#160;:&#160;<a class="el" href="classutil_1_1server__send__event.html#abf77e239928d4391df5fb9384306a925">util::server_send_event</a></li>
+<li>server_shutdown_event()&#160;:&#160;<a class="el" href="classutil_1_1server__shutdown__event.html#af671021d1d7e3a9daea2a7b396082f28">util::server_shutdown_event</a></li>
+<li>server_startup_event()&#160;:&#160;<a class="el" href="classutil_1_1server__startup__event.html#a22c68e4204b26a53a876e85bb4a98857">util::server_startup_event</a></li>
 <li>setFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a78ae962f1c41aa9d41e8bd431b9fc6ec">util::logger_sink</a></li>
 <li>setLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a8c945df74d587a5447255db63bf342cc">util::logger_sink</a></li>
 <li>setSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a7ecce168a7f7645c35518b9cccfbafe7">util::logger</a></li>
@@ -214,6 +235,9 @@ $(function() {
 <li>~logger_console_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#ab2d071a45207c01c7b692d0abaf90838">util::logger_console_sink</a></li>
 <li>~logger_file_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__file__sink.html#a65c80b921d8636ac462cfe85ffaa3a26">util::logger_file_sink</a></li>
 <li>~logger_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a86eb391763969c1ad0e7ed2844629ef5">util::logger_sink</a></li>
+<li>~server()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a933c1e7251b926568a919c9ceebf0088">util::server</a></li>
+<li>~server_read_event()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a306fc44a8afb2577dfb6941469b0ad72">util::server_read_event</a></li>
+<li>~server_send_event()&#160;:&#160;<a class="el" href="classutil_1_1server__send__event.html#a7522528550e4b13c8c8f524108fd8f3a">util::server_send_event</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

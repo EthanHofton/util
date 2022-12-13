@@ -1,5 +1,14 @@
 \hypertarget{classutil_1_1server__client__connect__event}{}\doxysection{util\+::server\+\_\+client\+\_\+connect\+\_\+event Class Reference}
 \label{classutil_1_1server__client__connect__event}\index{util::server\_client\_connect\_event@{util::server\_client\_connect\_event}}
+
+
+client connection event  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
 Inheritance diagram for util\+::server\+\_\+client\+\_\+connect\+\_\+event\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,13 +18,39 @@ Inheritance diagram for util\+::server\+\_\+client\+\_\+connect\+\_\+event\+:\be
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classutil_1_1server__client__connect__event_ab827307e6206701d2d139e38c8c21462}\label{classutil_1_1server__client__connect__event_ab827307e6206701d2d139e38c8c21462}} 
-{\bfseries server\+\_\+client\+\_\+connect\+\_\+event} (const int \&t\+\_\+client\+Sd, const int \&t\+\_\+client\+Port, const std\+::string \&t\+\_\+client\+Ip, const std\+::string \&t\+\_\+client\+Id)
-\item 
+\mbox{\hyperlink{classutil_1_1server__client__connect__event_ab827307e6206701d2d139e38c8c21462}{server\+\_\+client\+\_\+connect\+\_\+event}} (const int \&t\+\_\+client\+Sd, const int \&t\+\_\+client\+Port, const std\+::string \&t\+\_\+client\+Ip, const std\+::string \&t\+\_\+client\+Id)
+\begin{DoxyCompactList}\small\item\em server-\/clinet connection evnent. gets called when a new client connections to the server \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classutil_1_1server__client__connect__event_adfae59fd04668f5391535571a365c823}\label{classutil_1_1server__client__connect__event_adfae59fd04668f5391535571a365c823}} 
 {\bfseries EVENT\+\_\+\+CLASS\+\_\+\+TYPE} (SERVER\+\_\+\+EVENTS, client\+\_\+connect)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+client connection event 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1server__client__connect__event_ab827307e6206701d2d139e38c8c21462}\label{classutil_1_1server__client__connect__event_ab827307e6206701d2d139e38c8c21462}} 
+\index{util::server\_client\_connect\_event@{util::server\_client\_connect\_event}!server\_client\_connect\_event@{server\_client\_connect\_event}}
+\index{server\_client\_connect\_event@{server\_client\_connect\_event}!util::server\_client\_connect\_event@{util::server\_client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{server\_client\_connect\_event()}{server\_client\_connect\_event()}}
+{\footnotesize\ttfamily util\+::server\+\_\+client\+\_\+connect\+\_\+event\+::server\+\_\+client\+\_\+connect\+\_\+event (\begin{DoxyParamCaption}\item[{const int \&}]{t\+\_\+client\+Sd,  }\item[{const int \&}]{t\+\_\+client\+Port,  }\item[{const std\+::string \&}]{t\+\_\+client\+Ip,  }\item[{const std\+::string \&}]{t\+\_\+client\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server-\/clinet connection evnent. gets called when a new client connections to the server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+client\+Sd} & the socket discriptor of the client \\
+\hline
+{\em t\+\_\+client\+Port} & the port the client is on \\
+\hline
+{\em t\+\_\+client\+Ip} & the ip of the client \\
+\hline
+{\em t\+\_\+client\+Id} & the ID of the client \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

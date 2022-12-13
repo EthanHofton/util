@@ -81,37 +81,57 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>event dispatcher class. must be initalized with same eventType enum as the event it is dispatching. The event dispatcher dispatches events to the given functions if there event type matches.  
+ <a href="classutil_1_1event__dispatcher.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="event_8hpp_source.html">event.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a939e2abac7e3b4a5bf855bad85e6e453"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1event__dispatcher.html#a939e2abac7e3b4a5bf855bad85e6e453">event_dispatcher</a> (<a class="el" href="classutil_1_1event.html">event</a>&lt; eventTypes &gt; &amp;t_event)</td></tr>
+<tr class="memdesc:a939e2abac7e3b4a5bf855bad85e6e453"><td class="mdescLeft">&#160;</td><td class="mdescRight">event dispatcher constructor. stores the given event  <a href="classutil_1_1event__dispatcher.html#a939e2abac7e3b4a5bf855bad85e6e453">More...</a><br /></td></tr>
 <tr class="separator:a939e2abac7e3b4a5bf855bad85e6e453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb8e902507c171fd6501b518a2648a71"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acb8e902507c171fd6501b518a2648a71"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutil_1_1event__dispatcher.html#acb8e902507c171fd6501b518a2648a71">dispatch</a> (eventFn&lt; T &gt; t_dispatchFn)</td></tr>
+<tr class="memdesc:acb8e902507c171fd6501b518a2648a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">event handler dispatch method. the event function will only get called if the events static type matches the tparam <code>T::getStaticType()</code>. The event handler fucntion should return a boolean value. It should return true if the event was handled and does not need to get dispatched again, false if it is not yet handled and may need to get dispached again. The handle event method should take a derrived event. If the derived events type matches the event to dispaches type, the handler method will get invoked  <a href="classutil_1_1event__dispatcher.html#acb8e902507c171fd6501b518a2648a71">More...</a><br /></td></tr>
 <tr class="separator:acb8e902507c171fd6501b518a2648a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename eventTypes&gt;<br />
-class util::event_dispatcher&lt; eventTypes &gt;</div><p >@breif simple event dispatcher</p>
+class util::event_dispatcher&lt; eventTypes &gt;</div><p >event dispatcher class. must be initalized with same eventType enum as the event it is dispatching. The event dispatcher dispatches events to the given functions if there event type matches. </p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Example</h1>
+<p >using the event implamentation example from the <code>event</code> class, we can use the event dispatcher to dispatch those events as follows: </p><pre class="fragment">bool handleType(typeEvent&amp; t_event) {
+    std::cout &lt;&lt; "type event occured: " &lt;&lt; t_event.toString() &lt;&lt; std::endl;
+}
+
+bool handleClick(clickEvent&amp; t_event) {
+    std::cout &lt;&lt; "click event occured: " &lt;&lt; t_event.toString() &lt;&lt; std::endl;
+}
+
+void onEvent(util::event&lt;eventTypes&gt;&amp; t_event) {
+    util::event_dispatcher&lt;eventTypes&gt; eventDispatcher(t_event);
+
+    eventDispatcher.dispatch&lt;typeEvent&gt;(&amp;handleType);
+    eventDispatcher.dispatch&lt;clickEvent&gt;(&amp;handleClick);
+}
+
+int main(int argc, char** argv) {
+    typeEvent e1('c');
+    clickEvent e2(100, 200);
+
+    onEvent(e1);
+    onEvent(e2);
+
+    return EXIT_SUCCESS;
+}
+</pre><p> In the above example, we create two handler methods. One for click, and one for type. in our on event method, we create an event dispatcher and dispatch the events to the corrisponding event handler. if the given event in the on event function is the same type as the template paramiter, it will get dispatched to that handler. The handlers event static type must be the same type as the dispach methods tparam.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">eventTypes</td><td>the enum class that the events belong to</td></tr>
+    <tr><td class="paramname">eventTypes</td><td>the enum that stores all of the event types </td></tr>
   </table>
   </dd>
 </dl>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Example</h1>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classutil_1_1event.html">event</a> for the beginning part of the example</dd></dl>
-<p>implamenting a simple event disptacher using the example events for the example section in event can be done in the following way:</p>
-<p >bool handelType(typeEvent&amp; t_event) { std::cout &lt;&lt; "type event occured: " &lt;&lt; t_event.toString() &lt;&lt; std::endl; return false; }</p>
-<p >bool handelClick(clickEvent&amp; t_event) { std::cout &lt;&lt; "click event occured: " &lt;&lt; t_event.toString() &lt;&lt; std::endl; return true; }</p>
-<p >template&lt;typename eventType&gt; void onEvent(util::event&lt;eventType&gt;&amp; t_event) { util::event_dispatcher&lt;eventTypes&gt; eventDispatcher(t_event);</p>
-<p >eventDispatcher.dispatch&lt;typeEvent&gt;(&amp;handelType); eventDispatcher.dispatch&lt;clickEvent&gt;(&amp;handelClick); }</p>
-<p >int main(int argc, char** argv) { typeEvent e('c'); clickEvent e2(123, 345);</p>
-<p >onEvent(e); onEvent(e2);</p>
-<p >return EXIT_SUCCESS; }</p>
-<p >the onEvent method calls an event disptacher that will call the appropriate handler for each event. a main method will call the onEvent method with the generated event impls </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a939e2abac7e3b4a5bf855bad85e6e453" name="a939e2abac7e3b4a5bf855bad85e6e453"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a939e2abac7e3b4a5bf855bad85e6e453">&#9670;&#160;</a></span>event_dispatcher()</h2>
@@ -138,10 +158,11 @@ template&lt;typename eventTypes &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@brien event disptacher constructor. intializes the event to dispatch</p>
+
+<p>event dispatcher constructor. stores the given event </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event&lt;eventTypes&gt;&amp;</td><td>the event to try dispatch </td></tr>
+    <tr><td class="paramname">t_event</td><td>the event to dispatch to the correct handlers </td></tr>
   </table>
   </dd>
 </dl>
@@ -176,20 +197,21 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >@breif dispatch function. If the events event type matches the disparch function event type, the dispatch function will be called</p>
+
+<p>event handler dispatch method. the event function will only get called if the events static type matches the tparam <code>T::getStaticType()</code>. The event handler fucntion should return a boolean value. It should return true if the event was handled and does not need to get dispatched again, false if it is not yet handled and may need to get dispached again. The handle event method should take a derrived event. If the derived events type matches the event to dispaches type, the handler method will get invoked </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">the</td><td>typename of the event class </td></tr>
+    <tr><td class="paramname">T</td><td>the event type derrived class from event. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>event dispatrch function to be called on the event (if it matches) </td></tr>
+    <tr><td class="paramname">t_dispatchFn</td><td>the function that gets called if the event should be dispatched.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>wither or not the dispatch function was called </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the event handler method was called </dd></dl>
 
 </div>
 </div>
