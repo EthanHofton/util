@@ -15,9 +15,8 @@
 namespace util {
 
 /**
-* TODO: fill out event fields
+* @brief cleint events enum class. stores all the client event types
 */
-
 enum class CLIENT_EVENTS {
     // * logging events
     before_log,
@@ -36,6 +35,9 @@ enum class CLIENT_EVENTS {
     client_finished_listen,
 };
 
+/**
+* @brief cleint before log event class. is dispached before a log message
+*/
 class client_before_log_event : public util::event<CLIENT_EVENTS> {
 public:
 
@@ -43,6 +45,9 @@ public:
 
 };
 
+/**
+* @brief client after log event. dispached after a message is logged
+*/
 class client_after_log_event : public util::event<CLIENT_EVENTS> {
 public:
 
@@ -50,10 +55,16 @@ public:
 
 };
 
+/**
+* @brief client listen event. is used to generalize events that invole the client listen thread
+*/
 class client_listen_event : public util::event<CLIENT_EVENTS> {
 
 };
 
+/**
+* @brief client finished listen event. is dispatched once the client listen thread is finished
+*/
 class client_finished_listen_event : public client_listen_event {
 public:
 
@@ -61,6 +72,9 @@ public:
 
 };
 
+/**
+* @brief client start listen evnet. is dispached once the client starts a new listen thread
+*/
 class client_start_listen_event : public client_listen_event {
 public:
 
@@ -68,6 +82,9 @@ public:
 
 };
 
+/**
+* @brief client connect event. is dispached when the client connects to the server
+*/
 class client_connect_event : public util::event<CLIENT_EVENTS> {
 public:
 
@@ -90,6 +107,9 @@ private:
 
 };
 
+/**
+* @brief client disconnect event. is dispached once a client disconnects for the server
+*/
 class client_disconnect_event : public util::event<CLIENT_EVENTS> {
 public:
 
@@ -97,58 +117,128 @@ public:
 
 };
 
+/**
+    * @brief client communication evnet. is used to generalize events that involve comunnivation (e.g send, recv)
+    */
 class client_communication_event : public util::event<CLIENT_EVENTS> {
 
 public:
     
+    /**
+    * @brief client communication event constructor. copied the data buffer
+    *
+    * @param t_serverFd the server file discriptor
+    * @param t_data the data that was comminicated
+    * @param t_dataSize the size of the data buffer
+    */
     client_communication_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : m_serverFd(t_serverFd), m_dataSize(t_dataSize) {
         m_data = new char[m_dataSize];
         memcpy(m_data, t_data, (size_t)m_dataSize);
     }
 
+    /**
+    * @brief client comminication event disctrictor, free the memory that was created
+    */
     ~client_communication_event() {
         delete[] m_data;
     }
 
+    /**
+    * @brief return the data buffer as a string
+    *
+    * @return the data buffer as a string
+    */
     std::string getDataAsString() const { return std::string(m_data, m_dataSize); }
+    /**
+    * @brief get the data as a cosnt char *
+    *
+    * @return the data buffer
+    */
     const char* getData() const { return m_data; }
+    /**
+    * @brief get the size of the data buffer 
+    *
+    * @return the size of the data buffer
+    */
     size_t getDataSize() const { return m_dataSize; }
 
-private:
+protected:
 
+    /**
+    * @brief the server file discriptor
+    */
     int m_serverFd;
+    /**
+    * @brief the data that was comminicated
+    */
     char* m_data;
+    /**
+    * @brief the size of the data buffer
+    */
     size_t m_dataSize;
 };
 
 
+/**
+* @brief client send event. dispatched when the client sends a message to the server
+*/
 class client_send_event : public client_communication_event {
 public:
 
+    /**
+    * @brief client send event consturtor
+    *
+    * @param t_serverFd the server file disctiptor
+    * @param t_data the data that was sent
+    * @param t_dataSize the size of the data that was sent
+    */
     client_send_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : client_communication_event(t_serverFd, t_data, t_dataSize) {}
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, client_send);
 
-private:
-
-
 };
 
+/**
+* @brief client receve event. dispatched when the client receves data from the server
+*/
 class client_receve_event : public client_communication_event {
 public:
 
+    /**
+    * @brief client receve event constuctor
+    *
+    * @param t_serverFd the server file desciptor
+    * @param t_data the data that was receved
+    * @param t_dataSize the size of the data that was sent
+    */
     client_receve_event(const int& t_serverFd, const char* t_data, const size_t& t_dataSize) : client_communication_event(t_serverFd, t_data, t_dataSize) {}
 
     EVENT_CLASS_TYPE(CLIENT_EVENTS, client_receve);
 
 };
 
+/**
+* @brief client class. uses RIAA. when the client is created, it connects to the server and starts the listen thread. when it is deleted it disconnects and 
+* distroies the socket. However, the reconnect and disconnect will allow to do this early (the methods have been set up so that if disconnect/reconnect is called twice, it is ignored)
+*/
 class client {
 
+    /**
+    * @brief the event function that is called when an event needs to be dispactched
+    * the function should return void but take `util::event<CLIENT_EVENTS>&` as param
+    */
     using eventFn = std::function<void(util::event<CLIENT_EVENTS>&)>;
 
 public:
 
+    /**
+    * @brief client constructor. whenn the consturcor is called, it connects to the server, and starts the listen thread
+    *
+    * @param t_ip the IP of the server
+    * @param t_port the listen port of the server
+    * @param t_eventFn the event function to use
+    * @param t_logger the logger to use (PRE-INITALIZED)
+    */
     client(const std::string& t_ip, const int& t_port, eventFn t_eventFn, util::logger& t_logger) : m_ip(t_ip), m_port(t_port), m_logger(t_logger), m_eventFunction(t_eventFn) {
         m_alive = false;
         m_closed = true;
@@ -156,27 +246,52 @@ public:
         startListenThread();
     }
 
+    /**
+    * @brief disconnect from the server. can be called more then once. If allready disconnected, the function will do nothing.
+    */
     void disconnect() {
         handleDisconnect();
     }
 
+    /**
+    * @brief reconnect to the server. If client is allready connected, the function will do nothing
+    */
     void reconnect() {
         connectServer();
         startListenThread();
     }
 
+    /**
+    * @brief send the server a (string) message
+    *
+    * @param t_message the message to send
+    */
     void sendServer(const std::string& t_message) {
         handleSend(t_message.c_str(), strlen(t_message.c_str()));
     }
 
+    /**
+    * @brief send the server a message
+    *
+    * @param t_buff the bytes to send
+    * @param t_buffSize the size of the message
+    */
     void sendServer(char* t_buff, const size_t& t_buffSize) {
         handleSend(t_buff, t_buffSize);
     }
 
+    /**
+    * @brief client destructor. disconnects from the server. If allready disconnected, will do nothing
+    */
     ~client() {
         handleDisconnect();
     }
 
+    /**
+    * @brief alive getter. will return true if the client is currently listening
+    *
+    * @return if the server is alive or not
+    */
     bool alive() const { return m_alive; }
 
 private:
@@ -184,7 +299,7 @@ private:
     void startListenThread() {
         // * only restart the listen thread if it is not started allready 
         using namespace std::chrono_literals;
-        if (m_clientThread.wait_for(0ms) != std::future_status::ready) {
+        if (!m_clientThread.valid() || m_clientThread.wait_for(0ms) == std::future_status::ready) {
             // * set active to true as server is initalized and launch the listen thread
             logMessage(util::LOGGER_LEVEL::INFO, "starting client listen thread...");
             m_alive = true;
