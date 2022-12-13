@@ -463,7 +463,7 @@ public:
     * @param t_buff the buffer of bytes to send
     * @param t_buffSize the lenght of the buffer to send
     */
-    void sendClient(const std::string& t_clientId, char* t_buff, const size_t& t_buffSize) {
+    void sendClient(const std::string& t_clientId, const char* t_buff, const size_t& t_buffSize) {
         handleSend(t_clientId, t_buff, t_buffSize);
     }
 
@@ -484,7 +484,7 @@ public:
     * @param t_buff the bytes to send
     * @param t_buffSize the size of the array
     */
-    void sendAllClients(char* t_buff, const size_t& t_buffSize) {
+    void sendAllClients(const char* t_buff, const size_t& t_buffSize) {
         for (auto &clientConn : m_clientMap) {
             sendClient(clientConn.first, t_buff, t_buffSize);
         }

@@ -304,7 +304,7 @@ public:
     * @param t_buff the bytes to send
     * @param t_buffSize the size of the message
     */
-    void sendServer(char* t_buff, const size_t& t_buffSize) {
+    void sendServer(const char* t_buff, const size_t& t_buffSize) {
         handleSend(t_buff, t_buffSize);
     }
 
