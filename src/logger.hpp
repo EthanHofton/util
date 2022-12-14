@@ -11,6 +11,20 @@
 namespace util
 {
     /**
+    * @brief enum class to store the logger sink priority levels
+    */
+    enum class LOGGER_SINK_LEVEL
+    {
+        TRACE    = 0,
+        DEBUG    = 1,
+        INFO     = 2,
+        WARNING  = 3,
+        ERROR    = 4,
+        CRITICAL = 5,
+        NONE     = 6,
+    };
+
+    /**
      * @brief enum class to store the logger priority level
      * 
      */
@@ -21,7 +35,7 @@ namespace util
         INFO     = 2,
         WARNING  = 3,
         ERROR    = 4,
-        CRITICAL = 5
+        CRITICAL = 5,
     };
 
     /**
@@ -31,7 +45,7 @@ namespace util
      * @param t_level the log level to output
      * @return std::ostream& 
      */
-    std::ostream& operator<<(std::ostream& t_os, const LOGGER_LEVEL& t_level)
+    inline std::ostream& operator<<(std::ostream& t_os, const LOGGER_LEVEL& t_level)
     {
         switch (t_level)
         {
@@ -41,6 +55,28 @@ namespace util
             case LOGGER_LEVEL::WARNING:  return t_os << "WARNING";
             case LOGGER_LEVEL::ERROR:    return t_os << "ERROR";
             case LOGGER_LEVEL::CRITICAL: return t_os << "CRITICAL";
+        }
+    }
+
+    /**
+    * @brief LOGGER_SINK_LEVEL standard out
+    *
+    * @param t_os the output stream to write to
+    * @param t_level the logger sink level to output
+    *
+    * @return std::ostream&
+    */
+    inline std::ostream& operator<<(std::ostream& t_os, const LOGGER_SINK_LEVEL& t_level)
+    {
+        switch (t_level)
+        {
+            case LOGGER_SINK_LEVEL::TRACE:    return t_os << "TRACE";
+            case LOGGER_SINK_LEVEL::DEBUG:    return t_os << "DEBUG";
+            case LOGGER_SINK_LEVEL::INFO:     return t_os << "INFO";
+            case LOGGER_SINK_LEVEL::WARNING:  return t_os << "WARNING";
+            case LOGGER_SINK_LEVEL::ERROR:    return t_os << "ERROR";
+            case LOGGER_SINK_LEVEL::CRITICAL: return t_os << "CRITICAL";
+            case LOGGER_SINK_LEVEL::NONE:     return t_os << "NONE";
         }
     }
 
@@ -72,13 +108,19 @@ namespace util
          * 
          * @param t_level the level to set the logger priority
          */
-        void setLogLevel(const LOGGER_LEVEL& t_level) { m_level = t_level; }
+        void setLogLevel(const LOGGER_SINK_LEVEL& t_level) { m_level = t_level; }
         /**
-         * @brief Get the Log Level
+         * @brief Get the Log Level as int
          * 
-         * @return LOGGER_LEVEL 
+         * @return int 
          */
-        LOGGER_LEVEL getLogLevel() const { return m_level; }
+        int getLogLeveli() const { return (int)m_level; }
+        /**
+        * @brief get log level
+        *
+        * @return LOGGER_SINK_LEVEL
+        */
+        LOGGER_SINK_LEVEL getLogLevel() const { return m_level; }
 
         /**
          * @brief Set the output format
@@ -132,9 +174,10 @@ namespace util
          * 
          */
         std::string m_format = "[%Y-%m-%d %H:%M:%S] [%n] [%^%l%$] %v";
+
     private:
         std::string m_loggerName;
-        LOGGER_LEVEL m_level = LOGGER_LEVEL::INFO;
+        LOGGER_SINK_LEVEL m_level = LOGGER_SINK_LEVEL::INFO;
         friend logger;
     };
 
@@ -238,7 +281,7 @@ namespace util
          * @param t_index sinks identifier
          * @param t_level level to set
          */
-        void setSinkLogLevel(const std::string& t_index, const LOGGER_LEVEL& t_level)
+        void setSinkLogLevel(const std::string& t_index, const LOGGER_SINK_LEVEL& t_level)
         { m_sinks[t_index]->setLogLevel(t_level); }
         /**
          * @brief Get a sinks log level
@@ -246,7 +289,7 @@ namespace util
          * @param t_index the sinks identifier
          * @return LOGGER_LEVEL 
          */
-        LOGGER_LEVEL getSinkLogLevel(const std::string& t_index)
+        LOGGER_SINK_LEVEL getSinkLogLevel(const std::string& t_index)
         { return m_sinks[t_index]->getLogLevel(); }
 
         /**
@@ -273,7 +316,7 @@ namespace util
          * @param t_sink the identifier of the sink to log to
          */
         void log(const std::string& t_msg, const LOGGER_LEVEL& t_level, const std::string& t_sink)
-        { if ((int)t_level >= (int)(m_sinks[t_sink]->getLogLevel())) m_sinks[t_sink]->output(format(t_sink, t_msg, t_level)); }
+        { if ((int)t_level >= m_sinks[t_sink]->getLogLeveli()) m_sinks[t_sink]->output(format(t_sink, t_msg, t_level)); }
 
         /**
          * @brief log a message to all output sinks
