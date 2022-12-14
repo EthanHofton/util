@@ -555,7 +555,10 @@ private:
         m_eventFunction(sendEv);
 
         // * send the bytes to the client
-        send(clientFd, (void*)t_data, t_dataSize, 0);
+        if (send(clientFd, (void*)t_data, t_dataSize, 0) < 0) {
+            logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("failed to send message to client {}", t_clientId));
+            logMessage(util::LOGGER_LEVEL::ERROR, util::fmt("send error: {}", strerror(errno)));
+        }
     }
 
     void logMessage(const util::LOGGER_LEVEL& t_level, const std::string& t_message) const {
@@ -662,15 +665,16 @@ private:
         std::string clientIp = inet_ntoa(address.sin_addr);
         int clientPort = ntohs(address.sin_port);
 
+        // * add the client to the client map
+        m_clientMap[connId] = clientFd;
+        
         // * log client connet
         logMessage(LOGGER_LEVEL::INFO, util::fmt("new client ({}) connection at ip {} on port {}", connId, clientIp, clientPort));
-
+        
         // * create and dispatch the client connected event
         server_client_connect_event connEv = server_client_connect_event(clientFd, clientPort, clientIp, connId);
         m_eventFunction(connEv);
 
-        // * add the client to the client map
-        m_clientMap[connId] = clientFd;
     }
 
     bool handleClient(const std::string& t_clientId) {
