@@ -142,7 +142,7 @@ namespace util
      * @param t_s serializable string to print
      * @return std::ostream& 
      */
-    std::ostream& operator <<(std::ostream& t_out, const serializable_string& t_s)
+    inline std::ostream& operator <<(std::ostream& t_out, const serializable_string& t_s)
     {
         t_out << t_s.m_data;
         return t_out;
@@ -156,7 +156,7 @@ namespace util
      * @param t_stream stream to write to
      */
     template<>
-    void write<serializable_string>(const serializable_string& t_obj, std::ofstream &t_stream)
+    inline void write<serializable_string>(const serializable_string& t_obj, std::ofstream &t_stream)
     {
         t_obj.write(t_stream);
     }
@@ -169,7 +169,7 @@ namespace util
      * @param t_stream stream to read from
      */
     template<>
-    void read<serializable_string>(serializable_string* t_obj, std::ifstream &t_stream)
+    inline void read<serializable_string>(serializable_string* t_obj, std::ifstream &t_stream)
     {
         t_obj->read(t_stream);
     }
@@ -182,7 +182,7 @@ namespace util
      * @param t_stream stream to write to
      */
     template<>
-    void write<std::string>(const std::string& t_obj, std::ofstream &t_stream)
+    inline void write<std::string>(const std::string& t_obj, std::ofstream &t_stream)
     {
         serializable_string s = t_obj;
         s.write(t_stream);
@@ -196,7 +196,7 @@ namespace util
      * @param t_stream stream to read from
      */
     template<>
-    void read<std::string>(std::string* t_obj, std::ifstream &t_stream)
+    inline void read<std::string>(std::string* t_obj, std::ifstream &t_stream)
     {
         serializable_string s;
         s.read(t_stream);

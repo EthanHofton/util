@@ -112,7 +112,7 @@ namespace util
      * @param t_fmt the format string to return
      * @return std::string 
      */
-    std::string fmt(std::string t_fmt)
+    inline std::string fmt(std::string t_fmt)
     {
         return t_fmt;
     }
@@ -144,7 +144,7 @@ namespace util
      * @param fmt format string describing what time to use
      * @return std::string 
      */
-    std::string strfmttime(const std::string& fmt)
+    inline std::string strfmttime(const std::string& fmt)
     {
         char outstr[200];
         time_t t = time(NULL);
@@ -158,7 +158,7 @@ namespace util
     *
     * @return std::string the new v4 uuid
     */
-    std::string generate_uuid_v4() {
+    inline std::string generate_uuid_v4() {
         std::stringstream ss;
         prng rng;
         int i;

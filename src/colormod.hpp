@@ -41,7 +41,7 @@ namespace util
      * @param t_mod the color mod code
      * @return std::ostream& 
      */
-    std::ostream& operator<<(std::ostream& t_os, const CONSOLE_COLOR_CODE& t_mod)
+    inline std::ostream& operator<<(std::ostream& t_os, const CONSOLE_COLOR_CODE& t_mod)
     {
         return t_os << "\033[" << ((int)t_mod) << "m";
     }

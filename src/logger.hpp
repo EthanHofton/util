@@ -185,7 +185,7 @@ namespace util
      * @brief Destroy the logger sink object
      * 
      */
-    logger_sink::~logger_sink() {}
+    inline logger_sink::~logger_sink() {}
 
     /**
      * @brief logger class. takes sinks to output structed messages too.
