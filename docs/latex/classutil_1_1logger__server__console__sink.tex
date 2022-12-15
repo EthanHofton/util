@@ -1,0 +1,90 @@
+\hypertarget{classutil_1_1logger__server__console__sink}{}\doxysection{util\+::logger\+\_\+server\+\_\+console\+\_\+sink Class Reference}
+\label{classutil_1_1logger__server__console__sink}\index{util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}}
+Inheritance diagram for util\+::logger\+\_\+server\+\_\+console\+\_\+sink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutil_1_1logger__server__console__sink}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classutil_1_1logger__server__console__sink_a7cfb6c72c05bc700f4e01e23b9e3c587}{output}} (const std\+::string \&t\+\_\+out) const override
+\begin{DoxyCompactList}\small\item\em output a message. to be defined by derrived classes \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1logger__server__console__sink_ac502e1f5b94d6039648454a2ab5fec9b}{start\+Output\+Color\+Range}} (const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{util\+::\+LOGGER\+\_\+\+LEVEL}} \&t\+\_\+level) const override
+\begin{DoxyCompactList}\small\item\em add special charicters to the output stream to define colors \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1logger__server__console__sink_a860f3be473f947012285173d3b0fca5e}{end\+Output\+Color\+Range}} () const override
+\begin{DoxyCompactList}\small\item\em restore the old color for the output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1logger__server__console__sink_a37d004529d2f3a7c35a43f671ef911d0}\label{classutil_1_1logger__server__console__sink_a37d004529d2f3a7c35a43f671ef911d0}} 
+static void {\bfseries str\+\_\+overwrite\+\_\+stdout} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__server__console__sink_a860f3be473f947012285173d3b0fca5e}\label{classutil_1_1logger__server__console__sink_a860f3be473f947012285173d3b0fca5e}} 
+\index{util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}!endOutputColorRange@{endOutputColorRange}}
+\index{endOutputColorRange@{endOutputColorRange}!util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}}
+\doxysubsubsection{\texorpdfstring{endOutputColorRange()}{endOutputColorRange()}}
+{\footnotesize\ttfamily std\+::string util\+::logger\+\_\+server\+\_\+console\+\_\+sink\+::end\+Output\+Color\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+restore the old color for the output stream 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classutil_1_1logger__sink_a71f825d2dafe0d93e1b1dbb482b11fcb}{util\+::logger\+\_\+sink}}.
+
+\mbox{\Hypertarget{classutil_1_1logger__server__console__sink_a7cfb6c72c05bc700f4e01e23b9e3c587}\label{classutil_1_1logger__server__console__sink_a7cfb6c72c05bc700f4e01e23b9e3c587}} 
+\index{util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}!output@{output}}
+\index{output@{output}!util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily void util\+::logger\+\_\+server\+\_\+console\+\_\+sink\+::output (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+output a message. to be defined by derrived classes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+out} & the message to output \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classutil_1_1logger__sink_a0aa7398005008588cd349d491af6c2e8}{util\+::logger\+\_\+sink}}.
+
+\mbox{\Hypertarget{classutil_1_1logger__server__console__sink_ac502e1f5b94d6039648454a2ab5fec9b}\label{classutil_1_1logger__server__console__sink_ac502e1f5b94d6039648454a2ab5fec9b}} 
+\index{util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}!startOutputColorRange@{startOutputColorRange}}
+\index{startOutputColorRange@{startOutputColorRange}!util::logger\_server\_console\_sink@{util::logger\_server\_console\_sink}}
+\doxysubsubsection{\texorpdfstring{startOutputColorRange()}{startOutputColorRange()}}
+{\footnotesize\ttfamily std\+::string util\+::logger\+\_\+server\+\_\+console\+\_\+sink\+::start\+Output\+Color\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceutil_a8e72eaec516a371b251df311da971a87}{util\+::\+LOGGER\+\_\+\+LEVEL}} \&}]{t\+\_\+level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+add special charicters to the output stream to define colors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+level} & the level of the output to base the color off \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classutil_1_1logger__sink_acc10ce58bbc2d981cd7b72a136cd6217}{util\+::logger\+\_\+sink}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/server.\+hpp\end{DoxyCompactItemize}

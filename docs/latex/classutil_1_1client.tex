@@ -1,0 +1,111 @@
+\hypertarget{classutil_1_1client}{}\doxysection{util\+::client Class Reference}
+\label{classutil_1_1client}\index{util::client@{util::client}}
+
+
+client class. uses RIAA. when the client is created, it connects to the server and starts the listen thread. when it is deleted it disconnects and distroies the socket. However, the reconnect and disconnect will allow to do this early (the methods have been set up so that if disconnect/reconnect is called twice, it is ignored)  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1client_ab772bf2734cc18ec34f8ac6d963c8026}{client}} (const std\+::string \&t\+\_\+ip, const int \&t\+\_\+port, event\+Fn t\+\_\+event\+Fn, \mbox{\hyperlink{classutil_1_1logger}{util\+::logger}} \&t\+\_\+logger)
+\begin{DoxyCompactList}\small\item\em client constructor. whenn the consturcor is called, it connects to the server, and starts the listen thread \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client_ae1a1fcf3809c8462d3e63fd388c355e1}\label{classutil_1_1client_ae1a1fcf3809c8462d3e63fd388c355e1}} 
+void {\bfseries disconnect} ()
+\begin{DoxyCompactList}\small\item\em disconnect from the server. can be called more then once. If allready disconnected, the function will do nothing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client_abcbfa3a2987178209b593c2a54a77650}\label{classutil_1_1client_abcbfa3a2987178209b593c2a54a77650}} 
+void {\bfseries reconnect} ()
+\begin{DoxyCompactList}\small\item\em reconnect to the server. If client is allready connected, the function will do nothing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1client_a43c59f7b85b838518baec03d085be0c0}{send\+Server}} (const std\+::string \&t\+\_\+message)
+\begin{DoxyCompactList}\small\item\em send the server a (string) message \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1client_a36124d3cb0e215f517db904f4bdf9660}{send\+Server}} (char $\ast$t\+\_\+buff, const size\+\_\+t \&t\+\_\+buff\+Size)
+\begin{DoxyCompactList}\small\item\em send the server a message \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client_a4a22e42b9437ba83b152f5ef7fd3f976}\label{classutil_1_1client_a4a22e42b9437ba83b152f5ef7fd3f976}} 
+{\bfseries $\sim$client} ()
+\begin{DoxyCompactList}\small\item\em client destructor. disconnects from the server. If allready disconnected, will do nothing \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classutil_1_1client_a897b797bc56f54f0a24209d112c996a5}{alive}} () const
+\begin{DoxyCompactList}\small\item\em alive getter. will return true if the client is currently listening \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+client class. uses RIAA. when the client is created, it connects to the server and starts the listen thread. when it is deleted it disconnects and distroies the socket. However, the reconnect and disconnect will allow to do this early (the methods have been set up so that if disconnect/reconnect is called twice, it is ignored) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1client_ab772bf2734cc18ec34f8ac6d963c8026}\label{classutil_1_1client_ab772bf2734cc18ec34f8ac6d963c8026}} 
+\index{util::client@{util::client}!client@{client}}
+\index{client@{client}!util::client@{util::client}}
+\doxysubsubsection{\texorpdfstring{client()}{client()}}
+{\footnotesize\ttfamily util\+::client\+::client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+ip,  }\item[{const int \&}]{t\+\_\+port,  }\item[{event\+Fn}]{t\+\_\+event\+Fn,  }\item[{\mbox{\hyperlink{classutil_1_1logger}{util\+::logger}} \&}]{t\+\_\+logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client constructor. whenn the consturcor is called, it connects to the server, and starts the listen thread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+ip} & the IP of the server \\
+\hline
+{\em t\+\_\+port} & the listen port of the server \\
+\hline
+{\em t\+\_\+event\+Fn} & the event function to use \\
+\hline
+{\em t\+\_\+logger} & the logger to use (PRE-\/\+INITALIZED) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1client_a897b797bc56f54f0a24209d112c996a5}\label{classutil_1_1client_a897b797bc56f54f0a24209d112c996a5}} 
+\index{util::client@{util::client}!alive@{alive}}
+\index{alive@{alive}!util::client@{util::client}}
+\doxysubsubsection{\texorpdfstring{alive()}{alive()}}
+{\footnotesize\ttfamily bool util\+::client\+::alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+alive getter. will return true if the client is currently listening 
+
+\begin{DoxyReturn}{Returns}
+if the server is alive or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1client_a36124d3cb0e215f517db904f4bdf9660}\label{classutil_1_1client_a36124d3cb0e215f517db904f4bdf9660}} 
+\index{util::client@{util::client}!sendServer@{sendServer}}
+\index{sendServer@{sendServer}!util::client@{util::client}}
+\doxysubsubsection{\texorpdfstring{sendServer()}{sendServer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void util\+::client\+::send\+Server (\begin{DoxyParamCaption}\item[{char $\ast$}]{t\+\_\+buff,  }\item[{const size\+\_\+t \&}]{t\+\_\+buff\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+send the server a message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+buff} & the bytes to send \\
+\hline
+{\em t\+\_\+buff\+Size} & the size of the message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classutil_1_1client_a43c59f7b85b838518baec03d085be0c0}\label{classutil_1_1client_a43c59f7b85b838518baec03d085be0c0}} 
+\index{util::client@{util::client}!sendServer@{sendServer}}
+\index{sendServer@{sendServer}!util::client@{util::client}}
+\doxysubsubsection{\texorpdfstring{sendServer()}{sendServer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void util\+::client\+::send\+Server (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+send the server a (string) message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+message} & the message to send \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/client.\+hpp\end{DoxyCompactItemize}

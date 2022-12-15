@@ -1,0 +1,121 @@
+\hypertarget{classutil_1_1client__connect__event}{}\doxysection{util\+::client\+\_\+connect\+\_\+event Class Reference}
+\label{classutil_1_1client__connect__event}\index{util::client\_connect\_event@{util::client\_connect\_event}}
+
+
+client connect event. is dispached when the client connects to the server  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+Inheritance diagram for util\+::client\+\_\+connect\+\_\+event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classutil_1_1client__connect__event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1client__connect__event_ace802b76e4d4fa2efadc9420dd21f676}{client\+\_\+connect\+\_\+event}} (const int \&t\+\_\+server\+Fd, const int \&t\+\_\+client\+Fd, const std\+::string \&t\+\_\+ip, const int \&t\+\_\+port)
+\begin{DoxyCompactList}\small\item\em client connection event constructor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1client__connect__event_a143f22938d411cc4cba89e7dca694af4}{get\+Server\+Fd}} () const
+\begin{DoxyCompactList}\small\item\em server file desciptor getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1client__connect__event_a3a03865fbcfcd2337fc84281d9ade2da}{get\+Client\+Fd}} () const
+\begin{DoxyCompactList}\small\item\em client file desciptor getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1client__connect__event_aaa9043c46b63bbf0362071f9cb2160e2}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em server port getter \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classutil_1_1client__connect__event_a8aa2e685299823c5b9fdf19eb0488103}{get\+Ip}} () const
+\begin{DoxyCompactList}\small\item\em server ip getter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1client__connect__event_ad10f18faac45ad6596c80b1caff3642c}\label{classutil_1_1client__connect__event_ad10f18faac45ad6596c80b1caff3642c}} 
+{\bfseries EVENT\+\_\+\+CLASS\+\_\+\+TYPE} (CLIENT\+\_\+\+EVENTS, server\+\_\+connected)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+client connect event. is dispached when the client connects to the server 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1client__connect__event_ace802b76e4d4fa2efadc9420dd21f676}\label{classutil_1_1client__connect__event_ace802b76e4d4fa2efadc9420dd21f676}} 
+\index{util::client\_connect\_event@{util::client\_connect\_event}!client\_connect\_event@{client\_connect\_event}}
+\index{client\_connect\_event@{client\_connect\_event}!util::client\_connect\_event@{util::client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{client\_connect\_event()}{client\_connect\_event()}}
+{\footnotesize\ttfamily util\+::client\+\_\+connect\+\_\+event\+::client\+\_\+connect\+\_\+event (\begin{DoxyParamCaption}\item[{const int \&}]{t\+\_\+server\+Fd,  }\item[{const int \&}]{t\+\_\+client\+Fd,  }\item[{const std\+::string \&}]{t\+\_\+ip,  }\item[{const int \&}]{t\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client connection event constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+server\+Fd} & the server file descriptor \\
+\hline
+{\em t\+\_\+client\+Fd} & the client file descriptor \\
+\hline
+{\em t\+\_\+ip} & the ip adress of the server \\
+\hline
+{\em t\+\_\+port} & the listen port of the server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1client__connect__event_a3a03865fbcfcd2337fc84281d9ade2da}\label{classutil_1_1client__connect__event_a3a03865fbcfcd2337fc84281d9ade2da}} 
+\index{util::client\_connect\_event@{util::client\_connect\_event}!getClientFd@{getClientFd}}
+\index{getClientFd@{getClientFd}!util::client\_connect\_event@{util::client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{getClientFd()}{getClientFd()}}
+{\footnotesize\ttfamily int util\+::client\+\_\+connect\+\_\+event\+::get\+Client\+Fd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+client file desciptor getter 
+
+\begin{DoxyReturn}{Returns}
+the clinet connection id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1client__connect__event_a8aa2e685299823c5b9fdf19eb0488103}\label{classutil_1_1client__connect__event_a8aa2e685299823c5b9fdf19eb0488103}} 
+\index{util::client\_connect\_event@{util::client\_connect\_event}!getIp@{getIp}}
+\index{getIp@{getIp}!util::client\_connect\_event@{util::client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{getIp()}{getIp()}}
+{\footnotesize\ttfamily std\+::string util\+::client\+\_\+connect\+\_\+event\+::get\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server ip getter 
+
+\begin{DoxyReturn}{Returns}
+the ip adress of the server 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1client__connect__event_aaa9043c46b63bbf0362071f9cb2160e2}\label{classutil_1_1client__connect__event_aaa9043c46b63bbf0362071f9cb2160e2}} 
+\index{util::client\_connect\_event@{util::client\_connect\_event}!getPort@{getPort}}
+\index{getPort@{getPort}!util::client\_connect\_event@{util::client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int util\+::client\+\_\+connect\+\_\+event\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server port getter 
+
+\begin{DoxyReturn}{Returns}
+the listen port of the server 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1client__connect__event_a143f22938d411cc4cba89e7dca694af4}\label{classutil_1_1client__connect__event_a143f22938d411cc4cba89e7dca694af4}} 
+\index{util::client\_connect\_event@{util::client\_connect\_event}!getServerFd@{getServerFd}}
+\index{getServerFd@{getServerFd}!util::client\_connect\_event@{util::client\_connect\_event}}
+\doxysubsubsection{\texorpdfstring{getServerFd()}{getServerFd()}}
+{\footnotesize\ttfamily int util\+::client\+\_\+connect\+\_\+event\+::get\+Server\+Fd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server file desciptor getter 
+
+\begin{DoxyReturn}{Returns}
+the server file desciptor 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/client.\+hpp\end{DoxyCompactItemize}

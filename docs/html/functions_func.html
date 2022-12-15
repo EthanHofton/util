@@ -74,6 +74,7 @@ $(function() {
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>addSink()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#af94e8d190539776787bbd130b3704296">util::logger</a></li>
+<li>alive()&#160;:&#160;<a class="el" href="classutil_1_1client.html#a897b797bc56f54f0a24209d112c996a5">util::client</a></li>
 <li>append()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae97d251f1e16418958263c0df1db0c13">util::bitstream</a></li>
 </ul>
 
@@ -88,28 +89,59 @@ $(function() {
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>cbegin()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a679199e99585cf48a247355ccd04965c">util::bitstream</a></li>
 <li>cend()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a651d4a16844b0f4c84a1c0babf38b9b5">util::bitstream</a></li>
-<li>clone()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#ab14b048357d032f61297fea0c25d4847">util::logger_sink</a></li>
+<li>client()&#160;:&#160;<a class="el" href="classutil_1_1client.html#ab772bf2734cc18ec34f8ac6d963c8026">util::client</a></li>
+<li>client_communication_event()&#160;:&#160;<a class="el" href="classutil_1_1client__communication__event.html#a0ba92b360e279581098a894dcfea01d1">util::client_communication_event</a></li>
+<li>client_connect_event()&#160;:&#160;<a class="el" href="classutil_1_1client__connect__event.html#ace802b76e4d4fa2efadc9420dd21f676">util::client_connect_event</a></li>
+<li>client_receve_event()&#160;:&#160;<a class="el" href="classutil_1_1client__receve__event.html#a1688106d699de0ef71e23748ab8b19b3">util::client_receve_event</a></li>
+<li>client_send_event()&#160;:&#160;<a class="el" href="classutil_1_1client__send__event.html#af787a643ecfca6732a95e803d0a5d88f">util::client_send_event</a></li>
+<li>clone()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#a0224e4a902280f886879d5165f72f625">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__file__sink.html#a93d2e36c56cccdd3dad9283b23f130db">util::logger_file_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#ab14b048357d032f61297fea0c25d4847">util::logger_sink</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>data()&#160;:&#160;<a class="el" href="classutil_1_1serializable__list.html#a496c8da115f26ba01892f25ae08fc104">util::serializable_list&lt; T &gt;</a></li>
 <li>deserialize()&#160;:&#160;<a class="el" href="classutil_1_1serializable.html#a37a3ac1b4126907bba6c6cd6d1539a03">util::serializable</a></li>
+<li>disconnect()&#160;:&#160;<a class="el" href="classutil_1_1client.html#ae1a1fcf3809c8462d3e63fd388c355e1">util::client</a></li>
+<li>dispatch()&#160;:&#160;<a class="el" href="classutil_1_1event__dispatcher.html#acb8e902507c171fd6501b518a2648a71">util::event_dispatcher&lt; eventTypes &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
 <li>end()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a1f4b5f0af54a471ed4eb4280c3a0815e">util::bitstream</a></li>
 <li>endOutputColorRange()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#aadb0332ea0dc97a26cdda1f12c38afa2">util::logger_console_sink</a>, <a class="el" href="classutil_1_1logger__sink.html#a71f825d2dafe0d93e1b1dbb482b11fcb">util::logger_sink</a></li>
+<li>event_dispatcher()&#160;:&#160;<a class="el" href="classutil_1_1event__dispatcher.html#a939e2abac7e3b4a5bf855bad85e6e453">util::event_dispatcher&lt; eventTypes &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>get()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a091db5b721fcec6378ca0010e4dcf913">util::bitstream</a></li>
+<li>getBuffSize()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#af370b34c76adbe0db845ab466dbc62be">util::server_read_event</a>, <a class="el" href="classutil_1_1server__send__event.html#ae6b6fa8b9218c1d2614b431fafd6e9ce">util::server_send_event</a></li>
+<li>getClientBuff()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a1b16be2a59d7ce37a9b5ce1074bb4158">util::server_read_event</a>, <a class="el" href="classutil_1_1server__send__event.html#ac2e17e4afa58c6cecd4ee98a52faeacb">util::server_send_event</a></li>
+<li>getClientFd()&#160;:&#160;<a class="el" href="classutil_1_1client__connect__event.html#a3a03865fbcfcd2337fc84281d9ade2da">util::client_connect_event</a></li>
+<li>getClientId()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a9b644f4ab5bbf7aabd505ba432d0238e">util::server_client_event</a></li>
+<li>getClientIp()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a9929d28c07c56fd62cb3beff961049e2">util::server_client_event</a></li>
+<li>getClientMap()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a7c8951f4f93495c132fe5aad55eb9ab6">util::server</a>, <a class="el" href="classutil_1_1server__shutdown__event.html#aa81dfe87019f0a8b2b0593cf5ebf5633">util::server_shutdown_event</a></li>
+<li>getClientPort()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#ab1f5c50167f54bb6e75c5dffba28cd7a">util::server_client_event</a></li>
+<li>getClientSd()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a7aa04e0642faf3dba8d1c7c2a1ae76b0">util::server_client_event</a></li>
+<li>getData()&#160;:&#160;<a class="el" href="classutil_1_1client__communication__event.html#a7067dfdd119f5d40bf643c8027da7c5c">util::client_communication_event</a></li>
+<li>getDataAsString()&#160;:&#160;<a class="el" href="classutil_1_1client__communication__event.html#a8777a2fb5e589ae4363390d1e62e7771">util::client_communication_event</a></li>
+<li>getDataSize()&#160;:&#160;<a class="el" href="classutil_1_1client__communication__event.html#aef9be1d738c91ab5c86a1e56e68b5f57">util::client_communication_event</a></li>
+<li>getEventType()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aa3d5fbd5cf8a2e99ec143ded392a24c6">util::event&lt; eventTypes &gt;</a></li>
 <li>getFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a0bd9705e13323136ecd40e0cc58b81a6">util::logger_sink</a></li>
+<li>getIp()&#160;:&#160;<a class="el" href="classutil_1_1client__connect__event.html#a8aa2e685299823c5b9fdf19eb0488103">util::client_connect_event</a></li>
+<li>getLogger()&#160;:&#160;<a class="el" href="classutil_1_1server.html#aec17efa0e51828d2866aff5521bcec2f">util::server</a></li>
 <li>getLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a01d31b8777e127c2906858dcc942a0f5">util::logger_sink</a></li>
+<li>getName()&#160;:&#160;<a class="el" href="classutil_1_1event.html#aebd35a6fc8c83c164aaac575d44d68ca">util::event&lt; eventTypes &gt;</a></li>
+<li>getPort()&#160;:&#160;<a class="el" href="classutil_1_1client__connect__event.html#aaa9043c46b63bbf0362071f9cb2160e2">util::client_connect_event</a>, <a class="el" href="classutil_1_1server__shutdown__event.html#a693256dfdc96f247cb201dcaeb184f74">util::server_shutdown_event</a>, <a class="el" href="classutil_1_1server__startup__event.html#abfd0b21a5fe2805c4f88c621993cee81">util::server_startup_event</a></li>
+<li>getServerFd()&#160;:&#160;<a class="el" href="classutil_1_1client__connect__event.html#a143f22938d411cc4cba89e7dca694af4">util::client_connect_event</a>, <a class="el" href="classutil_1_1server__shutdown__event.html#ac718ec3bb7f15e9c4fd9685e76d54d7b">util::server_shutdown_event</a>, <a class="el" href="classutil_1_1server__startup__event.html#ade87e76d25241f86a50d01e8aaaa53e6">util::server_startup_event</a></li>
+<li>getServerMethod()&#160;:&#160;<a class="el" href="classutil_1_1server__startup__event.html#a7afab8874b293418822d8d628c326cd0">util::server_startup_event</a></li>
 <li>getSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a0f67ce37c0447ed74344ab8f99eaccb6">util::logger</a></li>
 <li>getSinkLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#aac3a1ac294d395b3435370f6c74ec76e">util::logger</a></li>
+</ul>
+
+
+<h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>handled()&#160;:&#160;<a class="el" href="classutil_1_1event.html#a03c34f7a666a6a9b692e476c85b5f19b">util::event&lt; eventTypes &gt;</a></li>
 </ul>
 
 
@@ -150,19 +182,34 @@ $(function() {
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>prepend()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a01eb371b0ed05612643554dae99198db">util::bitstream</a></li>
+<li>prng()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#ab116d7242835e17b7a06b6f7f698f63d">util::prng</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>randf()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#a27789e43f613b66d26711a2d77e20c5b">util::prng</a></li>
+<li>randi()&#160;:&#160;<a class="el" href="classutil_1_1prng.html#ad6e5902d5c33b7b80b5813530383d54a">util::prng</a></li>
 <li>read()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae6b666587ccfe0a58d1f100ca65beb9c">util::bitstream</a>, <a class="el" href="classutil_1_1serializable.html#a926595a896c4039bf2c5bf01cac1b1bb">util::serializable</a>, <a class="el" href="classutil_1_1serializable__list.html#af6dad646c2632b2cbd2fd05d7c012e8d">util::serializable_list&lt; T &gt;</a>, <a class="el" href="classutil_1_1serializable__string.html#ad7959d5dab6d3145033c955027a8c83c">util::serializable_string</a>, <a class="el" href="classutil_1_1ubint.html#a868db6b493fb643093ec9b807b4bea51">util::ubint</a></li>
+<li>reconnect()&#160;:&#160;<a class="el" href="classutil_1_1client.html#abcbfa3a2987178209b593c2a54a77650">util::client</a></li>
 <li>removeSink()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a008fce4c0e4e773abd1b26b7ab3acb8a">util::logger</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>sendAllClients()&#160;:&#160;<a class="el" href="classutil_1_1server.html#ad83147fb1042186c295ffeb4714c005e">util::server</a></li>
+<li>sendClient()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a860641f560127ba36f6f8e4e5f1bd1b6">util::server</a></li>
+<li>sendServer()&#160;:&#160;<a class="el" href="classutil_1_1client.html#a43c59f7b85b838518baec03d085be0c0">util::client</a></li>
 <li>serializable_list()&#160;:&#160;<a class="el" href="classutil_1_1serializable__list.html#a1ceb78c999b17e9ea9470d2c83537548">util::serializable_list&lt; T &gt;</a></li>
 <li>serializable_string()&#160;:&#160;<a class="el" href="classutil_1_1serializable__string.html#a2bbabde5dd8309218149c2b522f73b95">util::serializable_string</a></li>
 <li>serialize()&#160;:&#160;<a class="el" href="classutil_1_1serializable.html#a804bcd68e6038cb81dc0d51ff4f8b922">util::serializable</a></li>
+<li>server()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a0d8a86ad52c86f5347d7a2141345e977">util::server</a></li>
+<li>server_client_connect_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__connect__event.html#ab827307e6206701d2d139e38c8c21462">util::server_client_connect_event</a></li>
+<li>server_client_disconnect_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__disconnect__event.html#a098e52fd3ed046c673d370c6b17aaa61">util::server_client_disconnect_event</a></li>
+<li>server_client_event()&#160;:&#160;<a class="el" href="classutil_1_1server__client__event.html#a358c11f4cc892235e3646afc45ffb3e3">util::server_client_event</a></li>
+<li>server_read_event()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a983f0ef7351f14ba3f5139a0e81e0d05">util::server_read_event</a></li>
+<li>server_send_event()&#160;:&#160;<a class="el" href="classutil_1_1server__send__event.html#abf77e239928d4391df5fb9384306a925">util::server_send_event</a></li>
+<li>server_shutdown_event()&#160;:&#160;<a class="el" href="classutil_1_1server__shutdown__event.html#af671021d1d7e3a9daea2a7b396082f28">util::server_shutdown_event</a></li>
+<li>server_startup_event()&#160;:&#160;<a class="el" href="classutil_1_1server__startup__event.html#a22c68e4204b26a53a876e85bb4a98857">util::server_startup_event</a></li>
 <li>setFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a78ae962f1c41aa9d41e8bd431b9fc6ec">util::logger_sink</a></li>
 <li>setLogLevel()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a8c945df74d587a5447255db63bf342cc">util::logger_sink</a></li>
 <li>setSinkFormat()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a7ecce168a7f7645c35518b9cccfbafe7">util::logger</a></li>
@@ -177,6 +224,7 @@ $(function() {
 <li>toAscci()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae594445ce9f80651ad2e2e8d7b6e66c0">util::bitstream</a></li>
 <li>toBinary()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#a76ecc93df4c4f3fa69b45ab4255af7e7">util::bitstream</a></li>
 <li>toInt()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#ae6543e0ea41583118d0b37f56dfb6707">util::bitstream</a></li>
+<li>toString()&#160;:&#160;<a class="el" href="classutil_1_1event.html#ab044b1a2346b022526d9b7d14e24686f">util::event&lt; eventTypes &gt;</a></li>
 <li>toUbint()&#160;:&#160;<a class="el" href="classutil_1_1bitstream.html#af76a9e5b2a4b1a6cb56da532a642af71">util::bitstream</a></li>
 </ul>
 
@@ -197,10 +245,15 @@ $(function() {
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~client()&#160;:&#160;<a class="el" href="classutil_1_1client.html#a4a22e42b9437ba83b152f5ef7fd3f976">util::client</a></li>
+<li>~client_communication_event()&#160;:&#160;<a class="el" href="classutil_1_1client__communication__event.html#a17f3272c9ccefcf339de24541fb5940d">util::client_communication_event</a></li>
 <li>~logger()&#160;:&#160;<a class="el" href="classutil_1_1logger.html#a8f290f5a732175bf79e12fc2e8bac5a3">util::logger</a></li>
 <li>~logger_console_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__console__sink.html#ab2d071a45207c01c7b692d0abaf90838">util::logger_console_sink</a></li>
 <li>~logger_file_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__file__sink.html#a65c80b921d8636ac462cfe85ffaa3a26">util::logger_file_sink</a></li>
 <li>~logger_sink()&#160;:&#160;<a class="el" href="classutil_1_1logger__sink.html#a86eb391763969c1ad0e7ed2844629ef5">util::logger_sink</a></li>
+<li>~server()&#160;:&#160;<a class="el" href="classutil_1_1server.html#a933c1e7251b926568a919c9ceebf0088">util::server</a></li>
+<li>~server_read_event()&#160;:&#160;<a class="el" href="classutil_1_1server__read__event.html#a306fc44a8afb2577dfb6941469b0ad72">util::server_read_event</a></li>
+<li>~server_send_event()&#160;:&#160;<a class="el" href="classutil_1_1server__send__event.html#a7522528550e4b13c8c8f524108fd8f3a">util::server_send_event</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

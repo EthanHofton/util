@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['ubint_0',['ubint',['../classutil_1_1ubint.html#a854ad4da662bc4ffb01069ca05e61c03',1,'util::ubint::ubint(const unsigned long long &amp;t_n=0ULL)'],['../classutil_1_1ubint.html#a38dee604aad1263085baa8241edca221',1,'util::ubint::ubint(const int &amp;t_n)'],['../classutil_1_1ubint.html#a1770731b06b027b476b135366cb700e2',1,'util::ubint::ubint(const std::string &amp;t_s)'],['../classutil_1_1ubint.html#a2531a02693987abc97bc81c5eca02dc4',1,'util::ubint::ubint(const char *t_s)'],['../classutil_1_1ubint.html#a7841e25600e8829464a1dcd0ce578d5c',1,'util::ubint::ubint(const ubint &amp;t_u)'],['../classutil_1_1ubint.html#a65f12219b9823caad586dde30f394370',1,'util::ubint::ubint(ubint &amp;&amp;t_u)']]]
+  ['toascci_0',['toAscci',['../classutil_1_1bitstream.html#ae594445ce9f80651ad2e2e8d7b6e66c0',1,'util::bitstream']]],
+  ['tobinary_1',['toBinary',['../classutil_1_1bitstream.html#a76ecc93df4c4f3fa69b45ab4255af7e7',1,'util::bitstream']]],
+  ['toint_2',['toInt',['../classutil_1_1bitstream.html#ae6543e0ea41583118d0b37f56dfb6707',1,'util::bitstream']]],
+  ['tostring_3',['toString',['../classutil_1_1event.html#ab044b1a2346b022526d9b7d14e24686f',1,'util::event']]],
+  ['toubint_4',['toUbint',['../classutil_1_1bitstream.html#af76a9e5b2a4b1a6cb56da532a642af71',1,'util::bitstream']]]
 ];

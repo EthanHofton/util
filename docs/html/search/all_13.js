@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7elogger_0',['~logger',['../classutil_1_1logger.html#a8f290f5a732175bf79e12fc2e8bac5a3',1,'util::logger']]],
-  ['_7elogger_5fconsole_5fsink_1',['~logger_console_sink',['../classutil_1_1logger__console__sink.html#ab2d071a45207c01c7b692d0abaf90838',1,'util::logger_console_sink']]],
-  ['_7elogger_5ffile_5fsink_2',['~logger_file_sink',['../classutil_1_1logger__file__sink.html#a65c80b921d8636ac462cfe85ffaa3a26',1,'util::logger_file_sink']]],
-  ['_7elogger_5fsink_3',['~logger_sink',['../classutil_1_1logger__sink.html#a86eb391763969c1ad0e7ed2844629ef5',1,'util::logger_sink']]]
+  ['write_0',['write',['../classutil_1_1bitstream.html#a40911be6dda2f92d4ee1f42ae144b9de',1,'util::bitstream::write()'],['../classutil_1_1serializable.html#aa1b9f6c36c5693481e4f5f6c9453f343',1,'util::serializable::write()'],['../classutil_1_1serializable__list.html#a8faa6f20defd64bc5a9e3c78a34cd540',1,'util::serializable_list::write()'],['../classutil_1_1serializable__string.html#ac05ed645c82c2ac5174b7dc31e6635a1',1,'util::serializable_string::write()'],['../classutil_1_1ubint.html#a7166787662071478550a7401362e6a43',1,'util::ubint::write()']]]
 ];

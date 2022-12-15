@@ -31,7 +31,9 @@ void \mbox{\hyperlink{classutil_1_1logger__console__sink_accd5093f9f77692e37adad
 std\+::string \mbox{\hyperlink{classutil_1_1logger__console__sink_ab11fd4d59f6e2e0269e1f50fb329613d}{start\+Output\+Color\+Range}} (const LOGGER\+\_\+\+LEVEL \&t\+\_\+level) const override
 \begin{DoxyCompactList}\small\item\em gets the color code to be outputted to the console \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classutil_1_1logger__console__sink_aadb0332ea0dc97a26cdda1f12c38afa2}{end\+Output\+Color\+Range}} () const override
-\begin{DoxyCompactList}\small\item\em restores the old color code of the console \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em restores the old color code of the console \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ \mbox{\hyperlink{classutil_1_1logger__console__sink_a0224e4a902280f886879d5165f72f625}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em create a new logger sink copy object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -94,6 +96,20 @@ Destroy the logger console sink object.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__console__sink_a0224e4a902280f886879d5165f72f625}\label{classutil_1_1logger__console__sink_a0224e4a902280f886879d5165f72f625}} 
+\index{util::logger\_console\_sink@{util::logger\_console\_sink}!clone@{clone}}
+\index{clone@{clone}!util::logger\_console\_sink@{util::logger\_console\_sink}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ util\+::logger\+\_\+console\+\_\+sink\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+create a new logger sink copy object 
+
+
+
+Implements \mbox{\hyperlink{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}{util\+::logger\+\_\+sink}}.
+
 \mbox{\Hypertarget{classutil_1_1logger__console__sink_aadb0332ea0dc97a26cdda1f12c38afa2}\label{classutil_1_1logger__console__sink_aadb0332ea0dc97a26cdda1f12c38afa2}} 
 \index{util::logger\_console\_sink@{util::logger\_console\_sink}!endOutputColorRange@{endOutputColorRange}}
 \index{endOutputColorRange@{endOutputColorRange}!util::logger\_console\_sink@{util::logger\_console\_sink}}

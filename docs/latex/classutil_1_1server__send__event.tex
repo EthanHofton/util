@@ -1,0 +1,98 @@
+\hypertarget{classutil_1_1server__send__event}{}\doxysection{util\+::server\+\_\+send\+\_\+event Class Reference}
+\label{classutil_1_1server__send__event}\index{util::server\_send\_event@{util::server\_send\_event}}
+
+
+server send message event. gets called when the server sends a message to a socket  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+Inheritance diagram for util\+::server\+\_\+send\+\_\+event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classutil_1_1server__send__event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1server__send__event_abf77e239928d4391df5fb9384306a925}{server\+\_\+send\+\_\+event}} (const std\+::string \&t\+\_\+client\+Id, const int \&t\+\_\+client\+Sd, const std\+::string \&t\+\_\+client\+Ip, const int \&t\+\_\+client\+Port, const char $\ast$t\+\_\+client\+Buff, const int \&t\+\_\+client\+Buff\+Size)
+\begin{DoxyCompactList}\small\item\em server send event constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1server__send__event_a7522528550e4b13c8c8f524108fd8f3a}\label{classutil_1_1server__send__event_a7522528550e4b13c8c8f524108fd8f3a}} 
+{\bfseries $\sim$server\+\_\+send\+\_\+event} ()
+\begin{DoxyCompactList}\small\item\em server send event desctructor \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classutil_1_1server__send__event_ae6b6fa8b9218c1d2614b431fafd6e9ce}{get\+Buff\+Size}} () const
+\begin{DoxyCompactList}\small\item\em get the size of the client buffer \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classutil_1_1server__send__event_ac2e17e4afa58c6cecd4ee98a52faeacb}{get\+Client\+Buff}} () const
+\begin{DoxyCompactList}\small\item\em get the buffer the client sent \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1server__send__event_a5d4223b6ff0e5318bbb9abc7e1087059}\label{classutil_1_1server__send__event_a5d4223b6ff0e5318bbb9abc7e1087059}} 
+{\bfseries EVENT\+\_\+\+CLASS\+\_\+\+TYPE} (SERVER\+\_\+\+EVENTS, send)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+server send message event. gets called when the server sends a message to a socket 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1server__send__event_abf77e239928d4391df5fb9384306a925}\label{classutil_1_1server__send__event_abf77e239928d4391df5fb9384306a925}} 
+\index{util::server\_send\_event@{util::server\_send\_event}!server\_send\_event@{server\_send\_event}}
+\index{server\_send\_event@{server\_send\_event}!util::server\_send\_event@{util::server\_send\_event}}
+\doxysubsubsection{\texorpdfstring{server\_send\_event()}{server\_send\_event()}}
+{\footnotesize\ttfamily util\+::server\+\_\+send\+\_\+event\+::server\+\_\+send\+\_\+event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+client\+Id,  }\item[{const int \&}]{t\+\_\+client\+Sd,  }\item[{const std\+::string \&}]{t\+\_\+client\+Ip,  }\item[{const int \&}]{t\+\_\+client\+Port,  }\item[{const char $\ast$}]{t\+\_\+client\+Buff,  }\item[{const int \&}]{t\+\_\+client\+Buff\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+server send event constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+client\+Id} & the Id of the client \\
+\hline
+{\em t\+\_\+client\+Sd} & the sokcet descriptor of the client \\
+\hline
+{\em t\+\_\+client\+Ip} & the ip of the client \\
+\hline
+{\em t\+\_\+client\+Port} & the port the client is on \\
+\hline
+{\em t\+\_\+client\+Buff} & the buffer the client sent \\
+\hline
+{\em t\+\_\+client\+Buff\+Size} & the size of the buffer the client send \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1server__send__event_ae6b6fa8b9218c1d2614b431fafd6e9ce}\label{classutil_1_1server__send__event_ae6b6fa8b9218c1d2614b431fafd6e9ce}} 
+\index{util::server\_send\_event@{util::server\_send\_event}!getBuffSize@{getBuffSize}}
+\index{getBuffSize@{getBuffSize}!util::server\_send\_event@{util::server\_send\_event}}
+\doxysubsubsection{\texorpdfstring{getBuffSize()}{getBuffSize()}}
+{\footnotesize\ttfamily int util\+::server\+\_\+send\+\_\+event\+::get\+Buff\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the size of the client buffer 
+
+\begin{DoxyReturn}{Returns}
+the size of the client buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1server__send__event_ac2e17e4afa58c6cecd4ee98a52faeacb}\label{classutil_1_1server__send__event_ac2e17e4afa58c6cecd4ee98a52faeacb}} 
+\index{util::server\_send\_event@{util::server\_send\_event}!getClientBuff@{getClientBuff}}
+\index{getClientBuff@{getClientBuff}!util::server\_send\_event@{util::server\_send\_event}}
+\doxysubsubsection{\texorpdfstring{getClientBuff()}{getClientBuff()}}
+{\footnotesize\ttfamily const char $\ast$ util\+::server\+\_\+send\+\_\+event\+::get\+Client\+Buff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the buffer the client sent 
+
+\begin{DoxyReturn}{Returns}
+the clinet buffer 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/server.\+hpp\end{DoxyCompactItemize}

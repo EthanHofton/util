@@ -2,6 +2,7 @@
 \label{algo_8hpp}\index{src/algo.hpp@{src/algo.hpp}}
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}random.\+hpp\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,7 +23,9 @@ std\+::string \mbox{\hyperlink{algo_8hpp_ab244f610a04eae09fbacef0e4e9bdc80}{util
 {\footnotesize template$<$typename T , typename... Args$>$ }\\std\+::string \mbox{\hyperlink{algo_8hpp_a22095db14ec99b69313ae0f72994e7fe}{util\+::fmt}} (std\+::string t\+\_\+fmt, T t\+\_\+val, Args... t\+\_\+rest)
 \begin{DoxyCompactList}\small\item\em format a string, replace \{\} with arguments provided in squentail order \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{algo_8hpp_ab1d9997edb8c4fe8ae1d14dd950fddb3}{util\+::strfmttime}} (const std\+::string \&fmt)
-\begin{DoxyCompactList}\small\item\em takes an format string and replaces the corrisponding placeholders with there values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em takes an format string and replaces the corrisponding placeholders with there values \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}{util\+::generate\+\_\+uuid\+\_\+v4}} ()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -154,6 +157,17 @@ computes the gratest common devisor of t\+\_\+a and t\+\_\+b (using euclidean al
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}\label{algo_8hpp_a50505def43e261cc1e822485e7e8dd04}} 
+\index{algo.hpp@{algo.hpp}!generate\_uuid\_v4@{generate\_uuid\_v4}}
+\index{generate\_uuid\_v4@{generate\_uuid\_v4}!algo.hpp@{algo.hpp}}
+\doxysubsubsection{\texorpdfstring{generate\_uuid\_v4()}{generate\_uuid\_v4()}}
+{\footnotesize\ttfamily std\+::string util\+::generate\+\_\+uuid\+\_\+v4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+generate a new random v4 uuid
+
+\begin{DoxyReturn}{Returns}
+std\+::string the new v4 uuid 
 \end{DoxyReturn}
 \mbox{\Hypertarget{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}\label{algo_8hpp_a06515ad83f47d896c6a3bdd745eb8435}} 
 \index{algo.hpp@{algo.hpp}!lcm@{lcm}}

@@ -519,17 +519,17 @@ namespace util
         std::string m_digits;
     };
 
-    bool null(const ubint& t_u)
+    inline bool null(const ubint& t_u)
     {
         return (t_u.m_digits.size() == 1 && t_u.m_digits[0] == 0);
     }
 
-    int length(const ubint& t_u)
+    inline int length(const ubint& t_u)
     {
         return t_u.m_digits.size();
     }
 
-    ubint &operator+=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator+=(ubint& t_a, const ubint& t_b)
     {
         // * t = carry, s = sum, i = index, n = length(a), m = length(b)
         int t = 0, s, i;
@@ -563,14 +563,14 @@ namespace util
         return t_a;
     }
 
-    ubint operator+(const ubint& t_a, const ubint& t_b)
+    inline ubint operator+(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp += t_b;
         return tmp;
     }
 
-    ubint &operator-=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator-=(ubint& t_a, const ubint& t_b)
     {
         if (t_a < t_b)
         {
@@ -613,14 +613,14 @@ namespace util
         return t_a;
     }
 
-    ubint operator-(const ubint& t_a, const ubint& t_b)
+    inline ubint operator-(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp -= t_b;
         return tmp;
     }
 
-    ubint &operator*=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator*=(ubint& t_a, const ubint& t_b)
     {
         if (null(t_a) || null(t_b))
         {
@@ -655,14 +655,14 @@ namespace util
         return t_a;
     }
 
-    ubint operator*(const ubint& t_a, const ubint& t_b)
+    inline ubint operator*(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp *= t_b;
         return tmp;
     }
 
-    ubint &operator/=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator/=(ubint& t_a, const ubint& t_b)
     {
         if (null(t_b))
         {
@@ -714,14 +714,14 @@ namespace util
         return t_a;
     }
 
-    ubint operator/(const ubint& t_a, const ubint& t_b)
+    inline ubint operator/(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp /= t_b;
         return tmp;
     }
 
-    ubint operator%=(ubint& t_a, const ubint& t_b)
+    inline ubint operator%=(ubint& t_a, const ubint& t_b)
     {
         if (null(t_b))
         {
@@ -761,14 +761,14 @@ namespace util
         return t_a;
     }
 
-    ubint operator%(const ubint& t_a, const ubint& t_b)
+    inline ubint operator%(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp %= t_b;
         return tmp;
     }
 
-    ubint &operator<<=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator<<=(ubint& t_a, const ubint& t_b)
     {
         for (ubint i = 0ULL; i < t_b; i++)
         {
@@ -778,14 +778,14 @@ namespace util
         return t_a;
     }
         
-    ubint operator<<(const ubint& t_a, const ubint& t_b)
+    inline ubint operator<<(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp <<= t_b;
         return tmp;
     }
     
-    ubint &operator>>=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator>>=(ubint& t_a, const ubint& t_b)
     {
         for (ubint i = 0ULL; i < t_b; i++)
         {
@@ -806,14 +806,14 @@ namespace util
         return t_a;
     }
     
-    ubint operator>>(const ubint& t_a, const ubint& t_b)
+    inline ubint operator>>(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp >>= t_b;
         return tmp;
     }
 
-    ubint &operator^=(ubint& t_a, const ubint& t_b)
+    inline ubint &operator^=(ubint& t_a, const ubint& t_b)
     {
         ubint exp = t_b, base = t_a;
         t_a = 1;
@@ -832,34 +832,34 @@ namespace util
         return t_a;
     }
 
-    ubint operator^(const ubint& t_a, const ubint& t_b)
+    inline ubint operator^(const ubint& t_a, const ubint& t_b)
     {
         ubint tmp = t_a;
         tmp ^= t_b;
         return tmp;
     }
 
-    bool operator==(const ubint& t_a, const ubint& t_b)
+    inline bool operator==(const ubint& t_a, const ubint& t_b)
     {
         return t_a.m_digits == t_b.m_digits;
     }
 
-    bool operator!=(const ubint& t_a, const ubint& t_b)
+    inline bool operator!=(const ubint& t_a, const ubint& t_b)
     {
         return !(t_a == t_b);
     }
 
-    bool operator>(const ubint& t_a, const ubint& t_b)
+    inline bool operator>(const ubint& t_a, const ubint& t_b)
     {
         return t_b < t_a;
     }
 
-    bool operator>=(const ubint& t_a, const ubint& t_b)
+    inline bool operator>=(const ubint& t_a, const ubint& t_b)
     {
         return !(t_a < t_b);
     }
 
-    bool operator<(const ubint& t_a, const ubint& t_b)
+    inline bool operator<(const ubint& t_a, const ubint& t_b)
     {
         int n = length(t_a), m = length(t_b);
         if (n != m)
@@ -878,12 +878,12 @@ namespace util
         return false;
     }
 
-    bool operator<=(const ubint& t_a, const ubint& t_b)
+    inline bool operator<=(const ubint& t_a, const ubint& t_b)
     {
         return !(t_a > t_b);
     }
 
-    ubint sqrt(const ubint& t_n)
+    inline ubint sqrt(const ubint& t_n)
     {
         ubint left = 1, right = t_n, v = 1, mid, prod;
         right >>= 1;
@@ -911,17 +911,17 @@ namespace util
         return v;
     }
 
-    ubint min(const ubint& t_a, const ubint& t_b)
+    inline ubint min(const ubint& t_a, const ubint& t_b)
     {
         return (t_a < t_b) ? t_a : t_b;
     }
 
-    ubint max(const ubint& t_a, const ubint& t_b)
+    inline ubint max(const ubint& t_a, const ubint& t_b)
     {
         return (t_a > t_b) ? t_a : t_b;
     }
 
-    ubint factorial(const ubint& t_n)
+    inline ubint factorial(const ubint& t_n)
     {
         if (t_n == 1)
         {
@@ -931,7 +931,7 @@ namespace util
         return t_n * factorial(t_n - 1);
     }
 
-    ubint map(const ubint& t_x, 
+    inline ubint map(const ubint& t_x, 
         const ubint& t_orig_lower,
         const ubint& t_orig_upper,
         const ubint& t_dest_lower,
@@ -942,7 +942,7 @@ namespace util
              + t_dest_lower;
     }
 
-    std::ostream& operator<<(std::ostream& t_out, const ubint& t_x)
+    inline std::ostream& operator<<(std::ostream& t_out, const ubint& t_x)
     {
         for (int i = t_x.m_digits.size() - 1; i >= 0; i--)
         {
@@ -952,7 +952,7 @@ namespace util
         return t_out;
     }
 
-    std::istream& operator>>(std::istream& t_in, ubint& t_x)
+    inline std::istream& operator>>(std::istream& t_in, ubint& t_x)
     {
         std::string s;
         t_in >> s;

@@ -350,7 +350,7 @@ namespace util
         std::vector<bool> m_bits;
     };
 
-    bitstream fromAscii(const char &t_str)
+    inline bitstream fromAscii(const char &t_str)
     {
         bitstream res;
         int num = (int)t_str;
@@ -365,14 +365,14 @@ namespace util
         return res;
     }
 
-    bitstream fromAscii(const char &t_str, const int& t_bits)
+    inline bitstream fromAscii(const char &t_str, const int& t_bits)
     {
         bitstream s = fromAscii(t_str);
         s.prepend(std::vector<bool>(t_bits - s.size(), 0));
         return s;
     }
     
-    bitstream fromAscii(const std::string &t_str)
+    inline bitstream fromAscii(const std::string &t_str)
     {
         bitstream s;
         for (char c : t_str)
@@ -382,14 +382,14 @@ namespace util
         return s;
     }
 
-    bitstream bitwise_xor(const bitstream& t_lhs, const bitstream& t_rhs)
+    inline bitstream bitwise_xor(const bitstream& t_lhs, const bitstream& t_rhs)
     { bitstream r = t_lhs; for (int i = 0; i < t_lhs.size(); i++) r[i] = t_lhs[i] ^ t_rhs[i]; return r;}
-    bitstream bitwise_and(const bitstream& t_lhs, const bitstream& t_rhs)
+    inline bitstream bitwise_and(const bitstream& t_lhs, const bitstream& t_rhs)
     { bitstream r = t_lhs; for (int i = 0; i < t_lhs.size(); i++) r[i] = t_lhs[i] & t_rhs[i]; return r;}
-    bitstream bitwise_or(const bitstream& t_lhs, const bitstream& t_rhs)
+    inline bitstream bitwise_or(const bitstream& t_lhs, const bitstream& t_rhs)
     { bitstream r = t_lhs; for (int i = 0; i < t_lhs.size(); i++) r[i] = t_lhs[i] | t_rhs[i]; return r;}
 
-    std::ostream& operator<<(std::ostream& t_o, const bitstream& t_b)
+    inline std::ostream& operator<<(std::ostream& t_o, const bitstream& t_b)
     {
         t_o << t_b.toBinary();
         return t_o;

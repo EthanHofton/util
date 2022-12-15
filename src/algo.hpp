@@ -3,6 +3,7 @@
 
 #include <string>
 #include <sstream>
+#include "random.hpp"
 
 /**
  * @file algo.hpp
@@ -111,7 +112,7 @@ namespace util
      * @param t_fmt the format string to return
      * @return std::string 
      */
-    std::string fmt(std::string t_fmt)
+    inline std::string fmt(std::string t_fmt)
     {
         return t_fmt;
     }
@@ -143,13 +144,47 @@ namespace util
      * @param fmt format string describing what time to use
      * @return std::string 
      */
-    std::string strfmttime(const std::string& fmt)
+    inline std::string strfmttime(const std::string& fmt)
     {
         char outstr[200];
         time_t t = time(NULL);
         struct tm *tmp = gmtime(&t);
         strftime(outstr, sizeof(outstr), fmt.c_str(), tmp);
         return std::string(outstr);
+    }
+
+    /**
+    * generate a new random v4 uuid
+    *
+    * @return std::string the new v4 uuid
+    */
+    inline std::string generate_uuid_v4() {
+        std::stringstream ss;
+        prng rng;
+        int i;
+        
+        ss << std::hex;   
+        for (i = 0; i < 8; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        for (i = 0; i < 4; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-4";
+        for (i = 0; i < 3; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        ss << rng.randi(8, 11);
+        for (i = 0; i < 3; i++) {
+            ss << rng.randi(0, 15);
+        }
+        ss << "-";
+        for (i = 0; i < 12; i++) {
+            ss << rng.randi(0, 15);
+        }
+        return ss.str();
     }
 }
 

@@ -58,12 +58,12 @@ namespace util
 
             switch (t_level)
             {
-                case LOGGER_LEVEL::TRACE:    ss << CONSOLE_COLOR_CODE::FG_WHITE;                               break;
-                case LOGGER_LEVEL::DEBUG:    ss << CONSOLE_COLOR_CODE::FG_LIGHT_MAGENTA;                       break;
-                case LOGGER_LEVEL::INFO:     ss << CONSOLE_COLOR_CODE::FG_BLUE;                                break;
-                case LOGGER_LEVEL::WARNING:  ss << CONSOLE_COLOR_CODE::FG_YELLOW;                              break;
-                case LOGGER_LEVEL::ERROR:    ss << CONSOLE_COLOR_CODE::FG_RED;                                 break;
-                case LOGGER_LEVEL::CRITICAL: ss << CONSOLE_COLOR_CODE::BG_RED << CONSOLE_COLOR_CODE::FG_BLACK; break;
+                case LOGGER_LEVEL::TRACE:    ss << CONSOLE_COLOR_CODE::FG_WHITE;                                 break;
+                case LOGGER_LEVEL::DEBUG:    ss << CONSOLE_COLOR_CODE::FG_LIGHT_MAGENTA;                         break;
+                case LOGGER_LEVEL::INFO:     ss << CONSOLE_COLOR_CODE::FG_BLUE;                                  break;
+                case LOGGER_LEVEL::WARNING:  ss << CONSOLE_COLOR_CODE::FG_YELLOW;                                break;
+                case LOGGER_LEVEL::ERROR:    ss << CONSOLE_COLOR_CODE::FG_RED;                                   break;
+                case LOGGER_LEVEL::CRITICAL: ss << CONSOLE_COLOR_CODE::BG_RED << CONSOLE_COLOR_CODE::FG_DEFAULT; break;
             }
 
             return ss.str();

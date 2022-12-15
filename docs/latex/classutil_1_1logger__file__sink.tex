@@ -25,7 +25,9 @@ Inheritance diagram for util\+::logger\+\_\+file\+\_\+sink\+:\begin{figure}[H]
 \mbox{\hyperlink{classutil_1_1logger__file__sink_a65c80b921d8636ac462cfe85ffaa3a26}{$\sim$logger\+\_\+file\+\_\+sink}} () override
 \begin{DoxyCompactList}\small\item\em Destroy the logger file sink object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classutil_1_1logger__file__sink_a7451d29dfbb631ff5348ec5f999d7c99}{output}} (const std\+::string \&t\+\_\+out) const override
-\begin{DoxyCompactList}\small\item\em output the message to the log file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em output the message to the log file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ \mbox{\hyperlink{classutil_1_1logger__file__sink_a93d2e36c56cccdd3dad9283b23f130db}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Construct a new logger sink copy. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -80,6 +82,20 @@ Destroy the logger file sink object.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1logger__file__sink_a93d2e36c56cccdd3dad9283b23f130db}\label{classutil_1_1logger__file__sink_a93d2e36c56cccdd3dad9283b23f130db}} 
+\index{util::logger\_file\_sink@{util::logger\_file\_sink}!clone@{clone}}
+\index{clone@{clone}!util::logger\_file\_sink@{util::logger\_file\_sink}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classutil_1_1logger__sink}{logger\+\_\+sink}} $\ast$ util\+::logger\+\_\+file\+\_\+sink\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Construct a new logger sink copy. 
+
+
+
+Implements \mbox{\hyperlink{classutil_1_1logger__sink_ab14b048357d032f61297fea0c25d4847}{util\+::logger\+\_\+sink}}.
+
 \mbox{\Hypertarget{classutil_1_1logger__file__sink_a7451d29dfbb631ff5348ec5f999d7c99}\label{classutil_1_1logger__file__sink_a7451d29dfbb631ff5348ec5f999d7c99}} 
 \index{util::logger\_file\_sink@{util::logger\_file\_sink}!output@{output}}
 \index{output@{output}!util::logger\_file\_sink@{util::logger\_file\_sink}}
