@@ -93,7 +93,7 @@ namespace util
         static prng* s_instance;
     };
 
-    prng *prng::s_instance = nullptr;
+    inline prng *prng::s_instance = nullptr;
 
     /**
      * @brief shuffle an array
