@@ -4,8 +4,9 @@
 #include <functional>
 #include <future>
 #include <iostream>
-#include <event.hpp>
-#include <logger.hpp>
+
+#include "event.hpp"
+#include "logger.hpp"
 
 #include <arpa/inet.h>
 #include <stdexcept>
