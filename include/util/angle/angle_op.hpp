@@ -7,6 +7,7 @@
 
 namespace util {
 
+// * cout *
 inline std::ostream& operator <<(std::ostream& t_out, const angle<util::angle_unit::radian>& t_angle) {
     t_out << t_angle.m_angle << "rad";
     return t_out;
