@@ -526,7 +526,7 @@ public:
 
         bool looping = true;
 
-        while (i != end()) {
+        while (ci != end()) {
             if (i.m_cursor.tryMoveFirstChild()) {
                 c.add(ci, *i);
                 ci.m_cursor.tryMoveFirstChild();
@@ -540,8 +540,8 @@ public:
                     break;
                 }
 
-                ci.m_cursor.moveParent();
-                looping = i.m_cursor.moveParent();
+                looping = ci.m_cursor.moveParent();
+                i.m_cursor.moveParent();
             } while (looping);
         }
 
@@ -605,10 +605,6 @@ protected:
         * @brief list of shared pointers to all nodes children
         */
         std::vector<std::shared_ptr<node>> m_children;
-
-        ~node() {
-            std::cout << "deleting node: " << m_data << std::endl;
-        }
     };
 
     /**
