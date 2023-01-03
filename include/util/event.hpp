@@ -2,6 +2,7 @@
 #define UTIL_EVENT_HPP
 
 #include <iostream> 
+#include <type_traits>
 
 namespace util {
 
@@ -175,7 +176,8 @@ namespace util {
         * @return true if the event handler method was called
         */
         template<typename T>
-        bool dispatch(eventFn<T> t_dispatchFn) {
+        typename std::enable_if_t<std::is_base_of_v<event<eventTypes>, T>, bool>
+        dispatch(eventFn<T> t_dispatchFn) {
             if (m_event.getEventType() == T::getStaticType()) {
                 m_event.m_handled = t_dispatchFn(*(T*)&m_event);
 
