@@ -221,6 +221,19 @@ namespace util
         std::vector<bool>::const_iterator cend() const { return m_bits.cend(); }
 
         /**
+        * @brief get a rage of bits from the bitstream
+        *
+        * @param t_begin start of the new bitstream
+        * @param t_end end of the new bitstream
+        *
+        * @return a bitstream with all the bits from t_start to t_end
+        */
+        bitstream get(std::vector<bool>::const_iterator t_begin, std::vector<bool>::const_iterator t_end) {
+            std::vector<bool> bits(t_begin, t_end);
+            return bitstream(bits);
+        }
+
+        /**
          * @brief convert a bitsream to ascii.
          * bitsream must be devisable by 8
          * 
