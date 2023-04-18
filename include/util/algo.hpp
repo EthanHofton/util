@@ -160,7 +160,7 @@ namespace util
     */
     inline std::string generate_uuid_v4() {
         std::stringstream ss;
-        prng rng;
+        static prng rng;
         int i;
         
         ss << std::hex;   
