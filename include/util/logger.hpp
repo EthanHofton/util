@@ -57,6 +57,8 @@ namespace util
             case LOGGER_LEVEL::ERROR:    return t_os << "ERROR";
             case LOGGER_LEVEL::CRITICAL: return t_os << "CRITICAL";
         }
+
+        return t_os;
     }
 
     /**
