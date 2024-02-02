@@ -13,7 +13,7 @@ target_include_directories("util"
 target_compile_features("util" INTERFACE cxx_std_20)
 
 option(UTIL_BUILD_TESTS "Build tests" ON)
-option(UTIL_BUILD_DOCS "Build documentation" ON)
+option(UTIL_BUILD_DOCS "Build documentation" OFF)
 
 if(UTIL_BUILD_TESTS)
     enable_testing()

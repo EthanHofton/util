@@ -149,7 +149,7 @@ namespace util
          * @param t_level the level of the output to base the color off
          * @return std::string 
          */
-        virtual std::string startOutputColorRange(const LOGGER_LEVEL& t_level) const { return ""; }
+        virtual std::string startOutputColorRange(const LOGGER_LEVEL&) const { return ""; }
         /**
          * @brief restore the old color for the output stream
          * 

@@ -106,7 +106,7 @@ namespace util
      */
     template<typename T>
     void shuffle(T* t_data, size_t t_start, size_t t_end, size_t t_shuffleIter)
-    { for (int i = 0; i < t_shuffleIter; i++) std::swap<T>(t_data[prng::instance().randi(t_start, t_end)], t_data[prng::instance().randi(t_start, t_end)]); }
+    { for (int i = 0; (size_t)i < t_shuffleIter; i++) std::swap<T>(t_data[prng::instance().randi(t_start, t_end)], t_data[prng::instance().randi(t_start, t_end)]); }
 
     /**
      * @brief shuffle an array (shuffle the array the ammount of times of the size of the range)
