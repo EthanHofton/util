@@ -31,7 +31,16 @@ namespace util
         BG_RED           = 41,
         BG_GREEN         = 42,
         BG_BLUE          = 44,
-        BG_DEFAULT       = 49
+        BG_DEFAULT       = 49,
+        TEXT_RESET       = 0,
+        TEXT_BOLD        = 1,
+        TEXT_DIM         = 2,
+        TEXT_ITALIC      = 3,
+        TEXT_UNDERLINE   = 4,
+        TEXT_BLINK       = 5,
+        TEXT_REVERSE     = 7,
+        TEXT_HIDDEN      = 8
+
     };
 
     /**
